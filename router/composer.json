@@ -1,0 +1,29 @@
+{
+	"name": "raxos/router",
+	"description": "A fast and simple router, built with php attributes.",
+	"license": "mit",
+	"minimum-stability": "stable",
+	"type": "library",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "Bas Milius",
+			"email": "bas@mili.us"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Raxos\\Router\\": "src/Raxos/Router"
+		}
+	},
+	"config": {
+		"platform": {
+			"php": "^8.0"
+		}
+	},
+	"require": {
+		"ext-json": "*",
+		"jetbrains/phpstorm-attributes": "^1.0",
+		"raxos/http": "1.0.0"
+	}
+}

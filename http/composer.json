@@ -1,0 +1,27 @@
+{
+	"name": "raxos/http",
+	"description": "Http client and foundation.",
+	"license": "mit",
+	"minimum-stability": "stable",
+	"type": "library",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "Bas Milius",
+			"email": "bas@mili.us"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Raxos\\Http\\": "src/Raxos/Http"
+		}
+	},
+	"config": {
+		"platform": {
+			"php": "^8.0"
+		}
+	},
+	"require": {
+		"jetbrains/phpstorm-attributes": "^1.0"
+	}
+}

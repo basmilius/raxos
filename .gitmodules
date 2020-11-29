@@ -1,0 +1,6 @@
+[submodule "http"]
+	path = http
+	url = https://github.com/basmilius/raxos-http
+[submodule "router"]
+	path = router
+	url = https://github.com/basmilius/raxos-router

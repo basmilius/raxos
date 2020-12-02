@@ -4,3 +4,9 @@
 [submodule "router"]
 	path = router
 	url = https://github.com/basmilius/raxos-router
+[submodule "foundation"]
+	path = foundation
+	url = https://github.com/basmilius/raxos-foundation
+[submodule "database"]
+	path = database
+	url = https://github.com/basmilius/raxos-database

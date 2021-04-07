@@ -13,3 +13,6 @@
 [submodule "cache"]
 	path = cache
 	url = https://github.com/basmilius/raxos-cache
+[submodule "rate-limit"]
+	path = rate-limit
+	url = https://github.com/basmilius/raxos-rate-limit

@@ -16,3 +16,6 @@
 [submodule "rate-limit"]
 	path = rate-limit
 	url = https://github.com/basmilius/raxos-rate-limit
+[submodule "gimli"]
+	path = gimli
+	url = https://github.com/basmilius/raxos-gimli.git

@@ -19,3 +19,6 @@
 [submodule "gimli"]
 	path = gimli
 	url = https://github.com/basmilius/raxos-gimli.git
+[submodule "oauth2"]
+	path = oauth2
+	url = https://github.com/basmilius/raxos-oauth2

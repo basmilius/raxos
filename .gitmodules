@@ -22,3 +22,6 @@
 [submodule "oauth2"]
 	path = oauth2
 	url = https://github.com/basmilius/raxos-oauth2
+[submodule "mail"]
+	path = mail
+	url = https://github.com/basmilius/raxos-mail.git

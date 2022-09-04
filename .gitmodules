@@ -16,12 +16,12 @@
 [submodule "rate-limit"]
 	path = rate-limit
 	url = https://github.com/basmilius/raxos-rate-limit
-[submodule "gimli"]
-	path = gimli
-	url = https://github.com/basmilius/raxos-gimli.git
 [submodule "oauth2"]
 	path = oauth2
 	url = https://github.com/basmilius/raxos-oauth2
 [submodule "mail"]
 	path = mail
 	url = https://github.com/basmilius/raxos-mail.git
+[submodule "terminal"]
+	path = terminal
+	url = https://github.com/basmilius/raxos-terminal.git

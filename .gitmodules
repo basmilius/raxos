@@ -25,3 +25,6 @@
 [submodule "terminal"]
 	path = terminal
 	url = https://github.com/basmilius/raxos-terminal.git
+[submodule "openapi"]
+	path = openapi
+	url = https://github.com/basmilius/raxos-openapi

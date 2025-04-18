@@ -28,3 +28,6 @@
 [submodule "openapi"]
 	path = openapi
 	url = https://github.com/basmilius/raxos-openapi
+[submodule "message-bus"]
+	path = message-bus
+	url = git@github.com:basmilius/raxos-message-bus.git

@@ -5,3 +5,7 @@ Thumbs.db
 
 # Composer
 vendor/
+
+# Whitelist certain .idea files
+!.idea/.name
+!.idea/icon.svg

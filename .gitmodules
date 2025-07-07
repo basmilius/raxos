@@ -31,3 +31,6 @@
 [submodule "message-bus"]
 	path = message-bus
 	url = git@github.com:basmilius/raxos-message-bus.git
+[submodule "container"]
+	path = container
+	url = git@github.com:basmilius/raxos-container.git

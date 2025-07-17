@@ -34,3 +34,6 @@
 [submodule "container"]
 	path = container
 	url = git@github.com:basmilius/raxos-container.git
+[submodule "wallet"]
+	path = wallet
+	url = git@github.com:basmilius/raxos-wallet.git

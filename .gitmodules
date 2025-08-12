@@ -37,3 +37,6 @@
 [submodule "wallet"]
 	path = wallet
 	url = git@github.com:basmilius/raxos-wallet.git
+[submodule "datetime"]
+	path = datetime
+	url = git@github.com:basmilius/raxos-datetime.git

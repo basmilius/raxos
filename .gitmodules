@@ -1,45 +1,60 @@
-[submodule "http"]
-	path = http
-	url = https://github.com/basmilius/raxos-http
-[submodule "router"]
-	path = router
-	url = https://github.com/basmilius/raxos-router
-[submodule "foundation"]
-	path = foundation
-	url = https://github.com/basmilius/raxos-foundation
-[submodule "database"]
-	path = database
-	url = https://github.com/basmilius/raxos-database
 [submodule "cache"]
 	path = cache
 	url = https://github.com/basmilius/raxos-cache
-[submodule "rate-limit"]
-	path = rate-limit
-	url = https://github.com/basmilius/raxos-rate-limit
-[submodule "oauth2"]
-	path = oauth2
-	url = https://github.com/basmilius/raxos-oauth2
-[submodule "mail"]
-	path = mail
-	url = https://github.com/basmilius/raxos-mail.git
-[submodule "terminal"]
-	path = terminal
-	url = https://github.com/basmilius/raxos-terminal.git
-[submodule "openapi"]
-	path = openapi
-	url = https://github.com/basmilius/raxos-openapi
-[submodule "message-bus"]
-	path = message-bus
-	url = git@github.com:basmilius/raxos-message-bus.git
+[submodule "collection"]
+	path = collection
+	url = git@github.com:basmilius/raxos-collection.git
 [submodule "container"]
 	path = container
 	url = git@github.com:basmilius/raxos-container.git
-[submodule "wallet"]
-	path = wallet
-	url = git@github.com:basmilius/raxos-wallet.git
+[submodule "contract"]
+	path = contract
+	url = git@github.com:basmilius/raxos-contract.git
+[submodule "database"]
+	path = database
+	url = https://github.com/basmilius/raxos-database
 [submodule "datetime"]
 	path = datetime
 	url = git@github.com:basmilius/raxos-datetime.git
+[submodule "error"]
+	path = error
+	url = git@github.com:basmilius/raxos-error.git
+[submodule "foundation"]
+	path = foundation
+	url = https://github.com/basmilius/raxos-foundation
+[submodule "http"]
+	path = http
+	url = https://github.com/basmilius/raxos-http
+[submodule "mail"]
+	path = mail
+	url = https://github.com/basmilius/raxos-mail.git
+[submodule "message-bus"]
+	path = message-bus
+	url = git@github.com:basmilius/raxos-message-bus.git
+[submodule "oauth2"]
+	path = oauth2
+	url = https://github.com/basmilius/raxos-oauth2
+[submodule "openapi"]
+	path = openapi
+	url = https://github.com/basmilius/raxos-openapi
+[submodule "rate-limit"]
+	path = rate-limit
+	url = https://github.com/basmilius/raxos-rate-limit
+[submodule "reflection"]
+	path = reflection
+	url = git@github.com:basmilius/raxos-reflection.git
+[submodule "router"]
+	path = router
+	url = https://github.com/basmilius/raxos-router
 [submodule "search"]
 	path = search
 	url = git@github.com:basmilius/raxos-search.git
+[submodule "security"]
+	path = security
+	url = git@github.com:basmilius/raxos-security.git
+[submodule "terminal"]
+	path = terminal
+	url = https://github.com/basmilius/raxos-terminal.git
+[submodule "wallet"]
+	path = wallet
+	url = git@github.com:basmilius/raxos-wallet.git

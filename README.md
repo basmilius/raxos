@@ -6,4 +6,4 @@
 
 # Raxos
 
-Repository containing multiple PHP libraries that I use in personal projects.
+Repository containing multiple PHP libraries that I use in personal projects. It requires a minimum PHP version of 8.5.

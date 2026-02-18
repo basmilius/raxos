@@ -58,3 +58,6 @@
 [submodule "wallet"]
 	path = wallet
 	url = git@github.com:basmilius/raxos-wallet.git
+[submodule "barcode"]
+	path = barcode
+	url = git@github.com:basmilius/raxos-barcode.git

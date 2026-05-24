@@ -206,7 +206,7 @@ $container = new Container(production: true);
 $container->singleton(DatabaseConnection::class, fn() => new DatabaseConnection(...));
 $container->bind(SomeInterface::class, SomeImpl::class);
 
-$instance = $container->make(SomeService::class);
+$instance = $container->get(SomeService::class);
 ```
 
 Attributes voor auto-wiring: `#[Singleton]`, `#[Inject]`, `#[Proxy]`, `#[Tag]`

@@ -1,0 +1,16 @@
+{
+    "name": "@raxos/docs",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vitepress dev",
+        "build": "vitepress build",
+        "preview": "vitepress preview"
+    },
+    "devDependencies": {
+        "@types/node": "^26.0.1",
+        "vitepress": "^1.6.3",
+        "vitepress-plugin-group-icons": "^1.7.5",
+        "vue": "^3.6.0-beta.17"
+    }
+}

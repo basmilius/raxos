@@ -7,6 +7,12 @@ Thumbs.db
 # Composer
 vendor/
 
+# Node / docs
+node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+.wrangler/
+
 # Whitelist certain .idea files
 !.idea/.name
 !.idea/icon.svg

@@ -1,0 +1,16 @@
+{
+    "name": "raxos-docs",
+    "private": true,
+    "workspaces": [
+        "docs"
+    ],
+    "scripts": {
+        "docs:dev": "bun --cwd docs dev",
+        "docs:build": "bun --cwd docs build",
+        "docs:preview": "bun --cwd docs preview",
+        "docs:deploy": "wrangler deploy"
+    },
+    "devDependencies": {
+        "wrangler": "^4.105.0"
+    }
+}

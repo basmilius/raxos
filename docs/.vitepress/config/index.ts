@@ -10,13 +10,13 @@ export default defineConfig({
     cleanUrls: true,
     lastUpdated: true,
     sitemap: {
-        hostname: 'https://raxos.bas.dev'
+        hostname: 'https://raxos.dev'
     },
     head: [
         ['link', {rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg'}],
         ['link', {rel: 'stylesheet', href: 'https://font.bmcdn.nl/css2?family=inter-variable|jetbrains-mono'}],
         ['meta', {property: 'og:type', content: 'website'}],
-        ['meta', {property: 'og:url', content: 'https://raxos.bas.dev/'}]
+        ['meta', {property: 'og:url', content: 'https://raxos.dev/'}]
     ],
     markdown: {
         config(md) {

@@ -78,6 +78,7 @@ abstract class Query implements QueryInterface
 | `withoutModel(): static` | Removes the model binding. |
 | `eagerLoad(string\|array $relations): static` | Eager loads the given relations. |
 | `eagerLoadDisable(string\|array $relations): static` | Disables eager loading of the given relations. |
+| `prime(PrimerInterface\|callable $primer, PrimerTiming $timing = PrimerTiming::AfterRelations): static` | Registers a [primer](/database/api/Primer) that seeds a value across the hydrated batch, before or after relations load. |
 | `withDeleted(): static` | Includes soft deleted rows for a model with `#[SoftDelete]`. |
 
 ## Example

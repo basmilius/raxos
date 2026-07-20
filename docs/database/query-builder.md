@@ -185,6 +185,35 @@ Db::query()
 
 For structured expressions (comparisons, aggregates, dates, string functions) use the [Expr helper](/database/api/Expr).
 
+## Partials
+
+A partial is a reusable sub query fragment that behaves as an expression. Wrap a builder closure in `partial()`; the closure receives the connection of the host query and is only invoked when the partial is compiled, so a partial can be constructed without a live connection and reused anywhere an expression is accepted — most notably inside `Expr::exists()`.
+
+```php
+<?php
+declare(strict_types=1);
+
+use Raxos\Contract\Database\ConnectionInterface;
+use Raxos\Contract\Database\Query\QueryInterface;
+use Raxos\Database\Db;
+use Raxos\Database\Query\Expr;
+use function Raxos\Database\Query\{column, partial};
+
+// A correlated "has an order line" fragment, reusable across queries.
+$hasOrderLine = partial(static fn(ConnectionInterface $connection): QueryInterface => $connection->query()
+    ->select(1)
+    ->from('order_line')
+    ->where('product_id', column('id', 'product')));
+
+Db::query()
+    ->select('*')
+    ->from('product')
+    ->where(Expr::exists($hasOrderLine))
+    ->array();
+```
+
+Because a partial builds its sub query lazily with the host connection, the same partial works across connections and never depends on the global `Db::query()`. See the [Partial reference](/database/api/Partial).
+
 ## Executing a query
 
 Terminal methods run the statement and shape the result:

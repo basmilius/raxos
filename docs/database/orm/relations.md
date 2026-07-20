@@ -140,6 +140,47 @@ $lean = User::select()
     ->arrayList();
 ```
 
+## Priming
+
+Eager loading solves the N+1 problem for relations, but computed `#[Macro]` properties can have the same problem: reading one on every record in a list runs a query per record. A *primer* fixes that by resolving the value for the whole batch in a single query and seeding each model's macro cache.
+
+Register a primer per query with `prime()`. It runs over the freshly hydrated batch, either before or after relations are eager loaded (`PrimerTiming::AfterRelations` by default). Priming is opt-in, so paths that must read live data simply leave it off.
+
+```php
+<?php
+declare(strict_types=1);
+
+use Raxos\Contract\Collection\ArrayListInterface;
+use Raxos\Contract\Database\ConnectionInterface;
+use Raxos\Contract\Database\Orm\PrimerInterface;
+use Raxos\Database\Query\Expr;
+
+final class UserPostCountPrimer implements PrimerInterface
+{
+    public function prime(ArrayListInterface $instances, ConnectionInterface $connection): void
+    {
+        $rows = $connection->query()
+            ->select(['user_id', 'total' => Expr::count()])
+            ->from('post')
+            ->whereIn('user_id', $instances->column('id')->toArray())
+            ->groupBy('user_id')
+            ->array();
+
+        $byUser = array_column($rows, 'total', 'user_id');
+
+        foreach ($instances as $user) {
+            $user->backbone->macroCache->setValue('postCount', $byUser[$user->id] ?? 0);
+        }
+    }
+}
+
+$users = User::select()
+    ->prime(new UserPostCountPrimer())
+    ->arrayList();
+```
+
+A primer can also be a plain callable with the same `(ArrayListInterface $instances, ConnectionInterface $connection)` signature. See the [Primer reference](/database/api/Primer).
+
 ## Filtering on relations
 
 `whereHas()` adds a `where exists` condition based on a relation, optionally refined by a callback. `whereRelation()` is a shorthand that adds a comparison inside that relation. Both have `orWhereHas()` / `orWhereRelation()` and negated `whereNotHas()` variants.

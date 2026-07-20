@@ -54,6 +54,8 @@ The expression builder also covers date and time functions (`now()`, `currentDat
 | `subQuery(QueryInterface $query)` | Wraps a query as a parenthesized sub query. |
 | `func(string $name, array $params)` | An arbitrary SQL function call. |
 
+Any `QueryExpressionInterface` works wherever a value is expected — including a [`Partial`](/database/api/Partial), a reusable, lazily built sub query that pairs naturally with `exists()`.
+
 ## Example
 
 ```php

@@ -38,6 +38,8 @@ export const database: DefaultTheme.SidebarItem[] = [
             {text: 'Model', link: '/database/api/Model'},
             {text: 'ModelArrayList', link: '/database/api/ModelArrayList'},
             {text: 'Expr', link: '/database/api/Expr'},
+            {text: 'Partial', link: '/database/api/Partial'},
+            {text: 'Primer', link: '/database/api/Primer'},
             {text: 'ORM attributes', link: '/database/api/Attributes'}
         ]
     }

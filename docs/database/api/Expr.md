@@ -4,16 +4,16 @@ outline: deep
 
 # Expr
 
-`Raxos\Database\Query\Expr` builds SQL expressions used inside `where`, `having` and `select` clauses: comparisons, aggregates, date and time functions, numeric and string functions, and control flow. A ready made instance is exposed as the global `expr` constant in the `Raxos\Database\Query` namespace, so you rarely construct it yourself.
+`Raxos\Database\Query\Expr` builds SQL expressions used inside `where`, `having` and `select` clauses: comparisons, aggregates, date and time functions, numeric and string functions, and control flow. All methods are static, so you call them directly on the class without constructing it.
 
 ```php
-final class Expr implements QueryExpressionsInterface
+final class Expr
 ```
 
-Import the constant and use it directly:
+Import the class and call its static methods:
 
 ```php
-use const Raxos\Database\Query\expr;
+use Raxos\Database\Query\Expr;
 ```
 
 ## Comparisons
@@ -61,17 +61,17 @@ The expression builder also covers date and time functions (`now()`, `currentDat
 declare(strict_types=1);
 
 use Raxos\Database\Db;
-use const Raxos\Database\Query\expr;
+use Raxos\Database\Query\Expr;
 
 // select country, count(*) as total from users group by country having count(*) > 10
 $rows = Db::query()
     ->select([
         'country',
-        'total' => expr->count(),
+        'total' => Expr::count(),
     ])
     ->from('users')
     ->groupBy('country')
-    ->having(expr->gt(expr->count(), 10))
+    ->having(Expr::gt(Expr::count(), 10))
     ->array();
 ```
 
@@ -82,7 +82,7 @@ Combine it with a sub query in an `exists` condition:
 declare(strict_types=1);
 
 use Raxos\Database\Db;
-use const Raxos\Database\Query\expr;
+use Raxos\Database\Query\Expr;
 
 $hasOrders = Db::query()
     ->select()
@@ -90,7 +90,7 @@ $hasOrders = Db::query()
     ->where('orders.user_id', User::col('id'));
 
 $buyers = User::select()
-    ->where(expr->exists($hasOrders))
+    ->where(Expr::exists($hasOrders))
     ->arrayList();
 ```
 

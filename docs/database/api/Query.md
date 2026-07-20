@@ -14,8 +14,8 @@ abstract class Query implements QueryInterface
 
 | Method | Description |
 | --- | --- |
-| `select(Select\|Stringable\|array\|string\|int $fields = []): static` | Adds or extends the select clause. Empty means `*`. |
-| `selectDistinct(Select\|Stringable\|array\|string\|int $fields = []): static` | A `select distinct` clause. |
+| `select(QueryValueInterface\|Stringable\|array\|string\|int $fields = []): static` | Adds or extends the select clause. Empty means `*`. |
+| `selectDistinct(QueryValueInterface\|Stringable\|array\|string\|int $fields = []): static` | A `select distinct` clause. |
 | `selectSuffix(string $suffix, ...$fields): static` | A select with a raw suffix after the keyword. |
 | `from(QueryInterface\|array\|string $tables, ?string $alias = null): static` | Sets the from clause, accepting table names or a sub query. |
 

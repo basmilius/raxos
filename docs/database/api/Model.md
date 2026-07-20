@@ -32,12 +32,12 @@ abstract class Model implements
 | Method | Description |
 | --- | --- |
 | `static query(): QueryInterface` | Starts a new query bound to the model. |
-| `static select(Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select query bound to the model. |
+| `static select(QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select query bound to the model. |
 | `static selectDistinct(...): QueryInterface` | Starts a select distinct query. |
 | `static where(...): QueryInterface` | Shortcut for `select()->where(...)`. |
 | `static having(...): QueryInterface` | Shortcut for `select()->having(...)`. |
 | `static table(): string` | Returns the model's table name. |
-| `static col(string $key): ColumnLiteral` | Returns the fully qualified column literal for a key. |
+| `static col(string $key): ColumnRef` | Returns the fully qualified column literal for a key. |
 
 ## Static finders (Queryable)
 
@@ -94,22 +94,22 @@ Beyond the starters and finders above, the `Queryable` trait exposes the full `w
 
 | Method | Description |
 | --- | --- |
-| `static whereIn(ColumnLiteral $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->whereIn(...)`. |
-| `static whereNotIn(ColumnLiteral $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->whereNotIn(...)`. |
-| `static whereNull(ColumnLiteral $column): QueryInterface` | Shortcut for `select()->whereNull(...)`. |
-| `static whereNotNull(ColumnLiteral $column): QueryInterface` | Shortcut for `select()->whereNotNull(...)`. |
+| `static whereIn(ColumnRef $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->whereIn(...)`. |
+| `static whereNotIn(ColumnRef $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->whereNotIn(...)`. |
+| `static whereNull(ColumnRef $column): QueryInterface` | Shortcut for `select()->whereNull(...)`. |
+| `static whereNotNull(ColumnRef $column): QueryInterface` | Shortcut for `select()->whereNotNull(...)`. |
 | `static whereExists(QueryInterface $query): QueryInterface` | Shortcut for `select()->whereExists(...)`. |
 | `static whereNotExists(QueryInterface $query): QueryInterface` | Shortcut for `select()->whereNotExists(...)`. |
 | `static having(...): QueryInterface` | Shortcut for `select()->having(...)`. |
-| `static havingIn(ColumnLiteral $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->havingIn(...)`. |
-| `static havingNotIn(ColumnLiteral $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->havingNotIn(...)`. |
-| `static havingNull(ColumnLiteral $column): QueryInterface` | Shortcut for `select()->havingNull(...)`. |
-| `static havingNotNull(ColumnLiteral $column): QueryInterface` | Shortcut for `select()->havingNotNull(...)`. |
+| `static havingIn(ColumnRef $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->havingIn(...)`. |
+| `static havingNotIn(ColumnRef $column, ArrayableInterface\|array $options): QueryInterface` | Shortcut for `select()->havingNotIn(...)`. |
+| `static havingNull(ColumnRef $column): QueryInterface` | Shortcut for `select()->havingNull(...)`. |
+| `static havingNotNull(ColumnRef $column): QueryInterface` | Shortcut for `select()->havingNotNull(...)`. |
 | `static havingExists(QueryInterface $query): QueryInterface` | Shortcut for `select()->havingExists(...)`. |
 | `static havingNotExists(QueryInterface $query): QueryInterface` | Shortcut for `select()->havingNotExists(...)`. |
-| `static selectFoundRows(Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select that adds `SQL_CALC_FOUND_ROWS`. |
-| `static selectSuffix(string $suffix, Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select with a raw suffix after the select keyword. |
-| `static alias(string $key, string $table): ColumnLiteral` | Returns the fully qualified column literal for a key against an aliased table. |
+| `static selectFoundRows(QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select that adds `SQL_CALC_FOUND_ROWS`. |
+| `static selectSuffix(string $suffix, QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select with a raw suffix after the select keyword. |
+| `static alias(string $key, string $table): ColumnRef` | Returns the fully qualified column literal for a key against an aliased table. |
 
 ## Queryable hooks
 
@@ -117,7 +117,7 @@ Through `QueryableInterface`, a model implements two overridable static hooks. B
 
 | Method | Description |
 | --- | --- |
-| `static getQueryableColumns(Select $select): Select` | Adds extra columns to every model query. |
+| `static getQueryableColumns(array $columns): array` | Adds extra columns to every model query. |
 | `static getQueryableJoins(QueryInterface $query): QueryInterface` | Adds the joins those columns rely on. |
 
 See [models](/database/orm/models) for a worked example that combines both hooks with a `#[Computed]` property.

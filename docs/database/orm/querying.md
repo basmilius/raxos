@@ -88,7 +88,7 @@ $unverified = User::whereNull(User::col('verified_on'))
     ->arrayList();
 ```
 
-The full family: `where()`, `whereIn()`, `whereNotIn()`, `whereNull()`, `whereNotNull()`, `whereExists()` and `whereNotExists()`. The `where()` shortcut takes the `lhs`, `cmp`, `rhs` triple (two arguments imply an `=` comparison); `whereIn()` and `whereNotIn()` take a `ColumnLiteral` and a list of options; the null variants take a `ColumnLiteral`; the exists variants take a sub query.
+The full family: `where()`, `whereIn()`, `whereNotIn()`, `whereNull()`, `whereNotNull()`, `whereExists()` and `whereNotExists()`. The `where()` shortcut takes the `lhs`, `cmp`, `rhs` triple (two arguments imply an `=` comparison); `whereIn()` and `whereNotIn()` take a `ColumnRef` and a list of options; the null variants take a `ColumnRef`; the exists variants take a sub query.
 
 ## Having shortcuts
 
@@ -138,7 +138,7 @@ $lines = OrderLine::select()
     ->arrayList();
 ```
 
-- `col(string $key)` returns a fully qualified `ColumnLiteral` for the model's table. Passing `'*'` yields the wildcard for that table. Results are cached per key.
+- `col(string $key)` returns a fully qualified `ColumnRef` for the model's table. Passing `'*'` yields the wildcard for that table. Results are cached per key.
 - `alias(string $key, string $table)` returns the same, but qualified against an aliased table name instead of the model's own table, which is what you need when the model appears more than once in a query.
 - `table()` returns the model's mapped table name.
 

@@ -202,7 +202,7 @@ For the relation attributes and how records link together, continue to [relation
 
 Every model query passes through two static hooks that a model can override to add extra columns and their supporting joins to every query for that table. They come from `QueryableInterface` and default to a no-op on `Model`:
 
-- `getQueryableColumns(Select $select): Select` adds columns (often sub-query or joined columns) to the select.
+- `getQueryableColumns(array $columns): array` adds columns (often sub-query or joined columns) to the select.
 - `getQueryableJoins(QueryInterface $query): QueryInterface` adds the joins those columns rely on.
 
 Combine them with a `#[Computed]` property to expose a value that lives in another table on every record. The computed property is read back but never written, and the join makes its source column available.
@@ -215,7 +215,6 @@ use Override;
 use Raxos\Contract\Database\Query\QueryInterface;
 use Raxos\Database\Orm\Model;
 use Raxos\Database\Orm\Attribute\{Column, Computed, ForeignKey, PrimaryKey, Table};
-use Raxos\Database\Query\Select;
 
 #[Table('order_line')]
 final class OrderLine extends Model
@@ -233,13 +232,13 @@ final class OrderLine extends Model
     public string $currency;
 
     #[Override]
-    public static function getQueryableColumns(Select $select): Select
+    public static function getQueryableColumns(array $columns): array
     {
-        return $select->add(
+        return [
             self::col('*'),
-
-            currency: Merchant::col('currency')
-        );
+            ...$columns,
+            'currency' => Merchant::col('currency'),
+        ];
     }
 
     #[Override]

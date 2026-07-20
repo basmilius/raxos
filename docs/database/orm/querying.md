@@ -24,7 +24,7 @@ $query = User::select();
 $query = User::selectDistinct(['country']);
 ```
 
-`query(bool $prepared = true)` starts an empty builder. `select()` and `selectDistinct()` both accept a `Select`, a single column, a list of columns or a map of alias to column, and immediately set the `from` clause to the model's table. From there you chain the [query builder](/database/query-builder) and finish with a terminal such as `arrayList()`, `single()` or `paginate()`.
+`query()` starts an empty builder. `select()` and `selectDistinct()` both accept a `Select`, a single column, a list of columns or a map of alias to column, and immediately set the `from` clause to the model's table. From there you chain the [query builder](/database/query-builder) and finish with a terminal such as `arrayList()`, `single()` or `paginate()`.
 
 ## Finders
 

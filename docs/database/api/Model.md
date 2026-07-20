@@ -31,7 +31,7 @@ abstract class Model implements
 
 | Method | Description |
 | --- | --- |
-| `static query(bool $prepared = true): QueryInterface` | Starts a new query bound to the model. |
+| `static query(): QueryInterface` | Starts a new query bound to the model. |
 | `static select(Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select query bound to the model. |
 | `static selectDistinct(...): QueryInterface` | Starts a select distinct query. |
 | `static where(...): QueryInterface` | Shortcut for `select()->where(...)`. |
@@ -107,8 +107,8 @@ Beyond the starters and finders above, the `Queryable` trait exposes the full `w
 | `static havingNotNull(ColumnLiteral $column): QueryInterface` | Shortcut for `select()->havingNotNull(...)`. |
 | `static havingExists(QueryInterface $query): QueryInterface` | Shortcut for `select()->havingExists(...)`. |
 | `static havingNotExists(QueryInterface $query): QueryInterface` | Shortcut for `select()->havingNotExists(...)`. |
-| `static selectFoundRows(Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = [], bool $prepared = true): QueryInterface` | Starts a select that adds `SQL_CALC_FOUND_ROWS`. |
-| `static selectSuffix(string $suffix, Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = [], bool $prepared = true): QueryInterface` | Starts a select with a raw suffix after the select keyword. |
+| `static selectFoundRows(Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select that adds `SQL_CALC_FOUND_ROWS`. |
+| `static selectSuffix(string $suffix, Select\|QueryValueInterface\|Stringable\|array\|string\|int $keys = []): QueryInterface` | Starts a select with a raw suffix after the select keyword. |
 | `static alias(string $key, string $table): ColumnLiteral` | Returns the fully qualified column literal for a key against an aliased table. |
 
 ## Queryable hooks

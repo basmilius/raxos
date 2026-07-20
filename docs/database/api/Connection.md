@@ -17,7 +17,7 @@ abstract class Connection implements ConnectionInterface
 | `abstract connect(): void` | Opens the underlying PDO connection, implemented per driver. |
 | `disconnect(): void` | Closes the connection by dropping the PDO instance. |
 | `ping(): bool` | Checks whether the connection is still alive. |
-| `query(bool $prepared = true): QueryInterface` | Starts a new query builder for this connection's dialect. |
+| `query(): QueryInterface` | Starts a new query builder for this connection's dialect. |
 | `prepare(string\|QueryInterface $query, array $options = []): StatementInterface` | Prepares a statement for a query or raw SQL string. |
 | `execute(string\|QueryInterface $query): int` | Executes a statement and returns the affected row count. |
 | `transaction(): bool` | Begins a transaction, or a savepoint when one is already active. |

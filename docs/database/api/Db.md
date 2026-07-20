@@ -25,7 +25,7 @@ Each of these resolves the connection (defaulting to the registered default) and
 
 | Method | Description |
 | --- | --- |
-| `static query(bool $prepared = true, ?string $id = null): QueryInterface` | Starts a new query on the resolved connection. |
+| `static query(?string $id = null): QueryInterface` | Starts a new query on the resolved connection. |
 | `static prepare(QueryInterface\|string $query, array $options = [], ?string $id = null): StatementInterface` | Prepares a statement. |
 | `static execute(QueryInterface\|string $query, ?string $id = null): int` | Executes a statement and returns the affected row count. |
 | `static column(QueryInterface\|string $query, ?string $id = null): string\|int` | Executes and returns the first column of the first row. |

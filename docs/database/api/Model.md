@@ -8,12 +8,13 @@ outline: deep
 
 ```php
 abstract class Model implements
-    AccessInterface,
-    ArrayableInterface,
-    JsonSerializable,
-    QueryableInterface,
-    Stringable
+    ArrayAccess,
+    DebuggableInterface,
+    MutableModelInterface,
+    QueryableInterface
 ```
+
+`MutableModelInterface` extends `ModelInterface`, the read surface that `Model` shares with [ReadonlyModel](/database/api/ReadonlyModel), and adds the mutation on top of it.
 
 ## Instance methods
 
@@ -26,6 +27,7 @@ abstract class Model implements
 | `makeHidden(array\|string $keys): static` | Returns a clone with the given keys hidden from export. |
 | `makeVisible(array\|string $keys): static` | Returns a clone with the given keys forced visible in export. |
 | `only(array\|string $keys): static` | Returns a clone that exports only the given keys. |
+| `readonly(): ReadonlyModel` | Returns a read-only view over the same backbone, safe to hand to a template engine. |
 
 ## Static query starters (Queryable)
 
@@ -122,4 +124,4 @@ Through `QueryableInterface`, a model implements two overridable static hooks. B
 
 See [models](/database/orm/models) for a worked example that combines both hooks with a `#[Computed]` property.
 
-See [models](/database/orm/models) for the attribute driven definition, [relations](/database/orm/relations) for links between models, and [casters, embeddables and polymorphic models](/database/orm/casters-and-embeddables) for value conversion.
+See [models](/database/orm/models) for the attribute driven definition, [relations](/database/orm/relations) for links between models, [casters, embeddables and polymorphic models](/database/orm/casters-and-embeddables) for value conversion, and [read-only models](/database/orm/readonly-models) for handing a model to a template engine.

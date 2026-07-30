@@ -24,7 +24,8 @@ export const database: DefaultTheme.SidebarItem[] = [
             {text: 'Models', link: '/database/orm/models'},
             {text: 'Querying models', link: '/database/orm/querying'},
             {text: 'Relations', link: '/database/orm/relations'},
-            {text: 'Casters, embeddables and polymorphic models', link: '/database/orm/casters-and-embeddables'}
+            {text: 'Casters, embeddables and polymorphic models', link: '/database/orm/casters-and-embeddables'},
+            {text: 'Read-only models', link: '/database/orm/readonly-models'}
         ]
     },
     {
@@ -37,6 +38,7 @@ export const database: DefaultTheme.SidebarItem[] = [
             {text: 'Statement', link: '/database/api/Statement'},
             {text: 'Model', link: '/database/api/Model'},
             {text: 'ModelArrayList', link: '/database/api/ModelArrayList'},
+            {text: 'ReadonlyModel', link: '/database/api/ReadonlyModel'},
             {text: 'Expr', link: '/database/api/Expr'},
             {text: 'Partial', link: '/database/api/Partial'},
             {text: 'Primer', link: '/database/api/Primer'},

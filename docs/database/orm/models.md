@@ -322,3 +322,15 @@ See [connections](/database/connections) for how connection ids are registered.
 $public = User::all()->makeHidden('email');
 $summary = User::all()->only(['id', 'name']);
 ```
+
+## Handing a model to a template
+
+A model exposes `save()` and `destroy()` as regular methods, and a template engine falls back to a method lookup when a name is not a property. Passing a model straight into a template therefore lets <code v-pre>{{ user.destroy }}</code> delete the record while the page renders. Use `readonly()` instead, which returns a view over the same backbone without any mutation.
+
+```php
+$twig->render('profile.twig', [
+    'user' => $user->readonly()
+]);
+```
+
+See [read-only models](/database/orm/readonly-models) for the details.

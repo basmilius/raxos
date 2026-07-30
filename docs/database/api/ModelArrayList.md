@@ -28,6 +28,21 @@ Each method maps every contained model through the matching `Model` method and r
 | `makeVisible(array\|string $keys): static` | Maps every model through `Model::makeVisible()`, forcing the given keys visible. |
 | `only(array\|string $keys): static` | Maps every model through `Model::only()`, exporting only the given keys. |
 
+## Read-only views
+
+| Method | Description |
+| --- | --- |
+| `readonly(): static` | Maps every model through `Model::readonly()`, returning a collection of [ReadonlyModel](/database/api/ReadonlyModel) instances. |
+
+```php
+$users = User::all()->readonly();
+
+$users[0]->name;      // reads
+$users[0]->destroy(); // ReadonlyModelException
+```
+
+See [read-only models](/database/orm/readonly-models) for when to reach for this.
+
 ```php
 <?php
 declare(strict_types=1);

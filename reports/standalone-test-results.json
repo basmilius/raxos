@@ -1,0 +1,107 @@
+{
+  "barcode": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "cache": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "collection": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "container": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "contract": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "database": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "datetime": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "error": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "foundation": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "http": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "mail": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "message-bus": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "oauth2": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "openapi": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "rate-limit": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "reflection": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "router": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "search": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "security": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "terminal": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  },
+  "wallet": {
+    "install": 0,
+    "validate": 0,
+    "pest": 0
+  }
+}

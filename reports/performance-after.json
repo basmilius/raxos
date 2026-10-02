@@ -1,0 +1,128 @@
+{
+    "date": "2026-10-02",
+    "php": "8.5.9",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "opcache_cli": "0",
+    "jit": "disable",
+    "conditions": {
+        "warmup_runs": 1,
+        "lexer_runs": 5,
+        "suffix_runs": 7,
+        "router_runs": 5,
+        "json_runs": 7,
+        "file_runs": 5,
+        "database": "SQLite :memory:"
+    },
+    "lexer": [
+        {
+            "characters": 1000,
+            "encoding": "ascii",
+            "median_ms": 0.0713
+        },
+        {
+            "characters": 1000,
+            "encoding": "utf8",
+            "median_ms": 0.0635
+        },
+        {
+            "characters": 4000,
+            "encoding": "ascii",
+            "median_ms": 0.2732
+        },
+        {
+            "characters": 4000,
+            "encoding": "utf8",
+            "median_ms": 0.2548
+        },
+        {
+            "characters": 16000,
+            "encoding": "ascii",
+            "median_ms": 1.1221
+        },
+        {
+            "characters": 16000,
+            "encoding": "utf8",
+            "median_ms": 1.0343
+        },
+        {
+            "characters": 64000,
+            "encoding": "ascii",
+            "median_ms": 4.4719
+        },
+        {
+            "characters": 64000,
+            "encoding": "utf8",
+            "median_ms": 4.107
+        }
+    ],
+    "suffix_load_ms": 1.1003,
+    "suffix_count_before_reload": 9705,
+    "suffix_count_after_reload": 9705,
+    "dynamic_router_registration_ms": {
+        "100": 0.2557,
+        "400": 0.9863,
+        "1600": 4.609
+    },
+    "json": [
+        {
+            "bytes": 1048587,
+            "validate_decode_ms": 2.1234,
+            "decode_ms": 1.0156,
+            "scope": "isolated parsing operations; not HTTP request latency"
+        },
+        {
+            "bytes": 5242891,
+            "validate_decode_ms": 10.8828,
+            "decode_ms": 5.5576,
+            "scope": "isolated parsing operations; not HTTP request latency"
+        }
+    ],
+    "orm_cursor": {
+        "parents": 100,
+        "children": 100,
+        "queries": 2,
+        "cached_models": 0,
+        "batch_size": 100
+    },
+    "cursor_retention": {
+        "rows": 10000,
+        "cached_models": 0,
+        "held_bytes_over_baseline": 10104
+    },
+    "send_file": {
+        "bytes": 1048576,
+        "default_throttle": 0,
+        "median_ms": 0.3361,
+        "scope": "handler time, local file to \/dev\/null; excludes process startup and network"
+    },
+    "tag_flush": {
+        "members": 10000,
+        "eval_calls": 21,
+        "batches": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            500,
+            0
+        ],
+        "elapsed_ms": 9.452084,
+        "scope": "real Redis, one run, no concurrent writers"
+    }
+}

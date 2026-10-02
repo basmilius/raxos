@@ -16,3 +16,6 @@ docs/.vitepress/dist/
 # Whitelist certain .idea files
 !.idea/.name
 !.idea/icon.svg
+
+/.phpunit.cache/
+/.pest/

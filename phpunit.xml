@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/bootstrap.php" colors="true" cacheDirectory=".phpunit.cache" failOnWarning="true" failOnRisky="true" failOnDeprecation="true" failOnPhpunitDeprecation="true">
+    <testsuites>
+        <testsuite name="barcode"><directory suffix="Test.php">barcode/tests</directory></testsuite>
+        <testsuite name="cache"><directory suffix="Test.php">cache/tests</directory></testsuite>
+        <testsuite name="collection"><directory suffix="Test.php">collection/tests</directory></testsuite>
+        <testsuite name="container"><directory suffix="Test.php">container/tests</directory></testsuite>
+        <testsuite name="contract"><directory suffix="Test.php">contract/tests</directory></testsuite>
+        <testsuite name="database"><directory suffix="Test.php">database/tests</directory></testsuite>
+        <testsuite name="datetime"><directory suffix="Test.php">datetime/tests</directory></testsuite>
+        <testsuite name="error"><directory suffix="Test.php">error/tests</directory></testsuite>
+        <testsuite name="foundation"><directory suffix="Test.php">foundation/tests</directory></testsuite>
+        <testsuite name="http"><directory suffix="Test.php">http/tests</directory></testsuite>
+        <testsuite name="mail"><directory suffix="Test.php">mail/tests</directory></testsuite>
+        <testsuite name="message-bus"><directory suffix="Test.php">message-bus/tests</directory></testsuite>
+        <testsuite name="oauth2"><directory suffix="Test.php">oauth2/tests</directory></testsuite>
+        <testsuite name="openapi"><directory suffix="Test.php">openapi/tests</directory></testsuite>
+        <testsuite name="rate-limit"><directory suffix="Test.php">rate-limit/tests</directory></testsuite>
+        <testsuite name="reflection"><directory suffix="Test.php">reflection/tests</directory></testsuite>
+        <testsuite name="router"><directory suffix="Test.php">router/tests</directory></testsuite>
+        <testsuite name="search"><directory suffix="Test.php">search/tests</directory></testsuite>
+        <testsuite name="security"><directory suffix="Test.php">security/tests</directory></testsuite>
+        <testsuite name="terminal"><directory suffix="Test.php">terminal/tests</directory></testsuite>
+        <testsuite name="wallet"><directory suffix="Test.php">wallet/tests</directory></testsuite>
+    </testsuites>
+</phpunit>

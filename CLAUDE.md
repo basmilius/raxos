@@ -64,7 +64,7 @@ use const JSON_THROW_ON_ERROR;
 - Klasse-accolades op de **volgende regel** (`next_line` stijl)
 - Methode-accolades ook op de **volgende regel**
 
-### PHPDoc — verplicht op elke klasse, methode en property
+### PHPDoc — verplicht op elke klasse, methode en property in librarycode
 
 ```php
 /**
@@ -89,8 +89,11 @@ use const JSON_THROW_ON_ERROR;
 
 - `@author` is altijd `Bas Milius <bas@mili.us>`
 - `@since` bevat de versie van de module (niet de datum)
+- Nieuwe of aangepaste PHPDoc-blokken gebruiken voor deze versie `@since 3.2.0`
+- `@param` bevat alleen het type en de parameternaam, geen beschrijving
 - Bij nieuwe parameters ook de PHPDoc bijwerken
 - `@throws` toevoegen als de methode een exception kan gooien
+- Testbestanden en fixtures onder `tests/` krijgen geen PHPDocs
 
 ### Functions en parameters
 
@@ -236,9 +239,13 @@ Elke submodule heeft een eigen `composer.json`. Cross-module dependencies worden
 
 ---
 
-## Geen tests
+## Tests
 
-Er zijn geen Pest- of PHPUnit-tests aanwezig in dit project. Schrijf dus geen tests tenzij expliciet gevraagd.
+Alle 21 libraries hebben een eigen Pest-suite. Draai `composer install` en `composer test` vanuit de root om alle suites te testen. Een library kan zijn suite ook zelfstandig draaien met `composer install` en `composer test` vanuit zijn eigen map.
+
+Schrijf tests en fixtures zonder PHPDocs. Gewone comments zijn alleen nodig als ze een reden, workaround of externe testvector verklaren.
+
+Redis-integratietests gebruiken `RAXOS_REDIS_HOST` en `RAXOS_REDIS_PORT`. GitHub Actions levert een Redis-service. Zie `TESTING.md` voor de volledige lokale controles en de testgrenzen.
 
 ---
 

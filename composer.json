@@ -1,0 +1,59 @@
+{
+    "name": "raxos/workspace",
+    "description": "Development and test workspace for the Raxos libraries.",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "php": ">=8.5"
+    },
+    "require-dev": {
+        "opis/json-schema": "^2.6",
+        "pestphp/pest": "^5.0",
+        "psr/container": "^2.0",
+        "raxos/barcode": "*",
+        "raxos/cache": "*",
+        "raxos/collection": "*",
+        "raxos/container": "*",
+        "raxos/contract": "*",
+        "raxos/database": "*",
+        "raxos/datetime": "*",
+        "raxos/error": "*",
+        "raxos/foundation": "*",
+        "raxos/http": "*",
+        "raxos/mail": "*",
+        "raxos/message-bus": "*",
+        "raxos/oauth2": "*",
+        "raxos/openapi": "*",
+        "raxos/rate-limit": "*",
+        "raxos/reflection": "*",
+        "raxos/router": "*",
+        "raxos/search": "*",
+        "raxos/security": "*",
+        "raxos/terminal": "*",
+        "raxos/wallet": "*"
+    },
+    "config": {
+        "platform": {
+            "php": "8.5"
+        },
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": false
+        }
+    },
+    "scripts": {
+        "test": "pest --compact",
+        "test:lint": "@php tools/lint.php"
+    }
+}

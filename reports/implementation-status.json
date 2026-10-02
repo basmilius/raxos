@@ -1,0 +1,276 @@
+{
+  "version": "3.2.0",
+  "date": "2026-10-02",
+  "findings": {
+    "C01": "implemented and validated",
+    "C02": "implemented and validated",
+    "C03": "implemented and validated",
+    "C04": "implemented and validated",
+    "C05": "implemented and validated",
+    "C06": "implemented and validated",
+    "C07": "implemented and validated",
+    "C08": "implemented and validated",
+    "C09": "implemented and validated",
+    "C10": "implemented and validated",
+    "C11": "implemented and validated",
+    "C12": "implemented and validated",
+    "C13": "implemented and validated",
+    "C14": "implemented and validated",
+    "C15": "implemented and validated",
+    "C16": "implemented and validated",
+    "C17": "implemented and validated",
+    "C18": "implemented and validated",
+    "C19": "implemented and validated",
+    "C20": "implemented and validated",
+    "C21": "implemented and validated",
+    "C22": "implemented and validated",
+    "C23": "implemented and validated",
+    "C24": "implemented and validated",
+    "C25": "implemented and validated",
+    "C26": "implemented and validated",
+    "C27": "implemented and validated",
+    "P01": "implemented and validated",
+    "P02": "implemented and validated",
+    "P03": "implemented and validated",
+    "P04": "implemented and validated",
+    "P05": "implemented and validated",
+    "P06": "implemented and validated",
+    "P07": "implemented and validated",
+    "P08": "implemented and validated"
+  },
+  "libraries": {
+    "barcode": {
+      "tests": 7,
+      "assertions": 33,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "PDF417-capaciteit; PNG/SVG; QR-correctieniveaus"
+    },
+    "cache": {
+      "tests": 6,
+      "assertions": 37,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Echte Redis; native antwoorden; tags; begrensde invalidatie"
+    },
+    "collection": {
+      "tests": 23,
+      "assertions": 87,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Typed mutaties; projecties; readonly; serialisatie; maps; paginering"
+    },
+    "container": {
+      "tests": 12,
+      "assertions": 30,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Autowiring; singletons; lazy proxies; bindings; env; foutpaden"
+    },
+    "contract": {
+      "tests": 1,
+      "assertions": 219,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Alle interfaces en enums zelfstandig laden"
+    },
+    "database": {
+      "tests": 19,
+      "assertions": 313,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "SQLite; query-semantiek; CRUD; relaties; transacties; cursor-batches; identity cache"
+    },
+    "datetime": {
+      "tests": 23,
+      "assertions": 32,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Parsing; formattering; tijdzones; grenzen; vergelijkingen"
+    },
+    "error": {
+      "tests": 3,
+      "assertions": 12,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Exception-ID; oorzaak; JSON; foutinformatie"
+    },
+    "foundation": {
+      "tests": 31,
+      "assertions": 101,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Option; arrays; strings; willekeur; getallen; kleuren; IP; stopwatch"
+    },
+    "http": {
+      "tests": 33,
+      "assertions": 67,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Ranges; JSON-input; headers; requestmetadata; response; mock transport"
+    },
+    "mail": {
+      "tests": 19,
+      "assertions": 57,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Email-validatie; suffix-reload; SMTP/Mailgun/Postmark SDK-payloads"
+    },
+    "message-bus": {
+      "tests": 12,
+      "assertions": 46,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "AMQP SDK-mocks; queue-lifecycle; publicatie; prioriteiten; allowlist; ACK/NACK; objecthooks"
+    },
+    "oauth2": {
+      "tests": 15,
+      "assertions": 32,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "RFC 7636; S256; codebinding; SQLite atomiciteit; routes; fouten"
+    },
+    "openapi": {
+      "tests": 19,
+      "assertions": 56,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Recursieve DTO/ArrayShape; JSON Schema-validatie; routes; JSON/YAML-export; unions; grenzen"
+    },
+    "rate-limit": {
+      "tests": 5,
+      "assertions": 25,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Echte Redis; quota; TTL; status; invalid stores"
+    },
+    "reflection": {
+      "tests": 19,
+      "assertions": 40,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Types; literals; interfaces; DNF; methods; properties; attributes"
+    },
+    "router": {
+      "tests": 9,
+      "assertions": 22,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Beide routers; paden; cache-isolatie; registratie; preflight; 404/405"
+    },
+    "search": {
+      "tests": 9,
+      "assertions": 36,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Unicode; ongeldige encoding; ranges; quotes; filters; lange input"
+    },
+    "security": {
+      "tests": 69,
+      "assertions": 110,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "JWT/RSA/HMAC; Base64; tokens; NanoID; ULID; alle RFC 6238 SHA-vectors"
+    },
+    "terminal": {
+      "tests": 9,
+      "assertions": 15,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Lege/ongeldige quotes; escapes; argv; flags; delimiter"
+    },
+    "wallet": {
+      "tests": 10,
+      "assertions": 22,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "scope": "Velden; boarding pass; barcodes; kleuren; lokalisatie; echte ZIP-roundtrip"
+    }
+  },
+  "tests": {
+    "tests": 353,
+    "assertions": 1392,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 2.700864,
+    "timezone": "UTC"
+  },
+  "ci": {
+    "workflows": 22,
+    "root_and_all_libraries": true,
+    "php": "8.5",
+    "redis": "7",
+    "actionlint": "1.7.12",
+    "local_validation": "passed",
+    "github_execution": "pending push"
+  },
+  "validation": {
+    "standalone_install_validate_test": "21/21 passed",
+    "php_lint": "810 PHP files passed",
+    "composer_validate": "workspace and 21 libraries passed",
+    "phpdoc": "46 new or changed production blocks checked: since 3.2.0; no parameter descriptions. All 93 test and fixture files omit PHPDocs.",
+    "consumer_check": "12 actual message serialization round trips; 2 actual DTO schemas; no application suites",
+    "remote_heads_before_commits": "22/22 main heads matched GitHub",
+    "report_qa": {
+      "screen_views": 8,
+      "print_views": 2,
+      "passed": true,
+      "minimum_checked_text_contrast": 4.83
+    }
+  },
+  "limits": [
+    "No line or branch coverage percentage measured.",
+    "MySQL execution, RabbitMQ broker, mail delivery and Apple signing not exercised against live services."
+  ],
+  "artifacts": {
+    "historical_review": "review-evidence.json",
+    "performance_after": "performance-after.json",
+    "standalone": "standalone-test-results.json",
+    "consumer": "consumer-compatibility.json"
+  },
+  "library_commits": {
+    "barcode": "af4442e1e93ef428075c823f08c7a01263b3cd55",
+    "cache": "9a2c93c499171a13c5fbdf25d58859528873134b",
+    "collection": "206e7102ef34d6f50a0c4eb49b9a5cddeee9e769",
+    "container": "5e3dcc91b50e33e69f462c91c4c0377a85e8229b",
+    "contract": "d03d7aa1bfa80a9b8074236946a55debe05022bd",
+    "database": "7eb5309c7119c431e031c240d9eb166d18a44885",
+    "datetime": "2b43944c2ebe45d67039b07e888cb3a7fd991d49",
+    "error": "f24f3a22664960762b7a8daf2926f51649bc7ddd",
+    "foundation": "a04087bf725cd4f35f7c89383b9da7cc59fcec46",
+    "http": "fe8935ffd1a6c4c9ede875afe071437c6ddb4e72",
+    "mail": "b63cd81312cb7cfeb1aa89cd927e775d6cf77c13",
+    "message-bus": "f1ef6563ac13d7def66bc4a0916250b542b870b3",
+    "oauth2": "fa171526271983f78feb9c801697602c0fd64f5b",
+    "openapi": "bff462596fd12e9c28ec0145d84c57fe24178a5b",
+    "rate-limit": "8f7a414fcace49c54eb543f10d523f7aa70ed5a9",
+    "reflection": "9f66bd2f8ef992ebbbebac08fa007c71593ef101",
+    "router": "391ba5916af367202f6810126e696c2b7ea712e0",
+    "search": "1073acc8ce490f5d7db8ca88e1f6af588384ed33",
+    "security": "8490d4a0e86da8daaf25d340ac00fee810c45e33",
+    "terminal": "97aecf7c6b260ce8f9484fe9243dc9acc0ccc670",
+    "wallet": "a0a5129957e995b9497fa48c32262d499c1b0fe7"
+  }
+}

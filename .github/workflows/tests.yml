@@ -1,0 +1,46 @@
+name: Tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  workspace:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis:7-alpine
+        ports: ['6379:6379']
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      RAXOS_REDIS_HOST: 127.0.0.1
+      RAXOS_REDIS_PORT: 6379
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          extensions: bcmath, ctype, dom, fileinfo, gd, intl, json, mbstring, openssl, pdo, pdo_mysql, pdo_sqlite, redis, simplexml, zip
+          coverage: none
+          tools: composer:v2
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/composer/files
+          key: composer-${{ runner.os }}-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-${{ runner.os }}-
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+      - name: Validate workspace and packages
+        run: php tools/validate.php
+      - name: Lint PHP sources and tests
+        run: composer test:lint
+      - name: Run all library suites
+        run: composer test

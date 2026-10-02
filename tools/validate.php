@@ -33,9 +33,28 @@ foreach (['.', ...$libraries] as $library) {
         $failed = true;
     }
 
-    if ($library !== '.' && glob($directory . '/tests/*Test.php') === []) {
-        fwrite(STDERR, "{$library}: no Pest tests found.\n");
-        $failed = true;
+    if ($library !== '.') {
+        $hasTests = false;
+
+        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory . '/tests', FilesystemIterator::SKIP_DOTS)) as $file) {
+            if (!$file->isFile() || $file->getExtension() !== 'php') {
+                continue;
+            }
+
+            $hasTests = $hasTests || str_ends_with($file->getFilename(), 'Test.php');
+
+            foreach (token_get_all(file_get_contents($file->getPathname())) as $token) {
+                if (is_array($token) && $token[0] === T_DOC_COMMENT) {
+                    fwrite(STDERR, "{$file->getPathname()}: PHPDocs are not allowed in tests.\n");
+                    $failed = true;
+                }
+            }
+        }
+
+        if (!$hasTests) {
+            fwrite(STDERR, "{$library}: no Pest tests found.\n");
+            $failed = true;
+        }
     }
 }
 

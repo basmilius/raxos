@@ -85,5 +85,11 @@ Custom `CacheInterface` implementations must add `scope(callable $fn): mixed`. T
 - OpenAPI uses JSON Schema types and null unions, numeric exclusive bounds, and references for recursive DTOs. Regenerate client contracts and check client-generator output. Legacy boolean exclusive-bound arguments are translated using the corresponding minimum or maximum.
 - Mail providers accept Raxos `Email` objects, and forced public-suffix reloads replace the list. Large PDF417 payloads fail instead of being truncated. Boarding-pass fields accept their documented single-value and array forms.
 - Base64 preserves empty and zero strings. NanoID rejects nonpositive lengths. ULID rejects timestamps outside its 48-bit range and supports the Unix epoch. TOTP rejects empty secrets.
+- Container tags distinguish an empty string and `"0"` from an untagged dependency. `#[Tag]` can be used on injected parameters. Circular resolution fails with a dependency exception and leaves the container available for a later request.
+- New models omit unset columns so database defaults apply. Saving only relation changes executes pending relation writes. Ordered `HasOne` and many-to-many eager loads follow the same ordering as lazy loads. Zero-valued relation keys remain valid.
+- Query groups retain their position inside WHERE and JOIN conditions and before ORDER BY or pagination. Native DATE_ADD/DATE_SUB intervals and GROUP_CONCAT string separators now use the SQL syntax required by MySQL and MariaDB.
+- Structured search filters reject unsupported value types before changing the query. Numeric filters reject infinite and NaN inputs; SQLite range scoring uses floating-point division. Nested `Some` filters restore the outer filter's AND/OR mode after errors. `Every` remains unsupported.
+- Refresh tokens must belong to the requesting OAuth client. Authorization response values are URL-encoded, and implicit tokens are returned only after successful persistence.
+- OpenAPI preserves false, zero and empty examples. Query aliases use their public names, and method-specific query and middleware parameters stay on their own operation. Explicit model schemas take precedence over the `Stringable` fallback.
 
 New and changed PHPDoc blocks in library code use `@since 3.2.0`. Parameter tags contain only the type and name. Tests and fixtures omit PHPDocs.

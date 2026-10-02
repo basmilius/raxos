@@ -19,3 +19,5 @@ docs/.vitepress/dist/
 
 /.phpunit.cache/
 /.pest/
+/reports/junit.xml
+/reports/clover.xml

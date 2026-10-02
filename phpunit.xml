@@ -23,4 +23,28 @@
         <testsuite name="terminal"><directory suffix="Test.php">terminal/tests</directory></testsuite>
         <testsuite name="wallet"><directory suffix="Test.php">wallet/tests</directory></testsuite>
     </testsuites>
+    <source><include>
+        <directory>barcode/src</directory>
+        <directory>cache/src</directory>
+        <directory>collection/src</directory>
+        <directory>container/src</directory>
+        <directory>contract/src</directory>
+        <directory>database/src</directory>
+        <directory>datetime/src</directory>
+        <directory>error/src</directory>
+        <directory>foundation/src</directory>
+        <directory>http/src</directory>
+        <directory>mail/src</directory>
+        <directory>message-bus/src</directory>
+        <directory>oauth2/src</directory>
+        <directory>openapi/src</directory>
+        <directory>rate-limit/src</directory>
+        <directory>reflection/src</directory>
+        <directory>router/src</directory>
+        <directory>search/src</directory>
+        <directory>security/src</directory>
+        <directory>terminal/src</directory>
+        <directory>wallet/src</directory>
+    </include></source>
+    <php><ini name="date.timezone" value="UTC"/></php>
 </phpunit>

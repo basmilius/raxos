@@ -40,36 +40,140 @@
   },
   "libraries": {
     "barcode": {
-      "tests": 7,
-      "assertions": 33,
+      "tests": 35,
+      "assertions": 370,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "PDF417-capaciteit; PNG/SVG; QR-correctieniveaus"
+      "test_files": 9,
+      "coverage": {
+        "source_files": 11,
+        "covered_lines": 231,
+        "executable_lines": 298,
+        "percent": 77.52,
+        "largest_remaining_gaps": [
+          {
+            "file": "barcode/src/Encoder/PDF417Encoder.php",
+            "uncovered_lines": 65
+          },
+          {
+            "file": "barcode/src/Renderer/GDRenderer.php",
+            "uncovered_lines": 1
+          },
+          {
+            "file": "barcode/src/Renderer/PNGRenderer.php",
+            "uncovered_lines": 1
+          }
+        ]
+      },
+      "scope": "PDF417-grenzen; QR onafhankelijk decoderen; ECC; GD-pixels; veilige SVG/PNG-uitvoer"
     },
     "cache": {
-      "tests": 6,
-      "assertions": 37,
+      "tests": 32,
+      "assertions": 148,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Echte Redis; native antwoorden; tags; begrensde invalidatie"
+      "test_files": 9,
+      "coverage": {
+        "source_files": 12,
+        "covered_lines": 117,
+        "executable_lines": 144,
+        "percent": 81.25,
+        "largest_remaining_gaps": [
+          {
+            "file": "cache/src/Redis/Error/RedisCommandFailedException.php",
+            "uncovered_lines": 7
+          },
+          {
+            "file": "cache/src/Redis/Error/RedisErrorException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "cache/src/Redis/Error/RedisConnectionFailedException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "cache/src/Redis/Error/RedisImplementationMissingException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "cache/src/Redis/RedisCache.php",
+            "uncovered_lines": 4
+          }
+        ]
+      },
+      "scope": "Echte Redis; strings, keys en pubsub; locks; tags; begrensde invalidatie"
     },
     "collection": {
-      "tests": 23,
-      "assertions": 87,
+      "tests": 39,
+      "assertions": 284,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 12,
+      "coverage": {
+        "source_files": 13,
+        "covered_lines": 172,
+        "executable_lines": 183,
+        "percent": 93.99,
+        "largest_remaining_gaps": [
+          {
+            "file": "collection/src/Error/CollectionImmutableException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "collection/src/ReadonlyArrayList.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "collection/src/ReadonlyMap.php",
+            "uncovered_lines": 2
+          },
+          {
+            "file": "collection/src/ArrayList.php",
+            "uncovered_lines": 1
+          }
+        ]
+      },
       "scope": "Typed mutaties; projecties; readonly; serialisatie; maps; paginering"
     },
     "container": {
-      "tests": 12,
-      "assertions": 30,
+      "tests": 34,
+      "assertions": 101,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Autowiring; singletons; lazy proxies; bindings; env; foutpaden"
+      "test_files": 8,
+      "coverage": {
+        "source_files": 17,
+        "covered_lines": 245,
+        "executable_lines": 285,
+        "percent": 85.96,
+        "largest_remaining_gaps": [
+          {
+            "file": "container/src/Container.php",
+            "uncovered_lines": 12
+          },
+          {
+            "file": "container/src/Error/AutowireFailedException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "container/src/Error/NotFoundException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "container/src/Error/ReflectionFailedException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "container/src/Error/CircularDependencyDetectedException.php",
+            "uncovered_lines": 4
+          }
+        ]
+      },
+      "scope": "Cyclic dependencies; autowiring; tags incl. 0; env-typen; proxy-lifecycle; binding-fouten"
     },
     "contract": {
       "tests": 1,
@@ -77,144 +181,534 @@
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 1,
+      "coverage": {
+        "source_files": 109,
+        "covered_lines": 0,
+        "executable_lines": 0,
+        "percent": null,
+        "largest_remaining_gaps": []
+      },
       "scope": "Alle interfaces en enums zelfstandig laden"
     },
     "database": {
-      "tests": 50,
-      "assertions": 427,
+      "tests": 379,
+      "assertions": 5370,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "SQLite/MySQL/MariaDB; counts; dubbele kolommen; soft deletes; modelweergaven; CRUD; relaties; cursor-batches; identity cache"
+      "test_files": 61,
+      "coverage": {
+        "source_files": 144,
+        "covered_lines": 2742,
+        "executable_lines": 3505,
+        "percent": 78.23,
+        "largest_remaining_gaps": [
+          {
+            "file": "database/src/Query/Query.php",
+            "uncovered_lines": 122
+          },
+          {
+            "file": "database/src/Orm/Backbone.php",
+            "uncovered_lines": 91
+          },
+          {
+            "file": "database/src/Orm/Structure/StructureGenerator.php",
+            "uncovered_lines": 68
+          },
+          {
+            "file": "database/src/Orm/Structure/Structure.php",
+            "uncovered_lines": 29
+          },
+          {
+            "file": "database/src/Orm/Queryable.php",
+            "uncovered_lines": 23
+          }
+        ]
+      },
+      "scope": "SQLite/MySQL/MariaDB; native SQL-expressies en writes; alle 7 relaties; dirty state; defaults; primers; cursor-batches; counts; schema-introspectie"
     },
     "datetime": {
-      "tests": 23,
-      "assertions": 32,
+      "tests": 58,
+      "assertions": 118,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 10,
+      "coverage": {
+        "source_files": 9,
+        "covered_lines": 43,
+        "executable_lines": 43,
+        "percent": 100.0,
+        "largest_remaining_gaps": []
+      },
       "scope": "Parsing; formattering; tijdzones; grenzen; vergelijkingen"
     },
     "error": {
-      "tests": 3,
-      "assertions": 12,
+      "tests": 9,
+      "assertions": 31,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 3,
+      "coverage": {
+        "source_files": 3,
+        "covered_lines": 24,
+        "executable_lines": 24,
+        "percent": 100.0,
+        "largest_remaining_gaps": []
+      },
       "scope": "Exception-ID; oorzaak; JSON; foutinformatie"
     },
     "foundation": {
-      "tests": 31,
-      "assertions": 101,
+      "tests": 148,
+      "assertions": 487,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Option; arrays; strings; willekeur; getallen; kleuren; IP; stopwatch"
+      "test_files": 20,
+      "coverage": {
+        "source_files": 25,
+        "covered_lines": 493,
+        "executable_lines": 531,
+        "percent": 92.84,
+        "largest_remaining_gaps": [
+          {
+            "file": "foundation/src/Util/Debug.php",
+            "uncovered_lines": 24
+          },
+          {
+            "file": "foundation/src/Util/ColorUtil.php",
+            "uncovered_lines": 7
+          },
+          {
+            "file": "foundation/src/Error/TemporaryFileFailedException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "foundation/src/Preloader.php",
+            "uncovered_lines": 1
+          },
+          {
+            "file": "foundation/src/Util/ReflectionUtil.php",
+            "uncovered_lines": 1
+          }
+        ]
+      },
+      "scope": "Individuele util-units; Option; strings; arrays; kleuren; debug; IP; lazy/random; scalar-grenzen"
     },
     "http": {
-      "tests": 33,
-      "assertions": 67,
+      "tests": 229,
+      "assertions": 866,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Ranges; JSON-input; headers; requestmetadata; response; mock transport"
+      "test_files": 52,
+      "coverage": {
+        "source_files": 80,
+        "covered_lines": 709,
+        "executable_lines": 1008,
+        "percent": 70.34,
+        "largest_remaining_gaps": [
+          {
+            "file": "http/src/HttpSendFile.php",
+            "uncovered_lines": 52
+          },
+          {
+            "file": "http/src/UserAgent.php",
+            "uncovered_lines": 35
+          },
+          {
+            "file": "http/src/HttpRequest.php",
+            "uncovered_lines": 12
+          },
+          {
+            "file": "http/src/Validate/Error/ModelConstraintException.php",
+            "uncovered_lines": 12
+          },
+          {
+            "file": "http/src/Validate/Error/MatchesConstraintException.php",
+            "uncovered_lines": 11
+          }
+        ]
+      },
+      "scope": "PSR-7/18; alle validatieconstraints; geneste DTO’s; multipart; responscodes; file ranges; clients met transport-mocks"
     },
     "mail": {
-      "tests": 19,
-      "assertions": 57,
+      "tests": 36,
+      "assertions": 131,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 10,
+      "coverage": {
+        "source_files": 14,
+        "covered_lines": 168,
+        "executable_lines": 186,
+        "percent": 90.32,
+        "largest_remaining_gaps": [
+          {
+            "file": "mail/src/Error/MailerFailedException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "mail/src/Error/InvalidEmailAddressException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "mail/src/Error/MailerInvalidProviderException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "mail/src/Util/PublicSuffixList.php",
+            "uncovered_lines": 3
+          },
+          {
+            "file": "mail/src/Mailgun.php",
+            "uncovered_lines": 2
+          }
+        ]
+      },
       "scope": "Email-validatie; suffix-reload; SMTP/Mailgun/Postmark SDK-payloads"
     },
     "message-bus": {
-      "tests": 12,
-      "assertions": 46,
+      "tests": 22,
+      "assertions": 87,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 2,
+      "coverage": {
+        "source_files": 9,
+        "covered_lines": 67,
+        "executable_lines": 95,
+        "percent": 70.53,
+        "largest_remaining_gaps": [
+          {
+            "file": "message-bus/src/Error/MessageBusConnectionException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "message-bus/src/Error/MessageBusConsumeException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "message-bus/src/Error/MessageBusPublishException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "message-bus/src/Error/MessageBusTimeoutException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "message-bus/src/Error/MessageBusMissingHandlerException.php",
+            "uncovered_lines": 4
+          }
+        ]
+      },
       "scope": "AMQP SDK-mocks; queue-lifecycle; publicatie; prioriteiten; allowlist; ACK/NACK; objecthooks"
     },
     "oauth2": {
-      "tests": 15,
-      "assertions": 32,
+      "tests": 75,
+      "assertions": 236,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "RFC 7636; S256; codebinding; SQLite atomiciteit; routes; fouten"
+      "test_files": 7,
+      "coverage": {
+        "source_files": 30,
+        "covered_lines": 176,
+        "executable_lines": 189,
+        "percent": 93.12,
+        "largest_remaining_gaps": [
+          {
+            "file": "oauth2/src/Server/Error/InsufficientClientScopeException.php",
+            "uncovered_lines": 1
+          },
+          {
+            "file": "oauth2/src/Server/Error/InvalidClientException.php",
+            "uncovered_lines": 1
+          },
+          {
+            "file": "oauth2/src/Server/Error/InvalidGrantException.php",
+            "uncovered_lines": 1
+          },
+          {
+            "file": "oauth2/src/Server/Error/InvalidRequestException.php",
+            "uncovered_lines": 1
+          },
+          {
+            "file": "oauth2/src/Server/Error/InvalidScopeException.php",
+            "uncovered_lines": 1
+          }
+        ]
+      },
+      "scope": "Alle grants en responses; refresh-clientbinding; encoding; bearer; PKCE; atomic codeverbruik; controllerfouten"
     },
     "openapi": {
-      "tests": 19,
-      "assertions": 56,
+      "tests": 89,
+      "assertions": 243,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Recursieve DTO/ArrayShape; JSON Schema-validatie; routes; JSON/YAML-export; unions; grenzen"
+      "test_files": 34,
+      "coverage": {
+        "source_files": 48,
+        "covered_lines": 612,
+        "executable_lines": 628,
+        "percent": 97.45,
+        "largest_remaining_gaps": [
+          {
+            "file": "openapi/src/Error/ReflectionErrorException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "openapi/src/Definition/Schema.php",
+            "uncovered_lines": 3
+          },
+          {
+            "file": "openapi/src/RouterBuilder.php",
+            "uncovered_lines": 3
+          },
+          {
+            "file": "openapi/src/SchemaBuilder.php",
+            "uncovered_lines": 2
+          },
+          {
+            "file": "openapi/src/Attribute/FilterParams.php",
+            "uncovered_lines": 1
+          }
+        ]
+      },
+      "scope": "Alle schema-builders en 19 definition-units; false/0/empty; recursie; query-aliases; parameters per operation; JSON/YAML"
     },
     "rate-limit": {
-      "tests": 5,
-      "assertions": 25,
+      "tests": 25,
+      "assertions": 102,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 5,
+      "coverage": {
+        "source_files": 7,
+        "covered_lines": 49,
+        "executable_lines": 57,
+        "percent": 85.96,
+        "largest_remaining_gaps": [
+          {
+            "file": "rate-limit/src/Rate.php",
+            "uncovered_lines": 8
+          }
+        ]
+      },
       "scope": "Echte Redis; quota; TTL; status; invalid stores"
     },
     "reflection": {
-      "tests": 19,
-      "assertions": 40,
+      "tests": 35,
+      "assertions": 199,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 8,
+      "coverage": {
+        "source_files": 8,
+        "covered_lines": 234,
+        "executable_lines": 244,
+        "percent": 95.9,
+        "largest_remaining_gaps": [
+          {
+            "file": "reflection/src/PropertyReflector.php",
+            "uncovered_lines": 7
+          },
+          {
+            "file": "reflection/src/TypeReflector.php",
+            "uncovered_lines": 2
+          },
+          {
+            "file": "reflection/src/ParameterReflector.php",
+            "uncovered_lines": 1
+          }
+        ]
+      },
       "scope": "Types; literals; interfaces; DNF; methods; properties; attributes"
     },
     "router": {
-      "tests": 9,
-      "assertions": 22,
+      "tests": 127,
+      "assertions": 1383,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Beide routers; paden; cache-isolatie; registratie; preflight; 404/405"
+      "test_files": 33,
+      "coverage": {
+        "source_files": 52,
+        "covered_lines": 629,
+        "executable_lines": 720,
+        "percent": 87.36,
+        "largest_remaining_gaps": [
+          {
+            "file": "router/src/Error/InvalidInjectionException.php",
+            "uncovered_lines": 7
+          },
+          {
+            "file": "router/src/Error/MissingInjectionException.php",
+            "uncovered_lines": 7
+          },
+          {
+            "file": "router/src/Error/MappingReflectionErrorException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "router/src/Error/ReflectionErrorException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "router/src/Error/UnexpectedException.php",
+            "uncovered_lines": 5
+          }
+        ]
+      },
+      "scope": "RouterTest en DynamicRouterTest; alle injector/validator-units; frames; cache-isolatie; routes; middleware; optionele/enum-segmenten"
     },
     "search": {
-      "tests": 18,
-      "assertions": 81,
+      "tests": 114,
+      "assertions": 325,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Unicode; ranges; quotes; structured filters; modelpaginering op SQLite/MySQL/MariaDB"
+      "test_files": 32,
+      "coverage": {
+        "source_files": 42,
+        "covered_lines": 558,
+        "executable_lines": 595,
+        "percent": 93.78,
+        "largest_remaining_gaps": [
+          {
+            "file": "search/src/Query/Parser.php",
+            "uncovered_lines": 9
+          },
+          {
+            "file": "search/src/Error/ReflectionErrorException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "search/src/Error/IllegalSearchException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "search/src/Error/InvalidFilterValueException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "search/src/Error/InvalidRangeEndpointException.php",
+            "uncovered_lines": 4
+          }
+        ]
+      },
+      "scope": "Alle filters en AST-units; scores; ongeldige typen; eindige ranges; Unicode/parser; native fulltext; paginering op alle 3 drivers"
     },
     "security": {
-      "tests": 69,
-      "assertions": 110,
+      "tests": 91,
+      "assertions": 174,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 9,
+      "coverage": {
+        "source_files": 22,
+        "covered_lines": 237,
+        "executable_lines": 296,
+        "percent": 80.07,
+        "largest_remaining_gaps": [
+          {
+            "file": "security/src/Error/JwtEncodingException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "security/src/Error/TwoFactorAuthRandomizerException.php",
+            "uncovered_lines": 5
+          },
+          {
+            "file": "security/src/Error/JwtEncryptionException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "security/src/Error/JwtExpiredException.php",
+            "uncovered_lines": 4
+          },
+          {
+            "file": "security/src/Error/JwtInvalidSignatureException.php",
+            "uncovered_lines": 4
+          }
+        ]
+      },
       "scope": "JWT/RSA/HMAC; Base64; tokens; NanoID; ULID; alle RFC 6238 SHA-vectors"
     },
     "terminal": {
-      "tests": 9,
-      "assertions": 15,
+      "tests": 53,
+      "assertions": 147,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
+      "test_files": 13,
+      "coverage": {
+        "source_files": 26,
+        "covered_lines": 346,
+        "executable_lines": 411,
+        "percent": 84.18,
+        "largest_remaining_gaps": [
+          {
+            "file": "terminal/src/Internal/Data.php",
+            "uncovered_lines": 10
+          },
+          {
+            "file": "terminal/src/Collision/ErrorReporter.php",
+            "uncovered_lines": 7
+          },
+          {
+            "file": "terminal/src/Terminal.php",
+            "uncovered_lines": 7
+          },
+          {
+            "file": "terminal/src/Error/InvalidCommandException.php",
+            "uncovered_lines": 6
+          },
+          {
+            "file": "terminal/src/Error/ReflectionErrorException.php",
+            "uncovered_lines": 5
+          }
+        ]
+      },
       "scope": "Lege/ongeldige quotes; escapes; argv; flags; delimiter"
     },
     "wallet": {
-      "tests": 10,
-      "assertions": 22,
+      "tests": 52,
+      "assertions": 125,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Velden; boarding pass; barcodes; kleuren; lokalisatie; echte ZIP-roundtrip"
+      "test_files": 28,
+      "coverage": {
+        "source_files": 33,
+        "covered_lines": 226,
+        "executable_lines": 229,
+        "percent": 98.69,
+        "largest_remaining_gaps": [
+          {
+            "file": "wallet/src/Apple/PKPass.php",
+            "uncovered_lines": 3
+          }
+        ]
+      },
+      "scope": "28 unit-testbestanden; volledige ZIP/manifest/CMS-roundtrip met tijdelijk certificaat; componenten; lokalisatie; PEM-fouten"
     }
   },
   "tests": {
-    "tests": 393,
-    "assertions": 1551,
+    "tests": 1683,
+    "assertions": 11146,
     "errors": 0,
     "failures": 0,
     "skipped": 0,
-    "seconds": 2.687696,
+    "seconds": 10.435529,
     "timezone": "UTC"
   },
   "ci": {
@@ -231,29 +725,63 @@
       "workspace",
       "database",
       "search"
+    ],
+    "coverage": "Xdebug line coverage",
+    "artifacts": [
+      "JUnit",
+      "Clover"
     ]
   },
   "validation": {
     "standalone_install_validate_test": "21/21 passed",
-    "php_lint": "814 PHP files passed",
+    "php_lint": "1161 PHP files passed",
     "composer_validate": "workspace and 21 libraries passed",
-    "phpdoc": "49 new or changed production blocks checked: since 3.2.0; no parameter descriptions. All 97 workspace/library test and fixture files omit PHPDocs.",
+    "phpdoc": "All new and changed production PHPDocs use since 3.2.0 and parameter type/name only. All test and fixture PHP files omit PHPDocs.",
     "consumer_check": "12 actual message serialization round trips; 2 actual DTO schemas; supplied Passly products GET returns HTTP 200 and valid JSON; no full application suites",
     "remote_heads_before_commits": "22/22 main heads matched GitHub",
     "standalone_updated_suites": {
-      "database": "50 tests, 427 assertions; SQLite/MySQL/MariaDB",
-      "search": "18 tests, 81 assertions; SQLite/MySQL/MariaDB"
+      "barcode": "35 tests, 370 assertions",
+      "cache": "32 tests, 148 assertions",
+      "collection": "39 tests, 284 assertions",
+      "container": "34 tests, 101 assertions",
+      "contract": "1 tests, 219 assertions",
+      "database": "379 tests, 5370 assertions",
+      "datetime": "58 tests, 118 assertions",
+      "error": "9 tests, 31 assertions",
+      "foundation": "148 tests, 487 assertions",
+      "http": "229 tests, 866 assertions",
+      "mail": "36 tests, 131 assertions",
+      "message-bus": "22 tests, 87 assertions",
+      "oauth2": "75 tests, 236 assertions",
+      "openapi": "89 tests, 243 assertions",
+      "rate-limit": "25 tests, 102 assertions",
+      "reflection": "35 tests, 199 assertions",
+      "router": "127 tests, 1383 assertions",
+      "search": "114 tests, 325 assertions",
+      "security": "91 tests, 174 assertions",
+      "terminal": "53 tests, 147 assertions",
+      "wallet": "52 tests, 125 assertions"
     },
     "report_qa": {
       "screen_views": 8,
       "print_views": 2,
       "passed": true,
-      "minimum_checked_text_contrast": 4.83
-    }
+      "minimum_checked_text_contrast": 4.83,
+      "local_links": "passed",
+      "visual_inspection": "desktop light and narrow dark screenshots inspected"
+    },
+    "timezone": "All 22 suite configurations set UTC; 21 independent suites pass with Europe/Amsterdam as the ambient PHP timezone.",
+    "signed_library_commits": "21/21 verified",
+    "remote_heads_ready_for_push": "22/22 current GitHub main heads are ancestors of the local heads."
   },
   "limits": [
-    "No line or branch coverage percentage measured.",
-    "RabbitMQ broker, mail delivery and Apple signing not exercised against live services."
+    "Line coverage only; branch coverage was not collected.",
+    "Pest covers declarations restrict credit to each test’s specified units.",
+    "PHP subprocesses used by binary file-response tests are not instrumented by the parent Xdebug driver.",
+    "Contract interfaces have no executable lines; their autoload suite checks 219 contracts/enums.",
+    "Live RabbitMQ delivery and mail-provider delivery are not exercised.",
+    "Wallet CMS signatures are verified locally with an ephemeral certificate; Apple trust and device acceptance are not exercised.",
+    "Search Filter Every remains unsupported; tests assert its existing exception."
   ],
   "artifacts": {
     "historical_review": "review-evidence.json",
@@ -262,29 +790,37 @@
     "consumer": "consumer-compatibility.json",
     "test_results": "test-results.json",
     "library_commits": "library-commits.json",
-    "passly_regression": "passly-regression.json"
+    "passly_regression": "passly-regression.json",
+    "unit_coverage": "unit-test-coverage.json"
   },
   "library_commits": {
-    "barcode": "af4442e1e93ef428075c823f08c7a01263b3cd55",
-    "cache": "9a2c93c499171a13c5fbdf25d58859528873134b",
-    "collection": "206e7102ef34d6f50a0c4eb49b9a5cddeee9e769",
-    "container": "5e3dcc91b50e33e69f462c91c4c0377a85e8229b",
-    "contract": "d03d7aa1bfa80a9b8074236946a55debe05022bd",
-    "database": "454ebf902c8fb65db5d14d0b3abfb6202e88adf1",
-    "datetime": "2b43944c2ebe45d67039b07e888cb3a7fd991d49",
-    "error": "f24f3a22664960762b7a8daf2926f51649bc7ddd",
-    "foundation": "a04087bf725cd4f35f7c89383b9da7cc59fcec46",
-    "http": "fe8935ffd1a6c4c9ede875afe071437c6ddb4e72",
-    "mail": "b63cd81312cb7cfeb1aa89cd927e775d6cf77c13",
-    "message-bus": "f1ef6563ac13d7def66bc4a0916250b542b870b3",
-    "oauth2": "fa171526271983f78feb9c801697602c0fd64f5b",
-    "openapi": "bff462596fd12e9c28ec0145d84c57fe24178a5b",
-    "rate-limit": "8f7a414fcace49c54eb543f10d523f7aa70ed5a9",
-    "reflection": "9f66bd2f8ef992ebbbebac08fa007c71593ef101",
-    "router": "391ba5916af367202f6810126e696c2b7ea712e0",
-    "search": "4a3cfbbdc5841f6d30b3c1b56284186b9c3d6532",
-    "security": "8490d4a0e86da8daaf25d340ac00fee810c45e33",
-    "terminal": "97aecf7c6b260ce8f9484fe9243dc9acc0ccc670",
-    "wallet": "a0a5129957e995b9497fa48c32262d499c1b0fe7"
-  }
+    "barcode": "9d859407a1bde0d4896b8e22c2b67fbd0a1881d1",
+    "cache": "39015400bce2af5de5baca0544479d6c47ea8d6d",
+    "collection": "0249cad38c7e4713a10e94600b6e7a9381f0c913",
+    "container": "5cbe01b0e01d82600ae03c3e3cd43e49cde24c0d",
+    "contract": "b3edcc619245aaf8a450d00648a25e6daa35cd33",
+    "database": "d2fd96c6cec690d3d4b45d3b54536820a9cbced6",
+    "datetime": "b51335534fc23358f895abb6b2978ad912050a61",
+    "error": "dd5b33499618fdce70a3433e93186d476c2b575b",
+    "foundation": "cee28c6554b211481d5cf1d94e5af239baf637fb",
+    "http": "11fe82ea2ed0a25885826fbd6dda6192d0bfeae2",
+    "mail": "f4879a06a6b486b446e0e842de513c0243ba7a66",
+    "message-bus": "6bbe348e60686cda1604ceeac5b36b95f7693db8",
+    "oauth2": "6e8deb3f0a4c3cd411d30b7545de6edceab13997",
+    "openapi": "60d038312221c9a0becd6781781f9482808862c2",
+    "rate-limit": "dfc13d936e19f088e5cf458ac8ffcf219c24f19c",
+    "reflection": "9490ceada44701ae4e280ac5c12cc4616a7b149c",
+    "router": "07dc449a860275b897d13939dc11cf170e4f8670",
+    "search": "2483a9a4974d80902ed32c8992c893d96fd96369",
+    "security": "dfe2e3be2b992023ef63bf573abd623280692962",
+    "terminal": "2e13f2b46d2451600a6b04719bee4c1001286d43",
+    "wallet": "3818d3dafd20ae03147c77afccc0f6ee0d8bb90e"
+  },
+  "coverage": {
+    "covered_lines": 8078,
+    "executable_lines": 9671,
+    "source_files": 714,
+    "percent": 83.53
+  },
+  "test_files": 366
 }

@@ -54,7 +54,7 @@ jobs:
         with:
           php-version: '8.5'
           extensions: bcmath, ctype, dom, fileinfo, gd, intl, json, mbstring, openssl, pdo, pdo_mysql, pdo_sqlite, redis, simplexml, zip
-          coverage: none
+          coverage: xdebug
           tools: composer:v2
       - uses: actions/cache@v4
         with:
@@ -68,4 +68,13 @@ jobs:
       - name: Lint PHP sources and tests
         run: composer test:lint
       - name: Run all library suites
-        run: composer test
+        run: php -d memory_limit=2G vendor/bin/pest --log-junit=reports/junit.xml --coverage-clover=reports/clover.xml
+      - name: Upload test and coverage results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raxos-test-results
+          path: |
+            reports/junit.xml
+            reports/clover.xml
+          if-no-files-found: warn

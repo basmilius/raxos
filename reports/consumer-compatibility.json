@@ -1,80 +1,81 @@
 {
-    "date": "2026-10-02",
-    "messages": {
-        "Passly\\MessageBus\\Message\\CheckVatNumberMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\GeocodeAddressMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\IssueTicketsMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\OrderRefundedMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\PingMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\SendMerchantInvitationMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\SendOrderCanceledMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\SendOrderConfirmationMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\SendOrderExpiredMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\SendOrderFailedMessage": "round trip passed with explicit root-only allowlist",
-        "Passly\\MessageBus\\Message\\SendTicketsMessage": "round trip passed with explicit root-only allowlist",
-        "Marveld\\MessageBus\\Message\\PingMessage": "round trip passed with explicit root-only allowlist"
-    },
-    "schemas": {
-        "Passly\\Data\\Dto\\TotpState": {
-            "reference": {
-                "$ref": "#\/components\/schemas\/Passly.Data.Dto.TotpState"
+  "date": "2026-10-02",
+  "messages": {
+    "Passly\\MessageBus\\Message\\CheckVatNumberMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\GeocodeAddressMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\IssueTicketsMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\OrderRefundedMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\PingMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\SendMerchantInvitationMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\SendOrderCanceledMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\SendOrderConfirmationMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\SendOrderExpiredMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\SendOrderFailedMessage": "round trip passed with explicit root-only allowlist",
+    "Passly\\MessageBus\\Message\\SendTicketsMessage": "round trip passed with explicit root-only allowlist",
+    "Marveld\\MessageBus\\Message\\PingMessage": "round trip passed with explicit root-only allowlist"
+  },
+  "schemas": {
+    "Passly\\Data\\Dto\\TotpState": {
+      "reference": {
+        "$ref": "#/components/schemas/Passly.Data.Dto.TotpState"
+      },
+      "schemas": {
+        "Passly.Data.Dto.TotpState": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
             },
-            "schemas": {
-                "Passly.Data.Dto.TotpState": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "boolean"
-                        },
-                        "secret": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "null"
-                                }
-                            ]
-                        },
-                        "qr": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "null"
-                                }
-                            ]
-                        }
-                    }
+            "secret": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
                 }
-            }
-        },
-        "Marveld\\Data\\Dto\\StatusResponseDto": {
-            "reference": {
-                "$ref": "#\/components\/schemas\/Marveld.Data.Dto.StatusResponseDto"
+              ]
             },
-            "schemas": {
-                "Marveld.Data.Dto.StatusResponseDto": {
-                    "type": "object",
-                    "properties": {
-                        "status": {
-                            "type": "string"
-                        },
-                        "message": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "null"
-                                }
-                            ]
-                        }
-                    }
+            "qr": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
                 }
+              ]
             }
+          }
         }
+      }
     },
-    "limits": "Selected real message and DTO classes only; no application bootstrap or application suites."
+    "Marveld\\Data\\Dto\\StatusResponseDto": {
+      "reference": {
+        "$ref": "#/components/schemas/Marveld.Data.Dto.StatusResponseDto"
+      },
+      "schemas": {
+        "Marveld.Data.Dto.StatusResponseDto": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "message": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "limits": "Original 2 October checks covered selected message and DTO classes. The 3 October full Passly suite is recorded in passly-suite.json; Marveld application suite was not run.",
+  "passly_suite": "passly-suite.json"
 }

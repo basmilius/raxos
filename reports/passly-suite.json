@@ -1,0 +1,74 @@
+{
+  "checked_at_utc": "2026-10-02T23:08:22.864082+00:00",
+  "passly": {
+    "tests": 1312,
+    "assertions": 6825,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "duration_seconds": 60.53,
+    "parallel_processes": 4,
+    "base_revision": "74d75b09525dbd39dc392520632ecca8d4d4a778",
+    "local_fixes": [
+      ".github/workflows/tests.yml",
+      "src/Realtime/Ably.php",
+      "tests/FunctionsTest.php",
+      "tests/Data/Macro/TicketMacroTest.php",
+      "tests/Service/DiscountServiceTest.php",
+      "tests/Service/ReservationServiceTest.php",
+      "tests/TestMessageBus.php",
+      "tests/helper-api.php",
+      "tests/Provider/TomTom/TomTomTest.php",
+      "tests/Realtime/AblyTest.php"
+    ],
+    "file_sha256": {
+      ".github/workflows/tests.yml": "6ee911ffa43bd30c59c6670ce18c28be9f9bd9366b335bc746a47cadf7536844",
+      "src/Realtime/Ably.php": "56602a5d8ff47707cadce148018f3580156397bd382668b4063a84b522dc41ae",
+      "tests/FunctionsTest.php": "957450d7f2047a4404e0f54138c27ac2300e0c9bfe23b95b83dbd76d66609a0c",
+      "tests/Data/Macro/TicketMacroTest.php": "acea8cca6b5f170253335cd817cd3f12970530e3b30bbd75911447f849ecbe36",
+      "tests/Service/DiscountServiceTest.php": "266f7f6eb6504536904f7a13f3a57ac9ee92c2e46fa29c9c6cc3b4920a3c6483",
+      "tests/Service/ReservationServiceTest.php": "60418f139925174558b7a36d000c9fcfd0793d3c27b27e738ff9b6adebfb8f69",
+      "tests/TestMessageBus.php": "6b814ea00e06663fb7948a167e92da092de2f0865ff724f28200b2a359b288a4",
+      "tests/helper-api.php": "8e345c027e4cebdd5c63b51c0837344e846d8aead8a819118a6717a0833dcc75",
+      "tests/Provider/TomTom/TomTomTest.php": "78d00940d8bc934b271900e40e2b5c549f055330375a050e70d310865206ee0f",
+      "tests/Realtime/AblyTest.php": "26b36b5f00408704ba18f126f4d490bf21b38b2938897890a5541639f62b90ca"
+    }
+  },
+  "raxos": {
+    "tests": 1701,
+    "assertions": 11220,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "duration_seconds": 9.15,
+    "database_revision": "3852c3dd362ff71198732dd42cebdd0ad37baf3d",
+    "database_standalone_tests": 397,
+    "database_standalone_assertions": 5444
+  },
+  "environment": {
+    "php": "8.5.9",
+    "mariadb": "10.11",
+    "mysql": "8.4",
+    "redis": "7.2.7",
+    "timezone": "UTC",
+    "services": "Disposable containers and private Redis sockets; application .env retained."
+  },
+  "changes": [
+    "Message-bus test double implements the allowedClasses queue argument.",
+    "SQL clause scanning balances grouped and fulltext predicates while ignoring quoted literals and comments.",
+    "Database setup supports TEST_DB_PORT and fails on schema/import errors.",
+    "Lock tests reuse the configured database DSN.",
+    "Realtime publishing is disabled in test mode and covered by a regression test.",
+    "TomTom unit tests cover the full request, geographic fallback, missing results, HTTP failures, malformed JSON and transport failures.",
+    "Scan ordering fixture controls and restores the database clock.",
+    "Passly CI no longer requires a live TomTom API key."
+  ],
+  "limits": [
+    "TomTom geocoding uses mocked HTTP responses; current provider map data is not validated.",
+    "Marveld application suite was not run.",
+    "Raxos line coverage was not remeasured; the 2 October coverage report remains historical.",
+    "GitHub Actions was checked with actionlint but has not run remotely."
+  ]
+}

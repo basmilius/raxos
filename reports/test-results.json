@@ -3,12 +3,12 @@
   "php": "8.5.9",
   "timezone": "UTC",
   "summary": {
-    "tests": 353,
-    "assertions": 1392,
+    "tests": 393,
+    "assertions": 1551,
     "errors": 0,
     "failures": 0,
     "skipped": 0,
-    "seconds": 2.700864,
+    "seconds": 2.687696,
     "timezone": "UTC"
   },
   "libraries": {
@@ -17,49 +17,49 @@
         "test": "it encodes different accepted payloads into different matrices",
         "file": "barcode/tests/EncoderTest.php::it encodes different accepted payloads into different matrices",
         "assertions": 5,
-        "seconds": 0.010898,
+        "seconds": 0.00534,
         "result": "passed"
       },
       {
         "test": "it rejects payloads exceeding the selected dimensions instead of truncating",
         "file": "barcode/tests/EncoderTest.php::it rejects payloads exceeding the selected dimensions instead of truncating",
         "assertions": 2,
-        "seconds": 0.00093,
+        "seconds": 0.000331,
         "result": "passed"
       },
       {
         "test": "it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (L, 0))\"",
         "file": "barcode/tests/RenderTest.php::it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (L, 0))\"",
         "assertions": 6,
-        "seconds": 0.014124,
+        "seconds": 0.012907,
         "result": "passed"
       },
       {
         "test": "it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (M, 1))\"",
         "file": "barcode/tests/RenderTest.php::it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (M, 1))\"",
         "assertions": 6,
-        "seconds": 0.002138,
+        "seconds": 0.001808,
         "result": "passed"
       },
       {
         "test": "it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (Q, 2))\"",
         "file": "barcode/tests/RenderTest.php::it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (Q, 2))\"",
         "assertions": 6,
-        "seconds": 0.001969,
+        "seconds": 0.001767,
         "result": "passed"
       },
       {
         "test": "it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (H, 3))\"",
         "file": "barcode/tests/RenderTest.php::it renders valid PNG and SVG at every QR correction level with data set \"(Raxos\\Barcode\\Enum\\QRCodeErrorCorrectionLevel Enum (H, 3))\"",
         "assertions": 6,
-        "seconds": 0.002465,
+        "seconds": 0.002299,
         "result": "passed"
       },
       {
         "test": "it selects a larger QR version as the payload grows",
         "file": "barcode/tests/RenderTest.php::it selects a larger QR version as the payload grows",
         "assertions": 2,
-        "seconds": 0.005782,
+        "seconds": 0.005463,
         "result": "passed"
       }
     ],
@@ -68,42 +68,42 @@
         "test": "it normalizes native Redis boolean replies",
         "file": "cache/tests/RedisTest.php::it normalizes native Redis boolean replies",
         "assertions": 4,
-        "seconds": 0.011023,
+        "seconds": 0.007714,
         "result": "passed"
       },
       {
         "test": "it remembers tagged entries and invalidates all overlapping scopes in bounded batches",
         "file": "cache/tests/RedisTest.php::it remembers tagged entries and invalidates all overlapping scopes in bounded batches",
         "assertions": 7,
-        "seconds": 0.347214,
+        "seconds": 0.296868,
         "result": "passed"
       },
       {
         "test": "it retains cached zero and false values without invoking the factory twice",
         "file": "cache/tests/RedisTest.php::it retains cached zero and false values without invoking the factory twice",
         "assertions": 4,
-        "seconds": 0.000755,
+        "seconds": 0.000765,
         "result": "passed"
       },
       {
         "test": "it wraps counters, multi-key writes and expiry consistently",
         "file": "cache/tests/RedisTest.php::it wraps counters, multi-key writes and expiry consistently",
         "assertions": 10,
-        "seconds": 0.00105,
+        "seconds": 0.001069,
         "result": "passed"
       },
       {
         "test": "it uses native set operations without mixing unrelated keys",
         "file": "cache/tests/RedisTest.php::it uses native set operations without mixing unrelated keys",
         "assertions": 7,
-        "seconds": 0.000887,
+        "seconds": 0.001661,
         "result": "passed"
       },
       {
         "test": "it isolates tagged values with identical logical keys",
         "file": "cache/tests/RedisTest.php::it isolates tagged values with identical logical keys",
         "assertions": 5,
-        "seconds": 0.001458,
+        "seconds": 0.001517,
         "result": "passed"
       }
     ],
@@ -112,161 +112,161 @@
         "test": "it appends through array access with sequential numeric keys",
         "file": "collection/tests/ArrayListTest.php::it appends through array access with sequential numeric keys",
         "assertions": 2,
-        "seconds": 0.011317,
+        "seconds": 0.009206,
         "result": "passed"
       },
       {
         "test": "it validates every mutation and deserialization entry point with data set \"('append')\"",
         "file": "collection/tests/ArrayListTest.php::it validates every mutation and deserialization entry point with data set \"('append')\"",
         "assertions": 2,
-        "seconds": 0.000529,
+        "seconds": 0.000507,
         "result": "passed"
       },
       {
         "test": "it validates every mutation and deserialization entry point with data set \"('prepend')\"",
         "file": "collection/tests/ArrayListTest.php::it validates every mutation and deserialization entry point with data set \"('prepend')\"",
         "assertions": 2,
-        "seconds": 0.00018,
+        "seconds": 0.000137,
         "result": "passed"
       },
       {
         "test": "it validates every mutation and deserialization entry point with data set \"('offset')\"",
         "file": "collection/tests/ArrayListTest.php::it validates every mutation and deserialization entry point with data set \"('offset')\"",
         "assertions": 2,
-        "seconds": 0.000147,
+        "seconds": 0.000127,
         "result": "passed"
       },
       {
         "test": "it validates every mutation and deserialization entry point with data set \"('unserialize')\"",
         "file": "collection/tests/ArrayListTest.php::it validates every mutation and deserialization entry point with data set \"('unserialize')\"",
         "assertions": 2,
-        "seconds": 0.000136,
+        "seconds": 0.000113,
         "result": "passed"
       },
       {
         "test": "it validates every mutation and deserialization entry point with data set \"('construct')\"",
         "file": "collection/tests/ArrayListTest.php::it validates every mutation and deserialization entry point with data set \"('construct')\"",
         "assertions": 2,
-        "seconds": 0.000132,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it allows type-changing transforms without putting invalid values in typed lists",
         "file": "collection/tests/ArrayListTest.php::it allows type-changing transforms without putting invalid values in typed lists",
         "assertions": 5,
-        "seconds": 0.000443,
+        "seconds": 0.000208,
         "result": "passed"
       },
       {
         "test": "it preserves read only transformations and rejects mutation",
         "file": "collection/tests/ArrayListTest.php::it preserves read only transformations and rejects mutation",
         "assertions": 2,
-        "seconds": 0.000422,
+        "seconds": 0.000454,
         "result": "passed"
       },
       {
         "test": "it keeps value-preserving transforms independent and typed",
         "file": "collection/tests/OperationsTest.php::it keeps value-preserving transforms independent and typed",
         "assertions": 11,
-        "seconds": 0.014139,
+        "seconds": 0.011041,
         "result": "passed"
       },
       {
         "test": "it handles empty collections and strict searches",
         "file": "collection/tests/OperationsTest.php::it handles empty collections and strict searches",
         "assertions": 13,
-        "seconds": 0.000493,
+        "seconds": 0.000214,
         "result": "passed"
       },
       {
         "test": "it projects nested columns and selected fields without retaining an incompatible element type",
         "file": "collection/tests/OperationsTest.php::it projects nested columns and selected fields without retaining an incompatible element type",
         "assertions": 4,
-        "seconds": 0.00017,
+        "seconds": 0.000122,
         "result": "passed"
       },
       {
         "test": "it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\ArrayList', [1, 'x', null])\"",
         "file": "collection/tests/OperationsTest.php::it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\ArrayList', [1, 'x', null])\"",
         "assertions": 3,
-        "seconds": 0.000162,
+        "seconds": 0.000133,
         "result": "passed"
       },
       {
         "test": "it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\IntArrayList', [0, 2])\"",
         "file": "collection/tests/OperationsTest.php::it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\IntArrayList', [0, 2])\"",
         "assertions": 3,
-        "seconds": 0.000139,
+        "seconds": 0.000122,
         "result": "passed"
       },
       {
         "test": "it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\StringArrayList', ['', '0'])\"",
         "file": "collection/tests/OperationsTest.php::it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\StringArrayList', ['', '0'])\"",
         "assertions": 3,
-        "seconds": 0.000392,
+        "seconds": 0.000364,
         "result": "passed"
       },
       {
         "test": "it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\NumberArrayList', [1, 1.5])\"",
         "file": "collection/tests/OperationsTest.php::it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\NumberArrayList', [1, 1.5])\"",
         "assertions": 3,
-        "seconds": 0.000405,
+        "seconds": 0.000356,
         "result": "passed"
       },
       {
         "test": "it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\ReadonlyArrayList', [1])\"",
         "file": "collection/tests/OperationsTest.php::it round trips mutable and immutable collections through PHP serialization with data set \"('Raxos\\Collection\\ReadonlyArrayList', [1])\"",
         "assertions": 3,
-        "seconds": 0.00014,
+        "seconds": 0.000116,
         "result": "passed"
       },
       {
         "test": "it rejects invalid replacement values and keeps the source collection intact",
         "file": "collection/tests/OperationsTest.php::it rejects invalid replacement values and keeps the source collection intact",
         "assertions": 3,
-        "seconds": 0.000226,
+        "seconds": 0.000133,
         "result": "passed"
       },
       {
         "test": "it caches null and false without rerunning a value factory with data set \"(null)\"",
         "file": "collection/tests/OperationsTest.php::it caches null and false without rerunning a value factory with data set \"(null)\"",
         "assertions": 4,
-        "seconds": 0.0007,
+        "seconds": 0.000409,
         "result": "passed"
       },
       {
         "test": "it caches null and false without rerunning a value factory with data set \"(false)\"",
         "file": "collection/tests/OperationsTest.php::it caches null and false without rerunning a value factory with data set \"(false)\"",
         "assertions": 4,
-        "seconds": 0.000154,
+        "seconds": 0.00012,
         "result": "passed"
       },
       {
         "test": "it caches null and false without rerunning a value factory with data set \"(0)\"",
         "file": "collection/tests/OperationsTest.php::it caches null and false without rerunning a value factory with data set \"(0)\"",
         "assertions": 4,
-        "seconds": 0.000133,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it caches null and false without rerunning a value factory with data set \"('')\"",
         "file": "collection/tests/OperationsTest.php::it caches null and false without rerunning a value factory with data set \"('')\"",
         "assertions": 4,
-        "seconds": 0.00013,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it serializes maps and creates an independent immutable merge",
         "file": "collection/tests/OperationsTest.php::it serializes maps and creates an independent immutable merge",
         "assertions": 5,
-        "seconds": 0.000217,
+        "seconds": 0.000193,
         "result": "passed"
       },
       {
         "test": "it exports the pagination wire format",
         "file": "collection/tests/OperationsTest.php::it exports the pagination wire format",
         "assertions": 1,
-        "seconds": 0.000228,
+        "seconds": 0.000145,
         "result": "passed"
       }
     ],
@@ -275,84 +275,84 @@
         "test": "it preserves registered bindings and instances with the conditional APIs",
         "file": "container/tests/BindingsTest.php::it preserves registered bindings and instances with the conditional APIs",
         "assertions": 3,
-        "seconds": 0.026453,
+        "seconds": 0.021198,
         "result": "passed"
       },
       {
         "test": "it keeps tagged instances separate and removes all tagged variants on request",
         "file": "container/tests/BindingsTest.php::it keeps tagged instances separate and removes all tagged variants on request",
         "assertions": 5,
-        "seconds": 0.000171,
+        "seconds": 0.000135,
         "result": "passed"
       },
       {
         "test": "it injects callable dependencies while preserving supplied arguments and scalar defaults with data set \"(false)\"",
         "file": "container/tests/BindingsTest.php::it injects callable dependencies while preserving supplied arguments and scalar defaults with data set \"(false)\"",
         "assertions": 3,
-        "seconds": 0.001427,
+        "seconds": 0.001504,
         "result": "passed"
       },
       {
         "test": "it injects callable dependencies while preserving supplied arguments and scalar defaults with data set \"(true)\"",
         "file": "container/tests/BindingsTest.php::it injects callable dependencies while preserving supplied arguments and scalar defaults with data set \"(true)\"",
         "assertions": 3,
-        "seconds": 0.000181,
+        "seconds": 0.000129,
         "result": "passed"
       },
       {
         "test": "it casts configured environment values and falls back when the value is absent",
         "file": "container/tests/BindingsTest.php::it casts configured environment values and falls back when the value is absent",
         "assertions": 3,
-        "seconds": 0.000165,
+        "seconds": 0.000128,
         "result": "passed"
       },
       {
         "test": "it rejects missing tagged services and invalid callables",
         "file": "container/tests/BindingsTest.php::it rejects missing tagged services and invalid callables",
         "assertions": 2,
-        "seconds": 0.000532,
+        "seconds": 0.000599,
         "result": "passed"
       },
       {
         "test": "it releases failed singleton factories so a later attempt can succeed",
         "file": "container/tests/BindingsTest.php::it releases failed singleton factories so a later attempt can succeed",
         "assertions": 4,
-        "seconds": 0.000401,
+        "seconds": 0.000238,
         "result": "passed"
       },
       {
         "test": "it autowires constructor dependencies in production and development with data set \"(false)\"",
         "file": "container/tests/ContainerTest.php::it autowires constructor dependencies in production and development with data set \"(false)\"",
         "assertions": 1,
-        "seconds": 0.013173,
+        "seconds": 0.009883,
         "result": "passed"
       },
       {
         "test": "it autowires constructor dependencies in production and development with data set \"(true)\"",
         "file": "container/tests/ContainerTest.php::it autowires constructor dependencies in production and development with data set \"(true)\"",
         "assertions": 1,
-        "seconds": 0.000173,
+        "seconds": 0.000132,
         "result": "passed"
       },
       {
         "test": "it initializes lazy property dependencies",
         "file": "container/tests/ContainerTest.php::it initializes lazy property dependencies",
         "assertions": 1,
-        "seconds": 0.000327,
+        "seconds": 0.000266,
         "result": "passed"
       },
       {
         "test": "it resolves singleton class strings once",
         "file": "container/tests/ContainerTest.php::it resolves singleton class strings once",
         "assertions": 2,
-        "seconds": 0.000135,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it resolves singleton factories once and regular bindings for every request",
         "file": "container/tests/ContainerTest.php::it resolves singleton factories once and regular bindings for every request",
         "assertions": 2,
-        "seconds": 0.000151,
+        "seconds": 0.000124,
         "result": "passed"
       }
     ],
@@ -361,86 +361,282 @@
         "test": "it autoloads all public contracts without requiring their implementations",
         "file": "contract/tests/ContractsTest.php::it autoloads all public contracts without requiring their implementations",
         "assertions": 219,
-        "seconds": 0.019879,
+        "seconds": 0.01552,
         "result": "passed"
       }
     ],
     "database": [
       {
+        "test": "it preserves the concrete collection type for empty model views with data set \"('readonly')\"",
+        "file": "database/tests/ModelArrayListTest.php::it preserves the concrete collection type for empty model views with data set \"('readonly')\"",
+        "assertions": 3,
+        "seconds": 0.002216,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves the concrete collection type for empty model views with data set \"('makeHidden')\"",
+        "file": "database/tests/ModelArrayListTest.php::it preserves the concrete collection type for empty model views with data set \"('makeHidden')\"",
+        "assertions": 3,
+        "seconds": 0.000444,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves the concrete collection type for empty model views with data set \"('makeVisible')\"",
+        "file": "database/tests/ModelArrayListTest.php::it preserves the concrete collection type for empty model views with data set \"('makeVisible')\"",
+        "assertions": 3,
+        "seconds": 0.000165,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves the concrete collection type for empty model views with data set \"('only')\"",
+        "file": "database/tests/ModelArrayListTest.php::it preserves the concrete collection type for empty model views with data set \"('only')\"",
+        "assertions": 3,
+        "seconds": 0.000156,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves collection keys and shared model identities when creating visibility views with data set \"('makeHidden')\"",
+        "file": "database/tests/ModelArrayListTest.php::it preserves collection keys and shared model identities when creating visibility views with data set \"('makeHidden')\"",
+        "assertions": 6,
+        "seconds": 0.002283,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves collection keys and shared model identities when creating visibility views with data set \"('makeVisible')\"",
+        "file": "database/tests/ModelArrayListTest.php::it preserves collection keys and shared model identities when creating visibility views with data set \"('makeVisible')\"",
+        "assertions": 6,
+        "seconds": 0.000247,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves collection keys and shared model identities when creating visibility views with data set \"('only')\"",
+        "file": "database/tests/ModelArrayListTest.php::it preserves collection keys and shared model identities when creating visibility views with data set \"('only')\"",
+        "assertions": 6,
+        "seconds": 0.000235,
+        "result": "passed"
+      },
+      {
+        "test": "it keeps readonly model collections and nested relations backed by the original identities",
+        "file": "database/tests/ModelArrayListTest.php::it keeps readonly model collections and nested relations backed by the original identities",
+        "assertions": 8,
+        "seconds": 0.000734,
+        "result": "passed"
+      },
+      {
+        "test": "it serializes a paginated model list after the Passly visibility callback",
+        "file": "database/tests/ModelArrayListTest.php::it serializes a paginated model list after the Passly visibility callback",
+        "assertions": 6,
+        "seconds": 0.000368,
+        "result": "passed"
+      },
+      {
+        "test": "it allows a model list to project scalar values into a generic list",
+        "file": "database/tests/ModelArrayListTest.php::it allows a model list to project scalar values into a generic list",
+        "assertions": 3,
+        "seconds": 0.000196,
+        "result": "passed"
+      },
+      {
+        "test": "it counts a wildcard and a computed override without duplicate derived-table columns with data set \"dataset \"mysql\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts a wildcard and a computed override without duplicate derived-table columns with data set \"dataset \"mysql\"\"",
+        "assertions": 5,
+        "seconds": 0.032072,
+        "result": "passed"
+      },
+      {
+        "test": "it counts a wildcard and a computed override without duplicate derived-table columns with data set \"dataset \"mariadb\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts a wildcard and a computed override without duplicate derived-table columns with data set \"dataset \"mariadb\"\"",
+        "assertions": 5,
+        "seconds": 0.008855,
+        "result": "passed"
+      },
+      {
+        "test": "it serializes the Passly pagination callback with a computed column override with data set \"dataset \"mysql\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it serializes the Passly pagination callback with a computed column override with data set \"dataset \"mysql\"\"",
+        "assertions": 4,
+        "seconds": 0.011436,
+        "result": "passed"
+      },
+      {
+        "test": "it serializes the Passly pagination callback with a computed column override with data set \"dataset \"mariadb\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it serializes the Passly pagination callback with a computed column override with data set \"dataset \"mariadb\"\"",
+        "assertions": 4,
+        "seconds": 0.00604,
+        "result": "passed"
+      },
+      {
+        "test": "it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mysql\" / (true)\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mysql\" / (true)\"",
+        "assertions": 3,
+        "seconds": 0.013469,
+        "result": "passed"
+      },
+      {
+        "test": "it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mysql\" / (false)\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mysql\" / (false)\"",
+        "assertions": 3,
+        "seconds": 0.013233,
+        "result": "passed"
+      },
+      {
+        "test": "it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mariadb\" / (true)\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mariadb\" / (true)\"",
+        "assertions": 3,
+        "seconds": 0.006427,
+        "result": "passed"
+      },
+      {
+        "test": "it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mariadb\" / (false)\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts joined wildcards and duplicate explicit aliases with bound predicates with data set \"dataset \"mariadb\" / (false)\"",
+        "assertions": 3,
+        "seconds": 0.006181,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves DISTINCT and HAVING semantics when output names overlap with data set \"dataset \"mysql\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it preserves DISTINCT and HAVING semantics when output names overlap with data set \"dataset \"mysql\"\"",
+        "assertions": 3,
+        "seconds": 0.012118,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves DISTINCT and HAVING semantics when output names overlap with data set \"dataset \"mariadb\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it preserves DISTINCT and HAVING semantics when output names overlap with data set \"dataset \"mariadb\"\"",
+        "assertions": 3,
+        "seconds": 0.006411,
+        "result": "passed"
+      },
+      {
+        "test": "it keeps zero limits, empty results and aggregate queries correct with repeated aliases with data set \"dataset \"mysql\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it keeps zero limits, empty results and aggregate queries correct with repeated aliases with data set \"dataset \"mysql\"\"",
+        "assertions": 4,
+        "seconds": 0.012288,
+        "result": "passed"
+      },
+      {
+        "test": "it keeps zero limits, empty results and aggregate queries correct with repeated aliases with data set \"dataset \"mariadb\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it keeps zero limits, empty results and aggregate queries correct with repeated aliases with data set \"dataset \"mariadb\"\"",
+        "assertions": 4,
+        "seconds": 0.009004,
+        "result": "passed"
+      },
+      {
+        "test": "it uses a single count query when names are unique and propagates unrelated SQL errors with data set \"dataset \"mysql\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it uses a single count query when names are unique and propagates unrelated SQL errors with data set \"dataset \"mysql\"\"",
+        "assertions": 3,
+        "seconds": 0.009714,
+        "result": "passed"
+      },
+      {
+        "test": "it uses a single count query when names are unique and propagates unrelated SQL errors with data set \"dataset \"mariadb\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it uses a single count query when names are unique and propagates unrelated SQL errors with data set \"dataset \"mariadb\"\"",
+        "assertions": 3,
+        "seconds": 0.005546,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves parameters inside the SELECT projection and the WHERE clause with data set \"dataset \"mysql\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it preserves parameters inside the SELECT projection and the WHERE clause with data set \"dataset \"mysql\"\"",
+        "assertions": 2,
+        "seconds": 0.009752,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves parameters inside the SELECT projection and the WHERE clause with data set \"dataset \"mariadb\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it preserves parameters inside the SELECT projection and the WHERE clause with data set \"dataset \"mariadb\"\"",
+        "assertions": 2,
+        "seconds": 0.006367,
+        "result": "passed"
+      },
+      {
+        "test": "it counts UNION ALL rows with duplicate names and independent bindings with data set \"dataset \"mysql\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts UNION ALL rows with duplicate names and independent bindings with data set \"dataset \"mysql\"\"",
+        "assertions": 2,
+        "seconds": 0.010542,
+        "result": "passed"
+      },
+      {
+        "test": "it counts UNION ALL rows with duplicate names and independent bindings with data set \"dataset \"mariadb\"\"",
+        "file": "database/tests/MySqlQueryTest.php::it counts UNION ALL rows with duplicate names and independent bindings with data set \"dataset \"mariadb\"\"",
+        "assertions": 2,
+        "seconds": 0.005866,
+        "result": "passed"
+      },
+      {
         "test": "it evicts without reindexing numeric primary keys and normalizes composite keys",
         "file": "database/tests/OrmTest.php::it evicts without reindexing numeric primary keys and normalizes composite keys",
         "assertions": 5,
-        "seconds": 0.009707,
+        "seconds": 0.026261,
         "result": "passed"
       },
       {
         "test": "it groups OR predicates under the soft delete condition without mutating the query",
         "file": "database/tests/OrmTest.php::it groups OR predicates under the soft delete condition without mutating the query",
         "assertions": 4,
-        "seconds": 0.000826,
+        "seconds": 0.000354,
         "result": "passed"
       },
       {
         "test": "it adds soft delete filtering before grouping and pagination when no WHERE exists",
         "file": "database/tests/OrmTest.php::it adds soft delete filtering before grouping and pagination when no WHERE exists",
         "assertions": 2,
-        "seconds": 0.000614,
+        "seconds": 0.000311,
         "result": "passed"
       },
       {
         "test": "it resolves custom relation keys correctly with cold and unrelated warm caches with data set \"(false)\"",
         "file": "database/tests/OrmTest.php::it resolves custom relation keys correctly with cold and unrelated warm caches with data set \"(false)\"",
         "assertions": 2,
-        "seconds": 0.001385,
+        "seconds": 0.000343,
         "result": "passed"
       },
       {
         "test": "it resolves custom relation keys correctly with cold and unrelated warm caches with data set \"(true)\"",
         "file": "database/tests/OrmTest.php::it resolves custom relation keys correctly with cold and unrelated warm caches with data set \"(true)\"",
         "assertions": 2,
-        "seconds": 0.000366,
+        "seconds": 0.000371,
         "result": "passed"
       },
       {
         "test": "it eager loads cursor relations once per batch and releases streamed identities",
         "file": "database/tests/OrmTest.php::it eager loads cursor relations once per batch and releases streamed identities",
         "assertions": 254,
-        "seconds": 0.004365,
+        "seconds": 0.002627,
         "result": "passed"
       },
       {
         "test": "it preserves pre-existing modified identities while streaming and supports retaining identities explicitly",
         "file": "database/tests/OrmTest.php::it preserves pre-existing modified identities while streaming and supports retaining identities explicitly",
         "assertions": 5,
-        "seconds": 0.00042,
+        "seconds": 0.000294,
         "result": "passed"
       },
       {
         "test": "it validates cursor batch sizes",
         "file": "database/tests/OrmTest.php::it validates cursor batch sizes",
         "assertions": 1,
-        "seconds": 0.00023,
+        "seconds": 0.000232,
         "result": "passed"
       },
       {
         "test": "it cleans hydration scopes when a callback fails",
         "file": "database/tests/OrmTest.php::it cleans hydration scopes when a callback fails",
         "assertions": 3,
-        "seconds": 0.000264,
+        "seconds": 0.00026,
         "result": "passed"
       },
       {
         "test": "it round trips stored JSON and preserves invalid-storage behavior",
         "file": "database/tests/OrmTest.php::it round trips stored JSON and preserves invalid-storage behavior",
         "assertions": 4,
-        "seconds": 0.000354,
+        "seconds": 0.000344,
         "result": "passed"
       },
       {
         "test": "it does not confuse a cached child primary key with its reference column with data set \"(false)\"",
         "file": "database/tests/OrmTest.php::it does not confuse a cached child primary key with its reference column with data set \"(false)\"",
         "assertions": 1,
-        "seconds": 0.000291,
+        "seconds": 0.000288,
         "result": "passed"
       },
       {
@@ -454,49 +650,70 @@
         "test": "it retains existing identities when a bounded cache hydrates a temporary batch",
         "file": "database/tests/OrmTest.php::it retains existing identities when a bounded cache hydrates a temporary batch",
         "assertions": 3,
-        "seconds": 0.000234,
+        "seconds": 0.000226,
         "result": "passed"
       },
       {
         "test": "it persists new models and dirty updates and invalidates deleted identities",
         "file": "database/tests/OrmTest.php::it persists new models and dirty updates and invalidates deleted identities",
         "assertions": 7,
-        "seconds": 0.000314,
+        "seconds": 0.000305,
         "result": "passed"
       },
       {
         "test": "it marks the outer transaction rollback-only after an inner rollback",
         "file": "database/tests/OrmTest.php::it marks the outer transaction rollback-only after an inner rollback",
         "assertions": 3,
-        "seconds": 0.000536,
+        "seconds": 0.000267,
         "result": "passed"
       },
       {
         "test": "it closes a partially consumed cursor and leaves the connection reusable",
         "file": "database/tests/OrmTest.php::it closes a partially consumed cursor and leaves the connection reusable",
         "assertions": 3,
-        "seconds": 0.000345,
+        "seconds": 0.000233,
         "result": "passed"
       },
       {
         "test": "it keeps zero limits and counts the paginated result separately from the total",
         "file": "database/tests/QueryTest.php::it keeps zero limits and counts the paginated result separately from the total",
         "assertions": 4,
-        "seconds": 0.025951,
+        "seconds": 0.021133,
         "result": "passed"
       },
       {
         "test": "it counts grouped and distinct result rows including HAVING aliases",
         "file": "database/tests/QueryTest.php::it counts grouped and distinct result rows including HAVING aliases",
         "assertions": 4,
-        "seconds": 0.0003,
+        "seconds": 0.000248,
         "result": "passed"
       },
       {
         "test": "it returns every PDO scalar shape and the no-row sentinel",
         "file": "database/tests/QueryTest.php::it returns every PDO scalar shape and the no-row sentinel",
         "assertions": 5,
-        "seconds": 0.000218,
+        "seconds": 0.000176,
+        "result": "passed"
+      },
+      {
+        "test": "it preserves implicit soft-delete filters when wrapping counts",
+        "file": "database/tests/QueryTest.php::it preserves implicit soft-delete filters when wrapping counts",
+        "assertions": 4,
+        "seconds": 0.000251,
+        "result": "passed"
+      },
+      {
+        "test": "it inserts late WHERE and OR predicates before grouping, HAVING and pagination",
+        "file": "database/tests/QueryTest.php::it inserts late WHERE and OR predicates before grouping, HAVING and pagination",
+        "assertions": 3,
+        "seconds": 0.000201,
+        "result": "passed"
+      },
+      {
+        "test": "it inserts correlated subqueries and their bindings before an existing ORDER BY",
+        "file": "database/tests/QueryTest.php::it inserts correlated subqueries and their bindings before an existing ORDER BY",
+        "assertions": 2,
+        "seconds": 0.001019,
         "result": "passed"
       }
     ],
@@ -505,161 +722,161 @@
         "test": "it exports dates, date-times and times in their documented wire formats",
         "file": "datetime/tests/CalendarTest.php::it exports dates, date-times and times in their documented wire formats",
         "assertions": 5,
-        "seconds": 0.008927,
+        "seconds": 0.011276,
         "result": "passed"
       },
       {
         "test": "it uses ISO week years across the calendar-year boundary with data set \"('2021-01-01', '2020W53')\"",
         "file": "datetime/tests/CalendarTest.php::it uses ISO week years across the calendar-year boundary with data set \"('2021-01-01', '2020W53')\"",
         "assertions": 1,
-        "seconds": 0.000372,
+        "seconds": 0.000384,
         "result": "passed"
       },
       {
         "test": "it uses ISO week years across the calendar-year boundary with data set \"('2021-01-04', '2021W01')\"",
         "file": "datetime/tests/CalendarTest.php::it uses ISO week years across the calendar-year boundary with data set \"('2021-01-04', '2021W01')\"",
         "assertions": 1,
-        "seconds": 0.000152,
+        "seconds": 0.000117,
         "result": "passed"
       },
       {
         "test": "it uses ISO week years across the calendar-year boundary with data set \"('2024-12-30', '2025W01')\"",
         "file": "datetime/tests/CalendarTest.php::it uses ISO week years across the calendar-year boundary with data set \"('2024-12-30', '2025W01')\"",
         "assertions": 1,
-        "seconds": 0.000133,
+        "seconds": 0.000115,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(1)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(1)\"",
         "assertions": 1,
-        "seconds": 0.000297,
+        "seconds": 0.000311,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(2)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(2)\"",
         "assertions": 1,
-        "seconds": 0.00013,
+        "seconds": 0.000122,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(3)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(3)\"",
         "assertions": 1,
-        "seconds": 0.000124,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(4)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(4)\"",
         "assertions": 1,
-        "seconds": 0.000125,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(5)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(5)\"",
         "assertions": 1,
-        "seconds": 0.000117,
+        "seconds": 0.000104,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(6)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(6)\"",
         "assertions": 1,
-        "seconds": 0.000116,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(7)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(7)\"",
         "assertions": 1,
-        "seconds": 0.000122,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(8)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(8)\"",
         "assertions": 1,
-        "seconds": 0.000117,
+        "seconds": 0.000122,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(9)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(9)\"",
         "assertions": 1,
-        "seconds": 0.00012,
+        "seconds": 0.000118,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(10)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(10)\"",
         "assertions": 1,
-        "seconds": 0.000126,
+        "seconds": 0.00012,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(11)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(11)\"",
         "assertions": 1,
-        "seconds": 0.000312,
+        "seconds": 0.000116,
         "result": "passed"
       },
       {
         "test": "it maps all months and weekdays from actual calendar dates with data set \"(12)\"",
         "file": "datetime/tests/CalendarTest.php::it maps all months and weekdays from actual calendar dates with data set \"(12)\"",
         "assertions": 1,
-        "seconds": 0.000139,
+        "seconds": 0.000118,
         "result": "passed"
       },
       {
         "test": "it converts time strings without losing zero-valued segments with data set \"('00:00:00', 0)\"",
         "file": "datetime/tests/CalendarTest.php::it converts time strings without losing zero-valued segments with data set \"('00:00:00', 0)\"",
         "assertions": 1,
-        "seconds": 0.000138,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it converts time strings without losing zero-valued segments with data set \"('01:02:03', 3723)\"",
         "file": "datetime/tests/CalendarTest.php::it converts time strings without losing zero-valued segments with data set \"('01:02:03', 3723)\"",
         "assertions": 1,
-        "seconds": 0.000124,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it converts time strings without losing zero-valued segments with data set \"('12:30', 45000)\"",
         "file": "datetime/tests/CalendarTest.php::it converts time strings without losing zero-valued segments with data set \"('12:30', 45000)\"",
         "assertions": 1,
-        "seconds": 0.000124,
+        "seconds": 0.000104,
         "result": "passed"
       },
       {
         "test": "it converts time strings without losing zero-valued segments with data set \"('23:59:59', 86399)\"",
         "file": "datetime/tests/CalendarTest.php::it converts time strings without losing zero-valued segments with data set \"('23:59:59', 86399)\"",
         "assertions": 1,
-        "seconds": 0.000122,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it round trips date-only values without timezone shifts",
         "file": "datetime/tests/DateTimeTest.php::it round trips date-only values without timezone shifts",
         "assertions": 4,
-        "seconds": 0.033201,
+        "seconds": 0.025334,
         "result": "passed"
       },
       {
         "test": "it maps the first and last weekday correctly",
         "file": "datetime/tests/DateTimeTest.php::it maps the first and last weekday correctly",
         "assertions": 2,
-        "seconds": 0.000594,
+        "seconds": 0.000436,
         "result": "passed"
       },
       {
         "test": "it serializes offsets and handles the Amsterdam daylight saving boundary",
         "file": "datetime/tests/DateTimeTest.php::it serializes offsets and handles the Amsterdam daylight saving boundary",
         "assertions": 2,
-        "seconds": 0.000189,
+        "seconds": 0.000118,
         "result": "passed"
       }
     ],
@@ -668,21 +885,21 @@
         "test": "it preserves the previous exception and exposes a stable error payload",
         "file": "error/tests/ExceptionTest.php::it preserves the previous exception and exposes a stable error payload",
         "assertions": 5,
-        "seconds": 0.005253,
+        "seconds": 0.003798,
         "result": "passed"
       },
       {
         "test": "it preserves nested Raxos errors and stable identifiers in JSON",
         "file": "error/tests/ExceptionTest.php::it preserves nested Raxos errors and stable identifiers in JSON",
         "assertions": 4,
-        "seconds": 0.000168,
+        "seconds": 0.000148,
         "result": "passed"
       },
       {
         "test": "it keeps invalid argument errors usable as native exceptions and JSON responses",
         "file": "error/tests/ExceptionTest.php::it keeps invalid argument errors usable as native exceptions and JSON responses",
         "assertions": 3,
-        "seconds": 0.000134,
+        "seconds": 0.000115,
         "result": "passed"
       }
     ],
@@ -691,217 +908,217 @@
         "test": "it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('127.0.0.1', Raxos\\Foundation\\Network\\IPVersion Enum (V4, 'IPv4'))\"",
         "file": "foundation/tests/HelpersTest.php::it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('127.0.0.1', Raxos\\Foundation\\Network\\IPVersion Enum (V4, 'IPv4'))\"",
         "assertions": 5,
-        "seconds": 0.005199,
+        "seconds": 0.00437,
         "result": "passed"
       },
       {
         "test": "it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('255.255.255.255', Raxos\\Foundation\\Network\\IPVersion Enum (V4, 'IPv4'))\"",
         "file": "foundation/tests/HelpersTest.php::it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('255.255.255.255', Raxos\\Foundation\\Network\\IPVersion Enum (V4, 'IPv4'))\"",
         "assertions": 5,
-        "seconds": 0.00016,
+        "seconds": 0.000127,
         "result": "passed"
       },
       {
         "test": "it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('::1', Raxos\\Foundation\\Network\\IPVersion Enum (V6, 'IPv6'))\"",
         "file": "foundation/tests/HelpersTest.php::it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('::1', Raxos\\Foundation\\Network\\IPVersion Enum (V6, 'IPv6'))\"",
         "assertions": 5,
-        "seconds": 0.000136,
+        "seconds": 0.000115,
         "result": "passed"
       },
       {
         "test": "it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('2001:db8::1', Raxos\\Foundation\\Network\\IPVersion Enum (V6, 'IPv6'))\"",
         "file": "foundation/tests/HelpersTest.php::it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('2001:db8::1', Raxos\\Foundation\\Network\\IPVersion Enum (V6, 'IPv6'))\"",
         "assertions": 5,
-        "seconds": 0.000129,
+        "seconds": 0.000114,
         "result": "passed"
       },
       {
         "test": "it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('256.1.2.3', null)\"",
         "file": "foundation/tests/HelpersTest.php::it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('256.1.2.3', null)\"",
         "assertions": 2,
-        "seconds": 0.000164,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('', null)\"",
         "file": "foundation/tests/HelpersTest.php::it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('', null)\"",
         "assertions": 2,
-        "seconds": 0.000164,
+        "seconds": 0.000104,
         "result": "passed"
       },
       {
         "test": "it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('example.org', null)\"",
         "file": "foundation/tests/HelpersTest.php::it classifies IPv4 and IPv6 without accepting malformed addresses with data set \"('example.org', null)\"",
         "assertions": 2,
-        "seconds": 0.000142,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it flattens to the requested depth and selects array values",
         "file": "foundation/tests/HelpersTest.php::it flattens to the requested depth and selects array values",
         "assertions": 9,
-        "seconds": 0.000162,
+        "seconds": 0.00012,
         "result": "passed"
       },
       {
         "test": "it rounds in steps and simplifies signed fractions",
         "file": "foundation/tests/HelpersTest.php::it rounds in steps and simplifies signed fractions",
         "assertions": 8,
-        "seconds": 0.000402,
+        "seconds": 0.000318,
         "result": "passed"
       },
       {
         "test": "it handles Unicode in slugging, replacements and word truncation",
         "file": "foundation/tests/HelpersTest.php::it handles Unicode in slugging, replacements and word truncation",
         "assertions": 7,
-        "seconds": 0.005158,
+        "seconds": 0.004681,
         "result": "passed"
       },
       {
         "test": "it rejects random strings without a positive length or an alphabet with data set \"(0, 'l')\"",
         "file": "foundation/tests/HelpersTest.php::it rejects random strings without a positive length or an alphabet with data set \"(0, 'l')\"",
         "assertions": 1,
-        "seconds": 0.000196,
+        "seconds": 0.000127,
         "result": "passed"
       },
       {
         "test": "it rejects random strings without a positive length or an alphabet with data set \"(-1, 'l')\"",
         "file": "foundation/tests/HelpersTest.php::it rejects random strings without a positive length or an alphabet with data set \"(-1, 'l')\"",
         "assertions": 1,
-        "seconds": 0.000149,
+        "seconds": 0.000111,
         "result": "passed"
       },
       {
         "test": "it rejects random strings without a positive length or an alphabet with data set \"(4, '')\"",
         "file": "foundation/tests/HelpersTest.php::it rejects random strings without a positive length or an alphabet with data set \"(4, '')\"",
         "assertions": 1,
-        "seconds": 0.000144,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it rejects random strings without a positive length or an alphabet with data set \"(4, 'xyz')\"",
         "file": "foundation/tests/HelpersTest.php::it rejects random strings without a positive length or an alphabet with data set \"(4, 'xyz')\"",
         "assertions": 1,
-        "seconds": 0.000131,
+        "seconds": 0.000107,
         "result": "passed"
       },
       {
         "test": "it keeps falsey values as Some while recognizing the configured None sentinel with data set \"(false)\"",
         "file": "foundation/tests/OptionTest.php::it keeps falsey values as Some while recognizing the configured None sentinel with data set \"(false)\"",
         "assertions": 2,
-        "seconds": 0.025711,
+        "seconds": 0.017782,
         "result": "passed"
       },
       {
         "test": "it keeps falsey values as Some while recognizing the configured None sentinel with data set \"(0)\"",
         "file": "foundation/tests/OptionTest.php::it keeps falsey values as Some while recognizing the configured None sentinel with data set \"(0)\"",
         "assertions": 2,
-        "seconds": 0.000177,
+        "seconds": 0.000115,
         "result": "passed"
       },
       {
         "test": "it keeps falsey values as Some while recognizing the configured None sentinel with data set \"('')\"",
         "file": "foundation/tests/OptionTest.php::it keeps falsey values as Some while recognizing the configured None sentinel with data set \"('')\"",
         "assertions": 2,
-        "seconds": 0.000139,
+        "seconds": 0.000103,
         "result": "passed"
       },
       {
         "test": "it keeps falsey values as Some while recognizing the configured None sentinel with data set \"([])\"",
         "file": "foundation/tests/OptionTest.php::it keeps falsey values as Some while recognizing the configured None sentinel with data set \"([])\"",
         "assertions": 2,
-        "seconds": 0.000132,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it recognizes None, preserves existing options and evaluates factories once",
         "file": "foundation/tests/OptionTest.php::it recognizes None, preserves existing options and evaluates factories once",
         "assertions": 5,
-        "seconds": 0.000721,
+        "seconds": 0.000576,
         "result": "passed"
       },
       {
         "test": "it maps and filters Some and does not execute callbacks for None",
         "file": "foundation/tests/OptionTest.php::it maps and filters Some and does not execute callbacks for None",
         "assertions": 5,
-        "seconds": 0.000223,
+        "seconds": 0.000131,
         "result": "passed"
       },
       {
         "test": "it only invokes fallbacks for None and validates option fallbacks",
         "file": "foundation/tests/OptionTest.php::it only invokes fallbacks for None and validates option fallbacks",
         "assertions": 10,
-        "seconds": 0.000166,
+        "seconds": 0.000131,
         "result": "passed"
       },
       {
         "test": "it accepts and rejects values using strict equality",
         "file": "foundation/tests/OptionTest.php::it accepts and rejects values using strict equality",
         "assertions": 4,
-        "seconds": 0.000132,
+        "seconds": 0.000119,
         "result": "passed"
       },
       {
         "test": "it measures a return value without requiring a description",
         "file": "foundation/tests/UtilitiesTest.php::it measures a return value without requiring a description",
         "assertions": 3,
-        "seconds": 0.014844,
+        "seconds": 0.010626,
         "result": "passed"
       },
       {
         "test": "it stops a measurement when the callback fails",
         "file": "foundation/tests/UtilitiesTest.php::it stops a measurement when the callback fails",
         "assertions": 2,
-        "seconds": 0.00015,
+        "seconds": 0.000127,
         "result": "passed"
       },
       {
         "test": "it retains fractional alpha in hexadecimal colors",
         "file": "foundation/tests/UtilitiesTest.php::it retains fractional alpha in hexadecimal colors",
         "assertions": 3,
-        "seconds": 0.000134,
+        "seconds": 0.000116,
         "result": "passed"
       },
       {
         "test": "it uses the same RGB scale for gray and saturated colors",
         "file": "foundation/tests/UtilitiesTest.php::it uses the same RGB scale for gray and saturated colors",
         "assertions": 2,
-        "seconds": 0.000133,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it generates the requested number of random characters with data set \"(1)\"",
         "file": "foundation/tests/UtilitiesTest.php::it generates the requested number of random characters with data set \"(1)\"",
         "assertions": 1,
-        "seconds": 0.000208,
+        "seconds": 0.000123,
         "result": "passed"
       },
       {
         "test": "it generates the requested number of random characters with data set \"(3)\"",
         "file": "foundation/tests/UtilitiesTest.php::it generates the requested number of random characters with data set \"(3)\"",
         "assertions": 1,
-        "seconds": 0.000222,
+        "seconds": 0.000127,
         "result": "passed"
       },
       {
         "test": "it generates the requested number of random characters with data set \"(9)\"",
         "file": "foundation/tests/UtilitiesTest.php::it generates the requested number of random characters with data set \"(9)\"",
         "assertions": 1,
-        "seconds": 0.000134,
+        "seconds": 0.000119,
         "result": "passed"
       },
       {
         "test": "it generates the requested number of random characters with data set \"(16)\"",
         "file": "foundation/tests/UtilitiesTest.php::it generates the requested number of random characters with data set \"(16)\"",
         "assertions": 1,
-        "seconds": 0.000141,
+        "seconds": 0.000115,
         "result": "passed"
       },
       {
         "test": "it generates the requested number of random characters with data set \"(64)\"",
         "file": "foundation/tests/UtilitiesTest.php::it generates the requested number of random characters with data set \"(64)\"",
         "assertions": 1,
-        "seconds": 0.00013,
+        "seconds": 0.000104,
         "result": "passed"
       }
     ],
@@ -910,231 +1127,231 @@
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('none', '0123456789', 200)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('none', '0123456789', 200)\"",
         "assertions": 2,
-        "seconds": 0.150926,
+        "seconds": 0.129336,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=0-0', '0', 206)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=0-0', '0', 206)\"",
         "assertions": 2,
-        "seconds": 0.128299,
+        "seconds": 0.121033,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=2-4', '234', 206)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=2-4', '234', 206)\"",
         "assertions": 2,
-        "seconds": 0.131067,
+        "seconds": 0.119455,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=7-', '789', 206)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=7-', '789', 206)\"",
         "assertions": 2,
-        "seconds": 0.130879,
+        "seconds": 0.115976,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=-3', '789', 206)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=-3', '789', 206)\"",
         "assertions": 2,
-        "seconds": 0.131507,
+        "seconds": 0.114472,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=7-999', '789', 206)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=7-999', '789', 206)\"",
         "assertions": 2,
-        "seconds": 0.137336,
+        "seconds": 0.115392,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=-999', '0123456789', 206)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=-999', '0123456789', 206)\"",
         "assertions": 2,
-        "seconds": 0.126365,
+        "seconds": 0.116063,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=10-', '', 416)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=10-', '', 416)\"",
         "assertions": 2,
-        "seconds": 0.127604,
+        "seconds": 0.115365,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=-0', '', 416)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=-0', '', 416)\"",
         "assertions": 2,
-        "seconds": 0.125534,
+        "seconds": 0.116352,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=4-2', '', 416)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=4-2', '', 416)\"",
         "assertions": 2,
-        "seconds": 0.123367,
+        "seconds": 0.11458,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=abc-def', '', 416)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=abc-def', '', 416)\"",
         "assertions": 2,
-        "seconds": 0.132347,
+        "seconds": 0.117381,
         "result": "passed"
       },
       {
         "test": "it sends exact full, closed, open and suffix ranges with data set \"('bytes=0-1,3-4', '', 416)\"",
         "file": "http/tests/FileTest.php::it sends exact full, closed, open and suffix ranges with data set \"('bytes=0-1,3-4', '', 416)\"",
         "assertions": 2,
-        "seconds": 0.128676,
+        "seconds": 0.116017,
         "result": "passed"
       },
       {
         "test": "it uses unthrottled downloads by default and validates tuning",
         "file": "http/tests/FileTest.php::it uses unthrottled downloads by default and validates tuning",
         "assertions": 3,
-        "seconds": 0.000347,
+        "seconds": 0.000332,
         "result": "passed"
       },
       {
         "test": "it normalizes constructor headers and preserves multiple values and zero",
         "file": "http/tests/MetadataTest.php::it normalizes constructor headers and preserves multiple values and zero",
         "assertions": 5,
-        "seconds": 0.017793,
+        "seconds": 0.016973,
         "result": "passed"
       },
       {
         "test": "it parses the URI query and preserves explicit query overrides",
         "file": "http/tests/MetadataTest.php::it parses the URI query and preserves explicit query overrides",
         "assertions": 3,
-        "seconds": 0.002494,
+        "seconds": 0.001633,
         "result": "passed"
       },
       {
         "test": "it handles missing client metadata and extracts the first forwarded IP",
         "file": "http/tests/MetadataTest.php::it handles missing client metadata and extracts the first forwarded IP",
         "assertions": 7,
-        "seconds": 0.000621,
+        "seconds": 0.000444,
         "result": "passed"
       },
       {
         "test": "it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Bearer abc.def', 'abc.def')\"",
         "file": "http/tests/MetadataTest.php::it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Bearer abc.def', 'abc.def')\"",
         "assertions": 1,
-        "seconds": 0.000196,
+        "seconds": 0.00015,
         "result": "passed"
       },
       {
         "test": "it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('bearer abc.def', 'abc.def')\"",
         "file": "http/tests/MetadataTest.php::it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('bearer abc.def', 'abc.def')\"",
         "assertions": 1,
-        "seconds": 0.000141,
+        "seconds": 0.000111,
         "result": "passed"
       },
       {
         "test": "it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Basic secret', null)\"",
         "file": "http/tests/MetadataTest.php::it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Basic secret', null)\"",
         "assertions": 1,
-        "seconds": 0.000135,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Bearer ', null)\"",
         "file": "http/tests/MetadataTest.php::it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Bearer ', null)\"",
         "assertions": 1,
-        "seconds": 0.00013,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Bearer', null)\"",
         "file": "http/tests/MetadataTest.php::it parses bearer tokens without case sensitivity or empty-token acceptance with data set \"('Bearer', null)\"",
         "assertions": 1,
-        "seconds": 0.000125,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it orders acceptable languages and trims their surrounding whitespace",
         "file": "http/tests/MetadataTest.php::it orders acceptable languages and trims their surrounding whitespace",
         "assertions": 3,
-        "seconds": 0.000134,
+        "seconds": 0.000116,
         "result": "passed"
       },
       {
         "test": "it sanitizes query parameters and applies falsey defaults",
         "file": "http/tests/MetadataTest.php::it sanitizes query parameters and applies falsey defaults",
         "assertions": 1,
-        "seconds": 0.000118,
+        "seconds": 0.000114,
         "result": "passed"
       },
       {
         "test": "it serializes JSON responses with Unicode and unescaped URLs",
         "file": "http/tests/MetadataTest.php::it serializes JSON responses with Unicode and unescaped URLs",
         "assertions": 2,
-        "seconds": 0.000752,
+        "seconds": 0.000696,
         "result": "passed"
       },
       {
         "test": "it decodes JSON collections and null exactly once with data set \"('{\"name\":\"Passly\"}', ['Passly'])\"",
         "file": "http/tests/RequestTest.php::it decodes JSON collections and null exactly once with data set \"('{\"name\":\"Passly\"}', ['Passly'])\"",
         "assertions": 2,
-        "seconds": 0.015562,
+        "seconds": 0.014651,
         "result": "passed"
       },
       {
         "test": "it decodes JSON collections and null exactly once with data set \"('[1,2]', [1, 2])\"",
         "file": "http/tests/RequestTest.php::it decodes JSON collections and null exactly once with data set \"('[1,2]', [1, 2])\"",
         "assertions": 2,
-        "seconds": 0.000145,
+        "seconds": 0.000136,
         "result": "passed"
       },
       {
         "test": "it decodes JSON collections and null exactly once with data set \"('null', null)\"",
         "file": "http/tests/RequestTest.php::it decodes JSON collections and null exactly once with data set \"('null', null)\"",
         "assertions": 2,
-        "seconds": 0.000129,
+        "seconds": 0.000126,
         "result": "passed"
       },
       {
         "test": "it decodes JSON collections and null exactly once with data set \"(null, null)\"",
         "file": "http/tests/RequestTest.php::it decodes JSON collections and null exactly once with data set \"(null, null)\"",
         "assertions": 2,
-        "seconds": 0.000124,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it rejects malformed and scalar request JSON with a client error with data set \"('42')\"",
         "file": "http/tests/RequestTest.php::it rejects malformed and scalar request JSON with a client error with data set \"('42')\"",
         "assertions": 1,
-        "seconds": 0.000134,
+        "seconds": 0.000125,
         "result": "passed"
       },
       {
         "test": "it rejects malformed and scalar request JSON with a client error with data set \"('true')\"",
         "file": "http/tests/RequestTest.php::it rejects malformed and scalar request JSON with a client error with data set \"('true')\"",
         "assertions": 1,
-        "seconds": 0.00012,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it rejects malformed and scalar request JSON with a client error with data set \"('\"hello\"')\"",
         "file": "http/tests/RequestTest.php::it rejects malformed and scalar request JSON with a client error with data set \"('\"hello\"')\"",
         "assertions": 1,
-        "seconds": 0.00012,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it rejects malformed and scalar request JSON with a client error with data set \"('{invalid')\"",
         "file": "http/tests/RequestTest.php::it rejects malformed and scalar request JSON with a client error with data set \"('{invalid')\"",
         "assertions": 1,
-        "seconds": 0.000122,
+        "seconds": 0.00012,
         "result": "passed"
       },
       {
         "test": "it overwrites scalar HTTP options while retaining independent options",
         "file": "http/tests/RequestTest.php::it overwrites scalar HTTP options while retaining independent options",
         "assertions": 2,
-        "seconds": 0.007471,
+        "seconds": 0.008369,
         "result": "passed"
       }
     ],
@@ -1143,133 +1360,133 @@
         "test": "it sends Email value objects through the Mailgun string interface",
         "file": "mail/tests/MailTest.php::it sends Email value objects through the Mailgun string interface",
         "assertions": 4,
-        "seconds": 0.025548,
+        "seconds": 0.024113,
         "result": "passed"
       },
       {
         "test": "it replaces the public suffix index on forced reload",
         "file": "mail/tests/MailTest.php::it replaces the public suffix index on forced reload",
         "assertions": 3,
-        "seconds": 0.014037,
+        "seconds": 0.013462,
         "result": "passed"
       },
       {
         "test": "it round trips email addresses with tags",
         "file": "mail/tests/MailTest.php::it round trips email addresses with tags",
         "assertions": 1,
-        "seconds": 0.000318,
+        "seconds": 0.00027,
         "result": "passed"
       },
       {
         "test": "it rejects malformed email addresses with data set \"('')\"",
         "file": "mail/tests/MailTest.php::it rejects malformed email addresses with data set \"('')\"",
         "assertions": 1,
-        "seconds": 0.000551,
+        "seconds": 0.000452,
         "result": "passed"
       },
       {
         "test": "it rejects malformed email addresses with data set \"('user')\"",
         "file": "mail/tests/MailTest.php::it rejects malformed email addresses with data set \"('user')\"",
         "assertions": 1,
-        "seconds": 0.000152,
+        "seconds": 0.000117,
         "result": "passed"
       },
       {
         "test": "it rejects malformed email addresses with data set \"('user@')\"",
         "file": "mail/tests/MailTest.php::it rejects malformed email addresses with data set \"('user@')\"",
         "assertions": 1,
-        "seconds": 0.000135,
+        "seconds": 0.000112,
         "result": "passed"
       },
       {
         "test": "it rejects malformed email addresses with data set \"('@example.org')\"",
         "file": "mail/tests/MailTest.php::it rejects malformed email addresses with data set \"('@example.org')\"",
         "assertions": 1,
-        "seconds": 0.000125,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it rejects malformed email addresses with data set \"('a@@example.org')\"",
         "file": "mail/tests/MailTest.php::it rejects malformed email addresses with data set \"('a@@example.org')\"",
         "assertions": 1,
-        "seconds": 0.000121,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it rejects malformed email addresses with data set \"('user@example.org')\"",
         "file": "mail/tests/MailTest.php::it rejects malformed email addresses with data set \"('user@example.org')\"",
         "assertions": 1,
-        "seconds": 0.000129,
+        "seconds": 0.000107,
         "result": "passed"
       },
       {
         "test": "it retains email tags and formatted sender and recipient names with data set \"('bas@example.org')\"",
         "file": "mail/tests/MailTest.php::it retains email tags and formatted sender and recipient names with data set \"('bas@example.org')\"",
         "assertions": 4,
-        "seconds": 0.000133,
+        "seconds": 0.000117,
         "result": "passed"
       },
       {
         "test": "it retains email tags and formatted sender and recipient names with data set \"('bas+tag@example.org')\"",
         "file": "mail/tests/MailTest.php::it retains email tags and formatted sender and recipient names with data set \"('bas+tag@example.org')\"",
         "assertions": 4,
-        "seconds": 0.000123,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it retains email tags and formatted sender and recipient names with data set \"('bas+tag+extra@example.org')\"",
         "file": "mail/tests/MailTest.php::it retains email tags and formatted sender and recipient names with data set \"('bas+tag+extra@example.org')\"",
         "assertions": 4,
-        "seconds": 0.000123,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it identifies supported multi-label domains and rejects unknown suffixes with data set \"('example.org', true)\"",
         "file": "mail/tests/MailTest.php::it identifies supported multi-label domains and rejects unknown suffixes with data set \"('example.org', true)\"",
         "assertions": 1,
-        "seconds": 0.000256,
+        "seconds": 0.000225,
         "result": "passed"
       },
       {
         "test": "it identifies supported multi-label domains and rejects unknown suffixes with data set \"('example.co.uk', true)\"",
         "file": "mail/tests/MailTest.php::it identifies supported multi-label domains and rejects unknown suffixes with data set \"('example.co.uk', true)\"",
         "assertions": 1,
-        "seconds": 0.000226,
+        "seconds": 0.0002,
         "result": "passed"
       },
       {
         "test": "it identifies supported multi-label domains and rejects unknown suffixes with data set \"('sub.example.com', true)\"",
         "file": "mail/tests/MailTest.php::it identifies supported multi-label domains and rejects unknown suffixes with data set \"('sub.example.com', true)\"",
         "assertions": 1,
-        "seconds": 0.000337,
+        "seconds": 0.000302,
         "result": "passed"
       },
       {
         "test": "it identifies supported multi-label domains and rejects unknown suffixes with data set \"('example.invalidsuffix', false)\"",
         "file": "mail/tests/MailTest.php::it identifies supported multi-label domains and rejects unknown suffixes with data set \"('example.invalidsuffix', false)\"",
         "assertions": 1,
-        "seconds": 0.00594,
+        "seconds": 0.005474,
         "result": "passed"
       },
       {
         "test": "it passes Email objects, recipients and attachment bytes to SMTP as strings",
         "file": "mail/tests/ProvidersTest.php::it passes Email objects, recipients and attachment bytes to SMTP as strings",
         "assertions": 14,
-        "seconds": 0.027021,
+        "seconds": 0.023613,
         "result": "passed"
       },
       {
         "test": "it converts SMTP failures to a Raxos error with the original cause",
         "file": "mail/tests/ProvidersTest.php::it converts SMTP failures to a Raxos error with the original cause",
         "assertions": 1,
-        "seconds": 0.00063,
+        "seconds": 0.000593,
         "result": "passed"
       },
       {
         "test": "it passes Postmark the correct sender and recipient fields",
         "file": "mail/tests/ProvidersTest.php::it passes Postmark the correct sender and recipient fields",
         "assertions": 12,
-        "seconds": 0.004459,
+        "seconds": 0.004498,
         "result": "passed"
       }
     ],
@@ -1278,84 +1495,84 @@
         "test": "it removes a closed queue from the bus before shutting down",
         "file": "message-bus/tests/QueueTest.php::it removes a closed queue from the bus before shutting down",
         "assertions": 2,
-        "seconds": 0.010045,
+        "seconds": 0.009857,
         "result": "passed"
       },
       {
         "test": "it rejects non-message objects before their hooks execute even when explicitly allowed with data set \"(false)\"",
         "file": "message-bus/tests/QueueTest.php::it rejects non-message objects before their hooks execute even when explicitly allowed with data set \"(false)\"",
         "assertions": 4,
-        "seconds": 0.001176,
+        "seconds": 0.001263,
         "result": "passed"
       },
       {
         "test": "it rejects non-message objects before their hooks execute even when explicitly allowed with data set \"(true)\"",
         "file": "message-bus/tests/QueueTest.php::it rejects non-message objects before their hooks execute even when explicitly allowed with data set \"(true)\"",
         "assertions": 4,
-        "seconds": 0.000221,
+        "seconds": 0.000211,
         "result": "passed"
       },
       {
         "test": "it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (VERY_LOW, 1))\"",
         "file": "message-bus/tests/QueueTest.php::it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (VERY_LOW, 1))\"",
         "assertions": 5,
-        "seconds": 0.000196,
+        "seconds": 0.000175,
         "result": "passed"
       },
       {
         "test": "it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (LOW, 2))\"",
         "file": "message-bus/tests/QueueTest.php::it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (LOW, 2))\"",
         "assertions": 5,
-        "seconds": 0.000187,
+        "seconds": 0.000161,
         "result": "passed"
       },
       {
         "test": "it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (NORMAL, 3))\"",
         "file": "message-bus/tests/QueueTest.php::it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (NORMAL, 3))\"",
         "assertions": 5,
-        "seconds": 0.000184,
+        "seconds": 0.000176,
         "result": "passed"
       },
       {
         "test": "it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (HIGH, 4))\"",
         "file": "message-bus/tests/QueueTest.php::it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (HIGH, 4))\"",
         "assertions": 5,
-        "seconds": 0.000176,
+        "seconds": 0.000157,
         "result": "passed"
       },
       {
         "test": "it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (VERY_HIGH, 5))\"",
         "file": "message-bus/tests/QueueTest.php::it publishes persistent messages with the chosen priority and routing key with data set \"(Raxos\\MessageBus\\Enum\\MessagePriority Enum (VERY_HIGH, 5))\"",
         "assertions": 5,
-        "seconds": 0.000176,
+        "seconds": 0.000164,
         "result": "passed"
       },
       {
         "test": "it preserves the transport failure as the publication exception cause",
         "file": "message-bus/tests/QueueTest.php::it preserves the transport failure as the publication exception cause",
         "assertions": 1,
-        "seconds": 0.000453,
+        "seconds": 0.000461,
         "result": "passed"
       },
       {
         "test": "it dispatches explicitly registered messages with the consumer payload shape",
         "file": "message-bus/tests/QueueTest.php::it dispatches explicitly registered messages with the consumer payload shape",
         "assertions": 3,
-        "seconds": 0.000348,
+        "seconds": 0.000371,
         "result": "passed"
       },
       {
         "test": "it requeues rejected and failing handlers without acknowledging a delivery with data set \"(false)\"",
         "file": "message-bus/tests/QueueTest.php::it requeues rejected and failing handlers without acknowledging a delivery with data set \"(false)\"",
         "assertions": 3,
-        "seconds": 0.000209,
+        "seconds": 0.000208,
         "result": "passed"
       },
       {
         "test": "it requeues rejected and failing handlers without acknowledging a delivery with data set \"(true)\"",
         "file": "message-bus/tests/QueueTest.php::it requeues rejected and failing handlers without acknowledging a delivery with data set \"(true)\"",
         "assertions": 4,
-        "seconds": 0.000484,
+        "seconds": 0.000497,
         "result": "passed"
       }
     ],
@@ -1364,105 +1581,105 @@
         "test": "it matches the RFC7636 S256 test vector and rejects missing or invalid proof",
         "file": "oauth2/tests/AuthorizationTest.php::it matches the RFC7636 S256 test vector and rejects missing or invalid proof",
         "assertions": 4,
-        "seconds": 0.016951,
+        "seconds": 0.01641,
         "result": "passed"
       },
       {
         "test": "it consumes a code atomically before issuing tokens and rejects a concurrent redemption",
         "file": "oauth2/tests/AuthorizationTest.php::it consumes a code atomically before issuing tokens and rejects a concurrent redemption",
         "assertions": 3,
-        "seconds": 0.002245,
+        "seconds": 0.002401,
         "result": "passed"
       },
       {
         "test": "it stores the S256 challenge with each authorization code",
         "file": "oauth2/tests/AuthorizationTest.php::it stores the S256 challenge with each authorization code",
         "assertions": 8,
-        "seconds": 0.000757,
+        "seconds": 0.000841,
         "result": "passed"
       },
       {
         "test": "it exposes the four OAuth endpoints to controller mapping",
         "file": "oauth2/tests/AuthorizationTest.php::it exposes the four OAuth endpoints to controller mapping",
         "assertions": 1,
-        "seconds": 0.001622,
+        "seconds": 0.001688,
         "result": "passed"
       },
       {
         "test": "it rejects invalid code redemption before consuming a code or issuing a token with data set \"('expired', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects invalid code redemption before consuming a code or issuing a token with data set \"('expired', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "assertions": 2,
-        "seconds": 0.000253,
+        "seconds": 0.000225,
         "result": "passed"
       },
       {
         "test": "it rejects invalid code redemption before consuming a code or issuing a token with data set \"('other-client', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects invalid code redemption before consuming a code or issuing a token with data set \"('other-client', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "assertions": 2,
-        "seconds": 0.000223,
+        "seconds": 0.000201,
         "result": "passed"
       },
       {
         "test": "it rejects invalid code redemption before consuming a code or issuing a token with data set \"('missing-code', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects invalid code redemption before consuming a code or issuing a token with data set \"('missing-code', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "assertions": 2,
-        "seconds": 0.000205,
+        "seconds": 0.000189,
         "result": "passed"
       },
       {
         "test": "it rejects invalid code redemption before consuming a code or issuing a token with data set \"('redirect', 'Raxos\\OAuth2\\Server\\Error\\Red…eption')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects invalid code redemption before consuming a code or issuing a token with data set \"('redirect', 'Raxos\\OAuth2\\Server\\Error\\Red…eption')\"",
         "assertions": 2,
-        "seconds": 0.000276,
+        "seconds": 0.000351,
         "result": "passed"
       },
       {
         "test": "it rejects invalid code redemption before consuming a code or issuing a token with data set \"('verifier', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects invalid code redemption before consuming a code or issuing a token with data set \"('verifier', 'Raxos\\OAuth2\\Server\\Error\\Inv…eption')\"",
         "assertions": 2,
-        "seconds": 0.000215,
+        "seconds": 0.000198,
         "result": "passed"
       },
       {
         "test": "it rejects malformed PKCE challenges with data set \"(null, 'S256')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects malformed PKCE challenges with data set \"(null, 'S256')\"",
         "assertions": 1,
-        "seconds": 0.000129,
+        "seconds": 0.000116,
         "result": "passed"
       },
       {
         "test": "it rejects malformed PKCE challenges with data set \"('', 'S256')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects malformed PKCE challenges with data set \"('', 'S256')\"",
         "assertions": 1,
-        "seconds": 0.00012,
+        "seconds": 0.000113,
         "result": "passed"
       },
       {
         "test": "it rejects malformed PKCE challenges with data set \"('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx…xxxxxx', 'S256')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects malformed PKCE challenges with data set \"('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx…xxxxxx', 'S256')\"",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000121,
         "result": "passed"
       },
       {
         "test": "it rejects malformed PKCE challenges with data set \"('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!…!!!!!!', 'S256')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects malformed PKCE challenges with data set \"('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!…!!!!!!', 'S256')\"",
         "assertions": 1,
-        "seconds": 0.000122,
+        "seconds": 0.000131,
         "result": "passed"
       },
       {
         "test": "it rejects malformed PKCE challenges with data set \"([], 'S256')\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects malformed PKCE challenges with data set \"([], 'S256')\"",
         "assertions": 1,
-        "seconds": 0.00012,
+        "seconds": 0.000117,
         "result": "passed"
       },
       {
         "test": "it rejects malformed PKCE challenges with data set \"('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx…xxxxxx', null)\"",
         "file": "oauth2/tests/AuthorizationTest.php::it rejects malformed PKCE challenges with data set \"('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx…xxxxxx', null)\"",
         "assertions": 1,
-        "seconds": 0.000119,
+        "seconds": 0.000107,
         "result": "passed"
       }
     ],
@@ -1471,133 +1688,133 @@
         "test": "it exports the same document as JSON and YAML with stable path ordering",
         "file": "openapi/tests/DocumentTest.php::it exports the same document as JSON and YAML with stable path ordering",
         "assertions": 5,
-        "seconds": 0.024347,
+        "seconds": 0.023202,
         "result": "passed"
       },
       {
         "test": "it documents attributed routes and recursive responses without executing handlers",
         "file": "openapi/tests/DocumentTest.php::it documents attributed routes and recursive responses without executing handlers",
         "assertions": 11,
-        "seconds": 0.00529,
+        "seconds": 0.005674,
         "result": "passed"
       },
       {
         "test": "it respects an explicit controller selection when generating documentation",
         "file": "openapi/tests/DocumentTest.php::it respects an explicit controller selection when generating documentation",
         "assertions": 1,
-        "seconds": 0.000152,
+        "seconds": 0.000133,
         "result": "passed"
       },
       {
         "test": "it describes recursive DTOs with booleans, arrays and nullable references",
         "file": "openapi/tests/SchemaTest.php::it describes recursive DTOs with booleans, arrays and nullable references",
         "assertions": 9,
-        "seconds": 0.005168,
+        "seconds": 0.004377,
         "result": "passed"
       },
       {
         "test": "it reserves recursive ArrayShape components and keeps nested generic types",
         "file": "openapi/tests/SchemaTest.php::it reserves recursive ArrayShape components and keeps nested generic types",
         "assertions": 9,
-        "seconds": 0.000869,
+        "seconds": 0.00082,
         "result": "passed"
       },
       {
         "test": "it emits OpenAPI 3.1 numeric constraints and null unions",
         "file": "openapi/tests/SchemaTest.php::it emits OpenAPI 3.1 numeric constraints and null unions",
         "assertions": 6,
-        "seconds": 0.000161,
+        "seconds": 0.000151,
         "result": "passed"
       },
       {
         "test": "it allows null in nullable literal enums and supports null-first unions",
         "file": "openapi/tests/SchemaTest.php::it allows null in nullable literal enums and supports null-first unions",
         "assertions": 1,
-        "seconds": 0.00012,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it validates recursive DTO payloads against their generated JSON Schema with data set \"(true, true)\"",
         "file": "openapi/tests/SchemaTest.php::it validates recursive DTO payloads against their generated JSON Schema with data set \"(true, true)\"",
         "assertions": 1,
-        "seconds": 0.017709,
+        "seconds": 0.016543,
         "result": "passed"
       },
       {
         "test": "it validates recursive DTO payloads against their generated JSON Schema with data set \"(false, true)\"",
         "file": "openapi/tests/SchemaTest.php::it validates recursive DTO payloads against their generated JSON Schema with data set \"(false, true)\"",
         "assertions": 1,
-        "seconds": 0.00051,
+        "seconds": 0.000446,
         "result": "passed"
       },
       {
         "test": "it validates recursive DTO payloads against their generated JSON Schema with data set \"('true', false)\"",
         "file": "openapi/tests/SchemaTest.php::it validates recursive DTO payloads against their generated JSON Schema with data set \"('true', false)\"",
         "assertions": 1,
-        "seconds": 0.000287,
+        "seconds": 0.000259,
         "result": "passed"
       },
       {
         "test": "it validates recursive DTO payloads against their generated JSON Schema with data set \"(1, false)\"",
         "file": "openapi/tests/SchemaTest.php::it validates recursive DTO payloads against their generated JSON Schema with data set \"(1, false)\"",
         "assertions": 1,
-        "seconds": 0.000268,
+        "seconds": 0.000235,
         "result": "passed"
       },
       {
         "test": "it validates recursive DTO payloads against their generated JSON Schema with data set \"(null, false)\"",
         "file": "openapi/tests/SchemaTest.php::it validates recursive DTO payloads against their generated JSON Schema with data set \"(null, false)\"",
         "assertions": 1,
-        "seconds": 0.00026,
+        "seconds": 0.000228,
         "result": "passed"
       },
       {
         "test": "it validates nullable number constraints including exclusive bounds and multiples with data set \"(null, true)\"",
         "file": "openapi/tests/SchemaTest.php::it validates nullable number constraints including exclusive bounds and multiples with data set \"(null, true)\"",
         "assertions": 1,
-        "seconds": 0.001007,
+        "seconds": 0.000919,
         "result": "passed"
       },
       {
         "test": "it validates nullable number constraints including exclusive bounds and multiples with data set \"(0.5, false)\"",
         "file": "openapi/tests/SchemaTest.php::it validates nullable number constraints including exclusive bounds and multiples with data set \"(0.5, false)\"",
         "assertions": 1,
-        "seconds": 0.000191,
+        "seconds": 0.000194,
         "result": "passed"
       },
       {
         "test": "it validates nullable number constraints including exclusive bounds and multiples with data set \"(0.75, true)\"",
         "file": "openapi/tests/SchemaTest.php::it validates nullable number constraints including exclusive bounds and multiples with data set \"(0.75, true)\"",
         "assertions": 1,
-        "seconds": 0.000179,
+        "seconds": 0.00017,
         "result": "passed"
       },
       {
         "test": "it validates nullable number constraints including exclusive bounds and multiples with data set \"(2.5, true)\"",
         "file": "openapi/tests/SchemaTest.php::it validates nullable number constraints including exclusive bounds and multiples with data set \"(2.5, true)\"",
         "assertions": 1,
-        "seconds": 0.000177,
+        "seconds": 0.000161,
         "result": "passed"
       },
       {
         "test": "it validates nullable number constraints including exclusive bounds and multiples with data set \"(2.75, false)\"",
         "file": "openapi/tests/SchemaTest.php::it validates nullable number constraints including exclusive bounds and multiples with data set \"(2.75, false)\"",
         "assertions": 1,
-        "seconds": 0.000179,
+        "seconds": 0.000159,
         "result": "passed"
       },
       {
         "test": "it validates nullable number constraints including exclusive bounds and multiples with data set \"(0.8, false)\"",
         "file": "openapi/tests/SchemaTest.php::it validates nullable number constraints including exclusive bounds and multiples with data set \"(0.8, false)\"",
         "assertions": 1,
-        "seconds": 0.000185,
+        "seconds": 0.000161,
         "result": "passed"
       },
       {
         "test": "it does not weaken canonical components when a nullable reference is requested first",
         "file": "openapi/tests/SchemaTest.php::it does not weaken canonical components when a nullable reference is requested first",
         "assertions": 3,
-        "seconds": 0.000172,
+        "seconds": 0.000162,
         "result": "passed"
       }
     ],
@@ -1606,35 +1823,35 @@
         "test": "it rejects invalid quotas and intervals",
         "file": "rate-limit/tests/RateLimiterTest.php::it rejects invalid quotas and intervals",
         "assertions": 2,
-        "seconds": 0.023953,
+        "seconds": 0.020039,
         "result": "passed"
       },
       {
         "test": "it requires a Redis store that supports atomic commands",
         "file": "rate-limit/tests/RateLimiterTest.php::it requires a Redis store that supports atomic commands",
         "assertions": 1,
-        "seconds": 0.000207,
+        "seconds": 0.000284,
         "result": "passed"
       },
       {
         "test": "it increments atomically and retains the original expiry across requests",
         "file": "rate-limit/tests/RateLimiterTest.php::it increments atomically and retains the original expiry across requests",
         "assertions": 6,
-        "seconds": 0.001527,
+        "seconds": 0.001287,
         "result": "passed"
       },
       {
         "test": "it uses the interval-specific key and throws only after the quota is exceeded",
         "file": "rate-limit/tests/RateLimiterTest.php::it uses the interval-specific key and throws only after the quota is exceeded",
         "assertions": 11,
-        "seconds": 0.000721,
+        "seconds": 0.000707,
         "result": "passed"
       },
       {
         "test": "it reads a status without incrementing operations",
         "file": "rate-limit/tests/RateLimiterTest.php::it reads a status without incrementing operations",
         "assertions": 5,
-        "seconds": 0.000173,
+        "seconds": 0.000146,
         "result": "passed"
       }
     ],
@@ -1643,133 +1860,133 @@
         "test": "it reflects classes, attributes, properties and invokable methods",
         "file": "reflection/tests/ReflectorsTest.php::it reflects classes, attributes, properties and invokable methods",
         "assertions": 12,
-        "seconds": 0.006797,
+        "seconds": 0.006429,
         "result": "passed"
       },
       {
         "test": "it reflects callable parameters by name and position, including defaults and nullability",
         "file": "reflection/tests/ReflectorsTest.php::it reflects callable parameters by name and position, including defaults and nullability",
         "assertions": 5,
-        "seconds": 0.000144,
+        "seconds": 0.000122,
         "result": "passed"
       },
       {
         "test": "it preserves intersection groups in DNF union types",
         "file": "reflection/tests/ReflectorsTest.php::it preserves intersection groups in DNF union types",
         "assertions": 3,
-        "seconds": 0.000139,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('mixed', 123, true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('mixed', 123, true)\"",
         "assertions": 1,
-        "seconds": 0.003711,
+        "seconds": 0.003685,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('mixed', null, true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('mixed', null, true)\"",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('true', true, true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('true', true, true)\"",
         "assertions": 1,
-        "seconds": 0.000115,
+        "seconds": 0.000102,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('true', false, false)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('true', false, false)\"",
         "assertions": 1,
-        "seconds": 0.000115,
+        "seconds": 0.000103,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('false', false, true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('false', false, true)\"",
         "assertions": 1,
-        "seconds": 0.000113,
+        "seconds": 0.0001,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('false', true, false)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('false', true, false)\"",
         "assertions": 1,
-        "seconds": 0.000113,
+        "seconds": 0.000101,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('null', null, true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('null', null, true)\"",
         "assertions": 1,
-        "seconds": 0.000114,
+        "seconds": 0.000101,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('null', 0, false)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('null', 0, false)\"",
         "assertions": 1,
-        "seconds": 0.000117,
+        "seconds": 0.000103,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('never', 1, false)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('never', 1, false)\"",
         "assertions": 1,
-        "seconds": 0.000115,
+        "seconds": 0.000103,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('void', null, false)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('void', null, false)\"",
         "assertions": 1,
-        "seconds": 0.000113,
+        "seconds": 0.000102,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('int|string', 1, true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('int|string', 1, true)\"",
         "assertions": 1,
-        "seconds": 0.000118,
+        "seconds": 0.000103,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('int|string', [], false)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('int|string', [], false)\"",
         "assertions": 1,
-        "seconds": 0.000118,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('?string', null, true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('?string', null, true)\"",
         "assertions": 1,
-        "seconds": 0.000114,
+        "seconds": 0.000101,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('?string', 'text', true)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('?string', 'text', true)\"",
         "assertions": 1,
-        "seconds": 0.000112,
+        "seconds": 0.0001,
         "result": "passed"
       },
       {
         "test": "it accepts PHP literal and mixed types with data set \"('?string', 1, false)\"",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts PHP literal and mixed types with data set \"('?string', 1, false)\"",
         "assertions": 1,
-        "seconds": 0.000112,
+        "seconds": 0.000101,
         "result": "passed"
       },
       {
         "test": "it accepts interface instances and intersections",
         "file": "reflection/tests/TypeReflectorTest.php::it accepts interface instances and intersections",
         "assertions": 5,
-        "seconds": 0.000125,
+        "seconds": 0.000113,
         "result": "passed"
       }
     ],
@@ -1778,128 +1995,191 @@
         "test": "it resolves root routes in both router implementations",
         "file": "router/tests/RoutingTest.php::it resolves root routes in both router implementations",
         "assertions": 2,
-        "seconds": 0.020147,
+        "seconds": 0.018919,
         "result": "passed"
       },
       {
         "test": "it keeps resolved routes scoped to the router instance",
         "file": "router/tests/RoutingTest.php::it keeps resolved routes scoped to the router instance",
         "assertions": 1,
-        "seconds": 0.000199,
+        "seconds": 0.000193,
         "result": "passed"
       },
       {
         "test": "it invalidates route caches and compiles groups only after registration",
         "file": "router/tests/RoutingTest.php::it invalidates route caches and compiles groups only after registration",
         "assertions": 4,
-        "seconds": 0.002315,
+        "seconds": 0.00208,
         "result": "passed"
       },
       {
         "test": "it runs preflight middleware without invoking the requested handler",
         "file": "router/tests/RoutingTest.php::it runs preflight middleware without invoking the requested handler",
         "assertions": 4,
-        "seconds": 0.0005,
+        "seconds": 0.000471,
         "result": "passed"
       },
       {
         "test": "it honors explicit OPTIONS handlers and rejects unavailable preflight methods",
         "file": "router/tests/RoutingTest.php::it honors explicit OPTIONS handlers and rejects unavailable preflight methods",
         "assertions": 2,
-        "seconds": 0.000432,
+        "seconds": 0.000425,
         "result": "passed"
       },
       {
         "test": "it finds filtered attributes regardless of their original index",
         "file": "router/tests/RoutingTest.php::it finds filtered attributes regardless of their original index",
         "assertions": 1,
-        "seconds": 0.000304,
+        "seconds": 0.000255,
         "result": "passed"
       },
       {
         "test": "it returns 404 and 405 without invoking unrelated handlers",
         "file": "router/tests/RoutingTest.php::it returns 404 and 405 without invoking unrelated handlers",
         "assertions": 2,
-        "seconds": 0.000285,
+        "seconds": 0.000252,
         "result": "passed"
       },
       {
         "test": "it injects typed parameters into compiled and dynamic routes with data set \"(false)\"",
         "file": "router/tests/RoutingTest.php::it injects typed parameters into compiled and dynamic routes with data set \"(false)\"",
         "assertions": 3,
-        "seconds": 0.00021,
+        "seconds": 0.000181,
         "result": "passed"
       },
       {
         "test": "it injects typed parameters into compiled and dynamic routes with data set \"(true)\"",
         "file": "router/tests/RoutingTest.php::it injects typed parameters into compiled and dynamic routes with data set \"(true)\"",
         "assertions": 3,
-        "seconds": 0.000157,
+        "seconds": 0.000149,
         "result": "passed"
       }
     ],
     "search": [
       {
+        "test": "it paginates filtered model views through the Passly search and visibility path with data set \"dataset \"sqlite\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it paginates filtered model views through the Passly search and visibility path with data set \"dataset \"sqlite\"\"",
+        "assertions": 7,
+        "seconds": 0.012491,
+        "result": "passed"
+      },
+      {
+        "test": "it paginates filtered model views through the Passly search and visibility path with data set \"dataset \"mysql\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it paginates filtered model views through the Passly search and visibility path with data set \"dataset \"mysql\"\"",
+        "assertions": 7,
+        "seconds": 0.01665,
+        "result": "passed"
+      },
+      {
+        "test": "it paginates filtered model views through the Passly search and visibility path with data set \"dataset \"mariadb\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it paginates filtered model views through the Passly search and visibility path with data set \"dataset \"mariadb\"\"",
+        "assertions": 7,
+        "seconds": 0.007127,
+        "result": "passed"
+      },
+      {
+        "test": "it combines a structured filter with existing query conditions with data set \"dataset \"sqlite\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it combines a structured filter with existing query conditions with data set \"dataset \"sqlite\"\"",
+        "assertions": 4,
+        "seconds": 0.00064,
+        "result": "passed"
+      },
+      {
+        "test": "it combines a structured filter with existing query conditions with data set \"dataset \"mysql\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it combines a structured filter with existing query conditions with data set \"dataset \"mysql\"\"",
+        "assertions": 4,
+        "seconds": 0.032414,
+        "result": "passed"
+      },
+      {
+        "test": "it combines a structured filter with existing query conditions with data set \"dataset \"mariadb\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it combines a structured filter with existing query conditions with data set \"dataset \"mariadb\"\"",
+        "assertions": 4,
+        "seconds": 0.00823,
+        "result": "passed"
+      },
+      {
+        "test": "it returns a correctly typed empty page for a filter without matches with data set \"dataset \"sqlite\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it returns a correctly typed empty page for a filter without matches with data set \"dataset \"sqlite\"\"",
+        "assertions": 4,
+        "seconds": 0.000472,
+        "result": "passed"
+      },
+      {
+        "test": "it returns a correctly typed empty page for a filter without matches with data set \"dataset \"mysql\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it returns a correctly typed empty page for a filter without matches with data set \"dataset \"mysql\"\"",
+        "assertions": 4,
+        "seconds": 0.013105,
+        "result": "passed"
+      },
+      {
+        "test": "it returns a correctly typed empty page for a filter without matches with data set \"dataset \"mariadb\"\"",
+        "file": "search/tests/FilterPaginationTest.php::it returns a correctly typed empty page for a filter without matches with data set \"dataset \"mariadb\"\"",
+        "assertions": 4,
+        "seconds": 0.00629,
+        "result": "passed"
+      },
+      {
         "test": "it preserves codepoint positions and query syntax",
         "file": "search/tests/LexerTest.php::it preserves codepoint positions and query syntax",
         "assertions": 3,
-        "seconds": 0.012472,
+        "seconds": 0.015341,
         "result": "passed"
       },
       {
         "test": "it tokenizes long Unicode input without losing characters",
         "file": "search/tests/LexerTest.php::it tokenizes long Unicode input without losing characters",
         "assertions": 2,
-        "seconds": 0.004598,
+        "seconds": 0.004691,
         "result": "passed"
       },
       {
         "test": "it rejects invalid UTF8 input",
         "file": "search/tests/LexerTest.php::it rejects invalid UTF8 input",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000134,
         "result": "passed"
       },
       {
         "test": "it parses signed numeric ranges with open and closed endpoints with data set \"('price:1..9', 1, 9)\"",
         "file": "search/tests/ParserTest.php::it parses signed numeric ranges with open and closed endpoints with data set \"('price:1..9', 1, 9)\"",
         "assertions": 5,
-        "seconds": 0.005009,
+        "seconds": 0.004506,
         "result": "passed"
       },
       {
         "test": "it parses signed numeric ranges with open and closed endpoints with data set \"('price:..9', null, 9)\"",
         "file": "search/tests/ParserTest.php::it parses signed numeric ranges with open and closed endpoints with data set \"('price:..9', null, 9)\"",
         "assertions": 5,
-        "seconds": 0.000147,
+        "seconds": 0.000156,
         "result": "passed"
       },
       {
         "test": "it parses signed numeric ranges with open and closed endpoints with data set \"('price:-2..', -2, null)\"",
         "file": "search/tests/ParserTest.php::it parses signed numeric ranges with open and closed endpoints with data set \"('price:-2..', -2, null)\"",
         "assertions": 5,
-        "seconds": 0.000132,
+        "seconds": 0.000131,
         "result": "passed"
       },
       {
         "test": "it parses signed numeric ranges with open and closed endpoints with data set \"('PRICE:1.5..3.5', 1.5, 3.5)\"",
         "file": "search/tests/ParserTest.php::it parses signed numeric ranges with open and closed endpoints with data set \"('PRICE:1.5..3.5', 1.5, 3.5)\"",
         "assertions": 5,
-        "seconds": 0.000134,
+        "seconds": 0.000128,
         "result": "passed"
       },
       {
         "test": "it normalizes quoted text, scalar fields and empty queries",
         "file": "search/tests/ParserTest.php::it normalizes quoted text, scalar fields and empty queries",
         "assertions": 6,
-        "seconds": 0.000313,
+        "seconds": 0.000187,
         "result": "passed"
       },
       {
         "test": "it keeps zero-valued structured filter inputs and omits missing or empty ones",
         "file": "search/tests/ParserTest.php::it keeps zero-valued structured filter inputs and omits missing or empty ones",
         "assertions": 4,
-        "seconds": 0.000535,
+        "seconds": 0.000113,
         "result": "passed"
       }
     ],
@@ -1908,483 +2188,483 @@
         "test": "it round trips HMAC tokens with an explicitly permitted algorithm with data set \"(Raxos\\Security\\Jwt\\JwtAlgorithm Enum (HS256, 'HS256'))\"",
         "file": "security/tests/JwtTest.php::it round trips HMAC tokens with an explicitly permitted algorithm with data set \"(Raxos\\Security\\Jwt\\JwtAlgorithm Enum (HS256, 'HS256'))\"",
         "assertions": 1,
-        "seconds": 0.008105,
+        "seconds": 0.007883,
         "result": "passed"
       },
       {
         "test": "it round trips HMAC tokens with an explicitly permitted algorithm with data set \"(Raxos\\Security\\Jwt\\JwtAlgorithm Enum (HS384, 'HS384'))\"",
         "file": "security/tests/JwtTest.php::it round trips HMAC tokens with an explicitly permitted algorithm with data set \"(Raxos\\Security\\Jwt\\JwtAlgorithm Enum (HS384, 'HS384'))\"",
         "assertions": 1,
-        "seconds": 0.00014,
+        "seconds": 0.000126,
         "result": "passed"
       },
       {
         "test": "it round trips HMAC tokens with an explicitly permitted algorithm with data set \"(Raxos\\Security\\Jwt\\JwtAlgorithm Enum (HS512, 'HS512'))\"",
         "file": "security/tests/JwtTest.php::it round trips HMAC tokens with an explicitly permitted algorithm with data set \"(Raxos\\Security\\Jwt\\JwtAlgorithm Enum (HS512, 'HS512'))\"",
         "assertions": 1,
-        "seconds": 0.000127,
+        "seconds": 0.000112,
         "result": "passed"
       },
       {
         "test": "it keeps the HS256 default used by Passly",
         "file": "security/tests/JwtTest.php::it keeps the HS256 default used by Passly",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it rejects asymmetric public keys as HMAC secrets even in a mixed allowlist",
         "file": "security/tests/JwtTest.php::it rejects asymmetric public keys as HMAC secrets even in a mixed allowlist",
         "assertions": 1,
-        "seconds": 0.01278,
+        "seconds": 0.010353,
         "result": "passed"
       },
       {
         "test": "it requires RSA to be explicitly allowed",
         "file": "security/tests/JwtTest.php::it requires RSA to be explicitly allowed",
         "assertions": 2,
-        "seconds": 0.020069,
+        "seconds": 0.008292,
         "result": "passed"
       },
       {
         "test": "it rejects an empty algorithm policy",
         "file": "security/tests/JwtTest.php::it rejects an empty algorithm policy",
         "assertions": 1,
-        "seconds": 0.000125,
+        "seconds": 0.00012,
         "result": "passed"
       },
       {
         "test": "it verifies signatures before accepting claims",
         "file": "security/tests/JwtTest.php::it verifies signatures before accepting claims",
         "assertions": 1,
-        "seconds": 0.000349,
+        "seconds": 0.000372,
         "result": "passed"
       },
       {
         "test": "it enforces expiration and not before",
         "file": "security/tests/JwtTest.php::it enforces expiration and not before",
         "assertions": 3,
-        "seconds": 0.000622,
+        "seconds": 0.000643,
         "result": "passed"
       },
       {
         "test": "it rejects scalar JWT segments",
         "file": "security/tests/JwtTest.php::it rejects scalar JWT segments",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000113,
         "result": "passed"
       },
       {
         "test": "it selects the configured key by its header id",
         "file": "security/tests/JwtTest.php::it selects the configured key by its header id",
         "assertions": 1,
-        "seconds": 0.000121,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it rejects missing unknown or malformed key ids with multiple keys with data set \"([])\"",
         "file": "security/tests/JwtTest.php::it rejects missing unknown or malformed key ids with multiple keys with data set \"([])\"",
         "assertions": 1,
-        "seconds": 0.000139,
+        "seconds": 0.000125,
         "result": "passed"
       },
       {
         "test": "it rejects missing unknown or malformed key ids with multiple keys with data set \"(['unknown'])\"",
         "file": "security/tests/JwtTest.php::it rejects missing unknown or malformed key ids with multiple keys with data set \"(['unknown'])\"",
         "assertions": 1,
-        "seconds": 0.000135,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it rejects missing unknown or malformed key ids with multiple keys with data set \"([['active']])\"",
         "file": "security/tests/JwtTest.php::it rejects missing unknown or malformed key ids with multiple keys with data set \"([['active']])\"",
         "assertions": 1,
-        "seconds": 0.000131,
+        "seconds": 0.000119,
         "result": "passed"
       },
       {
         "test": "it rejects missing unknown or malformed key ids with multiple keys with data set \"([0])\"",
         "file": "security/tests/JwtTest.php::it rejects missing unknown or malformed key ids with multiple keys with data set \"([0])\"",
         "assertions": 1,
-        "seconds": 0.000136,
+        "seconds": 0.000121,
         "result": "passed"
       },
       {
         "test": "it preserves binary and falsey input in every Base64 variant with data set \"('')\"",
         "file": "security/tests/PrimitivesTest.php::it preserves binary and falsey input in every Base64 variant with data set \"('')\"",
         "assertions": 3,
-        "seconds": 0.018862,
+        "seconds": 0.018778,
         "result": "passed"
       },
       {
         "test": "it preserves binary and falsey input in every Base64 variant with data set \"('0')\"",
         "file": "security/tests/PrimitivesTest.php::it preserves binary and falsey input in every Base64 variant with data set \"('0')\"",
         "assertions": 3,
-        "seconds": 0.000125,
+        "seconds": 0.000134,
         "result": "passed"
       },
       {
         "test": "it preserves binary and falsey input in every Base64 variant with data set \"(Binary String: 0x00fffe00)\"",
         "file": "security/tests/PrimitivesTest.php::it preserves binary and falsey input in every Base64 variant with data set \"(Binary String: 0x00fffe00)\"",
         "assertions": 3,
-        "seconds": 0.000122,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it preserves binary and falsey input in every Base64 variant with data set \"('Hello world!')\"",
         "file": "security/tests/PrimitivesTest.php::it preserves binary and falsey input in every Base64 variant with data set \"('Hello world!')\"",
         "assertions": 3,
-        "seconds": 0.000119,
+        "seconds": 0.000109,
         "result": "passed"
       },
       {
         "test": "it preserves binary and falsey input in every Base64 variant with data set \"('é😀')\"",
         "file": "security/tests/PrimitivesTest.php::it preserves binary and falsey input in every Base64 variant with data set \"('é😀')\"",
         "assertions": 3,
-        "seconds": 0.000118,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it preserves binary and falsey input in every Base64 variant with data set \"('raxosraxosraxosraxosraxosraxo…sraxos')\"",
         "file": "security/tests/PrimitivesTest.php::it preserves binary and falsey input in every Base64 variant with data set \"('raxosraxosraxosraxosraxosraxo…sraxos')\"",
         "assertions": 3,
-        "seconds": 0.000174,
+        "seconds": 0.00016,
         "result": "passed"
       },
       {
         "test": "it rejects malformed Base64 with data set \"('%%%')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects malformed Base64 with data set \"('%%%')\"",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000115,
         "result": "passed"
       },
       {
         "test": "it rejects malformed Base64 with data set \"('a')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects malformed Base64 with data set \"('a')\"",
         "assertions": 1,
-        "seconds": 0.000115,
+        "seconds": 0.000102,
         "result": "passed"
       },
       {
         "test": "it rejects malformed Base64 with data set \"('YWJj!')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects malformed Base64 with data set \"('YWJj!')\"",
         "assertions": 1,
-        "seconds": 0.000114,
+        "seconds": 0.000104,
         "result": "passed"
       },
       {
         "test": "it matches the RFC4231 HMAC SHA256 vector and detects tampering",
         "file": "security/tests/PrimitivesTest.php::it matches the RFC4231 HMAC SHA256 vector and detects tampering",
         "assertions": 4,
-        "seconds": 0.000339,
+        "seconds": 0.000388,
         "result": "passed"
       },
       {
         "test": "it generates Nano IDs with the requested length and alphabet with data set \"(1)\"",
         "file": "security/tests/PrimitivesTest.php::it generates Nano IDs with the requested length and alphabet with data set \"(1)\"",
         "assertions": 2,
-        "seconds": 0.000427,
+        "seconds": 0.000667,
         "result": "passed"
       },
       {
         "test": "it generates Nano IDs with the requested length and alphabet with data set \"(16)\"",
         "file": "security/tests/PrimitivesTest.php::it generates Nano IDs with the requested length and alphabet with data set \"(16)\"",
         "assertions": 2,
-        "seconds": 0.000121,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it generates Nano IDs with the requested length and alphabet with data set \"(21)\"",
         "file": "security/tests/PrimitivesTest.php::it generates Nano IDs with the requested length and alphabet with data set \"(21)\"",
         "assertions": 2,
-        "seconds": 0.000119,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it generates Nano IDs with the requested length and alphabet with data set \"(64)\"",
         "file": "security/tests/PrimitivesTest.php::it generates Nano IDs with the requested length and alphabet with data set \"(64)\"",
         "assertions": 2,
-        "seconds": 0.000117,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it rejects non-positive Nano ID lengths with data set \"(0)\"",
         "file": "security/tests/PrimitivesTest.php::it rejects non-positive Nano ID lengths with data set \"(0)\"",
         "assertions": 1,
-        "seconds": 0.000122,
+        "seconds": 0.000132,
         "result": "passed"
       },
       {
         "test": "it rejects non-positive Nano ID lengths with data set \"(-1)\"",
         "file": "security/tests/PrimitivesTest.php::it rejects non-positive Nano ID lengths with data set \"(-1)\"",
         "assertions": 1,
-        "seconds": 0.000118,
+        "seconds": 0.000107,
         "result": "passed"
       },
       {
         "test": "it round trips ULID timestamps including the 48-bit boundaries with data set \"(0)\"",
         "file": "security/tests/PrimitivesTest.php::it round trips ULID timestamps including the 48-bit boundaries with data set \"(0)\"",
         "assertions": 4,
-        "seconds": 0.000142,
+        "seconds": 0.000132,
         "result": "passed"
       },
       {
         "test": "it round trips ULID timestamps including the 48-bit boundaries with data set \"(1)\"",
         "file": "security/tests/PrimitivesTest.php::it round trips ULID timestamps including the 48-bit boundaries with data set \"(1)\"",
         "assertions": 4,
-        "seconds": 0.000127,
+        "seconds": 0.000131,
         "result": "passed"
       },
       {
         "test": "it round trips ULID timestamps including the 48-bit boundaries with data set \"(1469918176387)\"",
         "file": "security/tests/PrimitivesTest.php::it round trips ULID timestamps including the 48-bit boundaries with data set \"(1469918176387)\"",
         "assertions": 4,
-        "seconds": 0.000127,
+        "seconds": 0.000114,
         "result": "passed"
       },
       {
         "test": "it round trips ULID timestamps including the 48-bit boundaries with data set \"(281474976710655)\"",
         "file": "security/tests/PrimitivesTest.php::it round trips ULID timestamps including the 48-bit boundaries with data set \"(281474976710655)\"",
         "assertions": 4,
-        "seconds": 0.000126,
+        "seconds": 0.000113,
         "result": "passed"
       },
       {
         "test": "it generates strictly increasing ULIDs within one millisecond",
         "file": "security/tests/PrimitivesTest.php::it generates strictly increasing ULIDs within one millisecond",
         "assertions": 2,
-        "seconds": 0.000199,
+        "seconds": 0.000183,
         "result": "passed"
       },
       {
         "test": "it rejects out-of-range ULID timestamps with data set \"(-1, 'Raxos\\Error\\InvalidArgumentException')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects out-of-range ULID timestamps with data set \"(-1, 'Raxos\\Error\\InvalidArgumentException')\"",
         "assertions": 1,
-        "seconds": 0.000127,
+        "seconds": 0.00012,
         "result": "passed"
       },
       {
         "test": "it rejects out-of-range ULID timestamps with data set \"(281474976710656, 'Raxos\\Security\\Error\\UlidTime…eption')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects out-of-range ULID timestamps with data set \"(281474976710656, 'Raxos\\Security\\Error\\UlidTime…eption')\"",
         "assertions": 1,
-        "seconds": 0.000302,
+        "seconds": 0.0003,
         "result": "passed"
       },
       {
         "test": "it rejects malformed ULID strings with data set \"('', 'Raxos\\Security\\Error\\UlidInva…eption')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects malformed ULID strings with data set \"('', 'Raxos\\Security\\Error\\UlidInva…eption')\"",
         "assertions": 1,
-        "seconds": 0.000194,
+        "seconds": 0.000246,
         "result": "passed"
       },
       {
         "test": "it rejects malformed ULID strings with data set \"('IIIIIIIIIIIIIIIIIIIIIIIIII', 'Raxos\\Security\\Error\\UlidWron…eption')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects malformed ULID strings with data set \"('IIIIIIIIIIIIIIIIIIIIIIIIII', 'Raxos\\Security\\Error\\UlidWron…eption')\"",
         "assertions": 1,
-        "seconds": 0.000285,
+        "seconds": 0.000398,
         "result": "passed"
       },
       {
         "test": "it rejects malformed ULID strings with data set \"('ZZZZZZZZZZZZZZZZZZZZZZZZZZ', 'Raxos\\Security\\Error\\UlidTime…eption')\"",
         "file": "security/tests/PrimitivesTest.php::it rejects malformed ULID strings with data set \"('ZZZZZZZZZZZZZZZZZZZZZZZZZZ', 'Raxos\\Security\\Error\\UlidTime…eption')\"",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000147,
         "result": "passed"
       },
       {
         "test": "it generates cryptographic tokens containing the requested number of bytes with data set \"(false)\"",
         "file": "security/tests/PrimitivesTest.php::it generates cryptographic tokens containing the requested number of bytes with data set \"(false)\"",
         "assertions": 1,
-        "seconds": 0.000186,
+        "seconds": 0.000208,
         "result": "passed"
       },
       {
         "test": "it generates cryptographic tokens containing the requested number of bytes with data set \"(true)\"",
         "file": "security/tests/PrimitivesTest.php::it generates cryptographic tokens containing the requested number of bytes with data set \"(true)\"",
         "assertions": 2,
-        "seconds": 0.000129,
+        "seconds": 0.000138,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(59, '94287082')\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(59, '94287082')\"",
         "assertions": 1,
-        "seconds": 0.034813,
+        "seconds": 0.033841,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(1111111109, '07081804')\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(1111111109, '07081804')\"",
         "assertions": 1,
-        "seconds": 0.000136,
+        "seconds": 0.000141,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(1111111111, '14050471')\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(1111111111, '14050471')\"",
         "assertions": 1,
-        "seconds": 0.000131,
+        "seconds": 0.000118,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(1234567890, '89005924')\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(1234567890, '89005924')\"",
         "assertions": 1,
-        "seconds": 0.000124,
+        "seconds": 0.000113,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(2000000000, '69279037')\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(2000000000, '69279037')\"",
         "assertions": 1,
-        "seconds": 0.000122,
+        "seconds": 0.00011,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(20000000000, '65353130')\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA1 vectors before and after 2038 with data set \"(20000000000, '65353130')\"",
         "assertions": 1,
-        "seconds": 0.000124,
+        "seconds": 0.000107,
         "result": "passed"
       },
       {
         "test": "it verifies current and adjacent periods but rejects invalid codes",
         "file": "security/tests/TwoFactorTest.php::it verifies current and adjacent periods but rejects invalid codes",
         "assertions": 5,
-        "seconds": 0.000187,
+        "seconds": 0.000178,
         "result": "passed"
       },
       {
         "test": "it encodes provisioning labels and settings in the OTP URI",
         "file": "security/tests/TwoFactorTest.php::it encodes provisioning labels and settings in the OTP URI",
         "assertions": 2,
-        "seconds": 0.000389,
+        "seconds": 0.000355,
         "result": "passed"
       },
       {
         "test": "it rejects invalid two-factor settings with data set \"(0, 30)\"",
         "file": "security/tests/TwoFactorTest.php::it rejects invalid two-factor settings with data set \"(0, 30)\"",
         "assertions": 1,
-        "seconds": 0.000149,
+        "seconds": 0.000141,
         "result": "passed"
       },
       {
         "test": "it rejects invalid two-factor settings with data set \"(-1, 30)\"",
         "file": "security/tests/TwoFactorTest.php::it rejects invalid two-factor settings with data set \"(-1, 30)\"",
         "assertions": 1,
-        "seconds": 0.000132,
+        "seconds": 0.000111,
         "result": "passed"
       },
       {
         "test": "it rejects invalid two-factor settings with data set \"(6, 0)\"",
         "file": "security/tests/TwoFactorTest.php::it rejects invalid two-factor settings with data set \"(6, 0)\"",
         "assertions": 1,
-        "seconds": 0.000124,
+        "seconds": 0.000108,
         "result": "passed"
       },
       {
         "test": "it rejects invalid two-factor settings with data set \"(6, -1)\"",
         "file": "security/tests/TwoFactorTest.php::it rejects invalid two-factor settings with data set \"(6, -1)\"",
         "assertions": 1,
-        "seconds": 0.000116,
+        "seconds": 0.000111,
         "result": "passed"
       },
       {
         "test": "it rejects malformed or empty two-factor secrets with data set \"('')\"",
         "file": "security/tests/TwoFactorTest.php::it rejects malformed or empty two-factor secrets with data set \"('')\"",
         "assertions": 1,
-        "seconds": 0.000213,
+        "seconds": 0.000211,
         "result": "passed"
       },
       {
         "test": "it rejects malformed or empty two-factor secrets with data set \"('INVALID!')\"",
         "file": "security/tests/TwoFactorTest.php::it rejects malformed or empty two-factor secrets with data set \"('INVALID!')\"",
         "assertions": 1,
-        "seconds": 0.000123,
+        "seconds": 0.000111,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 59, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 59, …)\"",
         "assertions": 1,
-        "seconds": 0.000142,
+        "seconds": 0.000125,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 1111111109, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 1111111109, …)\"",
         "assertions": 1,
-        "seconds": 0.000135,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 1111111111, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 1111111111, …)\"",
         "assertions": 1,
-        "seconds": 0.000132,
+        "seconds": 0.000118,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 1234567890, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 1234567890, …)\"",
         "assertions": 1,
-        "seconds": 0.00013,
+        "seconds": 0.000115,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 2000000000, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 2000000000, …)\"",
         "assertions": 1,
-        "seconds": 0.000136,
+        "seconds": 0.000118,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 20000000000, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA256, 'sha256'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…JQGEZA', 20000000000, …)\"",
         "assertions": 1,
-        "seconds": 0.00013,
+        "seconds": 0.000118,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 59, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 59, …)\"",
         "assertions": 1,
-        "seconds": 0.000139,
+        "seconds": 0.000125,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 1111111109, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 1111111109, …)\"",
         "assertions": 1,
-        "seconds": 0.000141,
+        "seconds": 0.000123,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 1111111111, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 1111111111, …)\"",
         "assertions": 1,
-        "seconds": 0.000142,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 1234567890, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 1234567890, …)\"",
         "assertions": 1,
-        "seconds": 0.000139,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 2000000000, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 2000000000, …)\"",
         "assertions": 1,
-        "seconds": 0.000142,
+        "seconds": 0.000125,
         "result": "passed"
       },
       {
         "test": "it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 20000000000, …)\"",
         "file": "security/tests/TwoFactorTest.php::it matches the RFC6238 SHA256 and SHA512 vectors with data set \"(Raxos\\Security\\TwoFactor\\TwoFactorAuthAlgorithm Enum (SHA512, 'sha512'), 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQ…EZDGNA', 20000000000, …)\"",
         "assertions": 1,
-        "seconds": 0.000142,
+        "seconds": 0.000122,
         "result": "passed"
       }
     ],
@@ -2393,63 +2673,63 @@
         "test": "it parses empty quoted positional and option values",
         "file": "terminal/tests/ParserTest.php::it parses empty quoted positional and option values",
         "assertions": 3,
-        "seconds": 0.040309,
+        "seconds": 0.03053,
         "result": "passed"
       },
       {
         "test": "it rejects unterminated quotes immediately",
         "file": "terminal/tests/ParserTest.php::it rejects unterminated quotes immediately",
         "assertions": 2,
-        "seconds": 0.00016,
+        "seconds": 0.000126,
         "result": "passed"
       },
       {
         "test": "it preserves Unicode and escaped quotes",
         "file": "terminal/tests/ParserTest.php::it preserves Unicode and escaped quotes",
         "assertions": 1,
-        "seconds": 0.000114,
+        "seconds": 0.000106,
         "result": "passed"
       },
       {
         "test": "it preserves argv tokens without reparsing shell quoting",
         "file": "terminal/tests/ParserTest.php::it preserves argv tokens without reparsing shell quoting",
         "assertions": 2,
-        "seconds": 0.000128,
+        "seconds": 0.000121,
         "result": "passed"
       },
       {
         "test": "it keeps argv short options, negative positionals and repeated options intact",
         "file": "terminal/tests/ParserTest.php::it keeps argv short options, negative positionals and repeated options intact",
         "assertions": 3,
-        "seconds": 0.000134,
+        "seconds": 0.000117,
         "result": "passed"
       },
       {
         "test": "it returns no command for an empty argv",
         "file": "terminal/tests/ParserTest.php::it returns no command for an empty argv",
         "assertions": 1,
-        "seconds": 0.000115,
+        "seconds": 9.8e-05,
         "result": "passed"
       },
       {
         "test": "it parses raw boolean flags and quoted option values with data set \"('send --flag', [true])\"",
         "file": "terminal/tests/ParserTest.php::it parses raw boolean flags and quoted option values with data set \"('send --flag', [true])\"",
         "assertions": 1,
-        "seconds": 0.000156,
+        "seconds": 0.000126,
         "result": "passed"
       },
       {
         "test": "it parses raw boolean flags and quoted option values with data set \"('send --name=\"héllo world\"', ['héllo world'])\"",
         "file": "terminal/tests/ParserTest.php::it parses raw boolean flags and quoted option values with data set \"('send --name=\"héllo world\"', ['héllo world'])\"",
         "assertions": 1,
-        "seconds": 0.000136,
+        "seconds": 0.000124,
         "result": "passed"
       },
       {
         "test": "it parses raw boolean flags and quoted option values with data set \"('send -n=0', ['0'])\"",
         "file": "terminal/tests/ParserTest.php::it parses raw boolean flags and quoted option values with data set \"('send -n=0', ['0'])\"",
         "assertions": 1,
-        "seconds": 0.000128,
+        "seconds": 0.00011,
         "result": "passed"
       }
     ],
@@ -2458,70 +2738,70 @@
         "test": "it accepts one field and field arrays consistently",
         "file": "wallet/tests/BoardingPassTest.php::it accepts one field and field arrays consistently",
         "assertions": 2,
-        "seconds": 0.015631,
+        "seconds": 0.011851,
         "result": "passed"
       },
       {
         "test": "it serializes a boarding pass without optional fields",
         "file": "wallet/tests/BoardingPassTest.php::it serializes a boarding pass without optional fields",
         "assertions": 1,
-        "seconds": 0.000139,
+        "seconds": 0.000125,
         "result": "passed"
       },
       {
         "test": "it preserves explicit false and zero values in the Apple wire format",
         "file": "wallet/tests/ComponentsTest.php::it preserves explicit false and zero values in the Apple wire format",
         "assertions": 5,
-        "seconds": 0.003792,
+        "seconds": 0.003375,
         "result": "passed"
       },
       {
         "test": "it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (AZTEC, 'PKBarcodeFormatAztec'))\"",
         "file": "wallet/tests/ComponentsTest.php::it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (AZTEC, 'PKBarcodeFormatAztec'))\"",
         "assertions": 1,
-        "seconds": 0.000333,
+        "seconds": 0.000336,
         "result": "passed"
       },
       {
         "test": "it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (CODE128, 'PKBarcodeFormatCode128'))\"",
         "file": "wallet/tests/ComponentsTest.php::it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (CODE128, 'PKBarcodeFormatCode128'))\"",
         "assertions": 1,
-        "seconds": 0.000124,
+        "seconds": 0.000127,
         "result": "passed"
       },
       {
         "test": "it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (PDF417, 'PKBarcodeFormatPDF417'))\"",
         "file": "wallet/tests/ComponentsTest.php::it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (PDF417, 'PKBarcodeFormatPDF417'))\"",
         "assertions": 1,
-        "seconds": 0.000122,
+        "seconds": 0.000111,
         "result": "passed"
       },
       {
         "test": "it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (QR, 'PKBarcodeFormatQR'))\"",
         "file": "wallet/tests/ComponentsTest.php::it exports every supported Apple barcode format with data set \"(Raxos\\Wallet\\Apple\\Enum\\BarcodeFormat Enum (QR, 'PKBarcodeFormatQR'))\"",
         "assertions": 1,
-        "seconds": 0.000118,
+        "seconds": 0.000126,
         "result": "passed"
       },
       {
         "test": "it converts colors and uses the Apple RGB representation",
         "file": "wallet/tests/ComponentsTest.php::it converts colors and uses the Apple RGB representation",
         "assertions": 3,
-        "seconds": 0.000305,
+        "seconds": 0.000301,
         "result": "passed"
       },
       {
         "test": "it escapes localized strings without altering Unicode",
         "file": "wallet/tests/ComponentsTest.php::it escapes localized strings without altering Unicode",
         "assertions": 1,
-        "seconds": 0.00028,
+        "seconds": 0.000276,
         "result": "passed"
       },
       {
         "test": "it creates a readable ZIP with exact file contents and deletes the temporary artifact",
         "file": "wallet/tests/ComponentsTest.php::it creates a readable ZIP with exact file contents and deletes the temporary artifact",
         "assertions": 6,
-        "seconds": 0.001308,
+        "seconds": 0.001224,
         "result": "passed"
       }
     ]

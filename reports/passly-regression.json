@@ -1,0 +1,46 @@
+{
+  "verified_at": "2026-10-02T10:54:14.515154+00:00",
+  "endpoint": "GET /merchants/{merchant}/events/{event}/products?language=nl&limit=25",
+  "before": {
+    "status": 200,
+    "content_type": "text/plain",
+    "error": "ModelArrayList::makeVisible returned ArrayList; expected ModelArrayList"
+  },
+  "after_model_view_fix": {
+    "status": 500,
+    "error": "PDO SQLSTATE 42S21, driver code 1060: duplicate output column max_quantity"
+  },
+  "after_all_fixes": {
+    "status": 200,
+    "content_type": "application/json",
+    "keys": [
+      "items",
+      "page",
+      "page_size",
+      "pages",
+      "total"
+    ],
+    "item_count": 1,
+    "page": 1,
+    "page_size": 25,
+    "pages": 1,
+    "total": 1
+  },
+  "regressions": [
+    "Model visibility and readonly views preserve the concrete list type.",
+    "Count queries preserve implicit soft-delete filters.",
+    "MySQL/MariaDB counts support duplicate projection names, including through SearchProvider.",
+    "Structured filters precede existing grouping, ordering and pagination clauses."
+  ],
+  "test_services": [
+    "SQLite in-memory",
+    "MySQL 8.4 disposable container",
+    "MariaDB 10.11 disposable container"
+  ],
+  "query_cost": "Unique projections use one count query. Duplicate projections use a zero-row metadata probe and a count CTE after MySQL rejects the ordinary derived-table count.",
+  "limits": [
+    "This checks the supplied GET request, not the complete Passly application suite."
+  ],
+  "credentials_recorded": false,
+  "product_data_recorded": false
+}

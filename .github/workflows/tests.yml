@@ -9,6 +9,28 @@ jobs:
   workspace:
     runs-on: ubuntu-latest
     services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+          MYSQL_DATABASE: raxos_test
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd "mysqladmin ping --silent"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'yes'
+          MARIADB_DATABASE: raxos_test
+        ports: ['3307:3306']
+        options: >-
+          --health-cmd "mariadb-admin ping --silent"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
       redis:
         image: redis:7-alpine
         ports: ['6379:6379']
@@ -20,6 +42,9 @@ jobs:
     env:
       RAXOS_REDIS_HOST: 127.0.0.1
       RAXOS_REDIS_PORT: 6379
+      RAXOS_MYSQL_DSN: 'mysql:host=127.0.0.1;port=3306;dbname=raxos_test'
+      RAXOS_MARIADB_DSN: 'mysql:host=127.0.0.1;port=3307;dbname=raxos_test'
+      RAXOS_MYSQL_USER: root
     steps:
       - uses: actions/checkout@v7
         with:

@@ -80,12 +80,12 @@
       "scope": "Alle interfaces en enums zelfstandig laden"
     },
     "database": {
-      "tests": 19,
-      "assertions": 313,
+      "tests": 50,
+      "assertions": 427,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "SQLite; query-semantiek; CRUD; relaties; transacties; cursor-batches; identity cache"
+      "scope": "SQLite/MySQL/MariaDB; counts; dubbele kolommen; soft deletes; modelweergaven; CRUD; relaties; cursor-batches; identity cache"
     },
     "datetime": {
       "tests": 23,
@@ -176,12 +176,12 @@
       "scope": "Beide routers; paden; cache-isolatie; registratie; preflight; 404/405"
     },
     "search": {
-      "tests": 9,
-      "assertions": 36,
+      "tests": 18,
+      "assertions": 81,
       "errors": 0,
       "failures": 0,
       "skipped": 0,
-      "scope": "Unicode; ongeldige encoding; ranges; quotes; filters; lange input"
+      "scope": "Unicode; ranges; quotes; structured filters; modelpaginering op SQLite/MySQL/MariaDB"
     },
     "security": {
       "tests": 69,
@@ -209,12 +209,12 @@
     }
   },
   "tests": {
-    "tests": 353,
-    "assertions": 1392,
+    "tests": 393,
+    "assertions": 1551,
     "errors": 0,
     "failures": 0,
     "skipped": 0,
-    "seconds": 2.700864,
+    "seconds": 2.687696,
     "timezone": "UTC"
   },
   "ci": {
@@ -224,15 +224,26 @@
     "redis": "7",
     "actionlint": "1.7.12",
     "local_validation": "passed",
-    "github_execution": "pending push"
+    "github_execution": "pending push",
+    "mysql": "8.4",
+    "mariadb": "10.11",
+    "sql_service_workflows": [
+      "workspace",
+      "database",
+      "search"
+    ]
   },
   "validation": {
     "standalone_install_validate_test": "21/21 passed",
-    "php_lint": "810 PHP files passed",
+    "php_lint": "814 PHP files passed",
     "composer_validate": "workspace and 21 libraries passed",
-    "phpdoc": "46 new or changed production blocks checked: since 3.2.0; no parameter descriptions. All 93 test and fixture files omit PHPDocs.",
-    "consumer_check": "12 actual message serialization round trips; 2 actual DTO schemas; no application suites",
+    "phpdoc": "49 new or changed production blocks checked: since 3.2.0; no parameter descriptions. All 97 workspace/library test and fixture files omit PHPDocs.",
+    "consumer_check": "12 actual message serialization round trips; 2 actual DTO schemas; supplied Passly products GET returns HTTP 200 and valid JSON; no full application suites",
     "remote_heads_before_commits": "22/22 main heads matched GitHub",
+    "standalone_updated_suites": {
+      "database": "50 tests, 427 assertions; SQLite/MySQL/MariaDB",
+      "search": "18 tests, 81 assertions; SQLite/MySQL/MariaDB"
+    },
     "report_qa": {
       "screen_views": 8,
       "print_views": 2,
@@ -242,13 +253,16 @@
   },
   "limits": [
     "No line or branch coverage percentage measured.",
-    "MySQL execution, RabbitMQ broker, mail delivery and Apple signing not exercised against live services."
+    "RabbitMQ broker, mail delivery and Apple signing not exercised against live services."
   ],
   "artifacts": {
     "historical_review": "review-evidence.json",
     "performance_after": "performance-after.json",
     "standalone": "standalone-test-results.json",
-    "consumer": "consumer-compatibility.json"
+    "consumer": "consumer-compatibility.json",
+    "test_results": "test-results.json",
+    "library_commits": "library-commits.json",
+    "passly_regression": "passly-regression.json"
   },
   "library_commits": {
     "barcode": "af4442e1e93ef428075c823f08c7a01263b3cd55",
@@ -256,7 +270,7 @@
     "collection": "206e7102ef34d6f50a0c4eb49b9a5cddeee9e769",
     "container": "5e3dcc91b50e33e69f462c91c4c0377a85e8229b",
     "contract": "d03d7aa1bfa80a9b8074236946a55debe05022bd",
-    "database": "7eb5309c7119c431e031c240d9eb166d18a44885",
+    "database": "454ebf902c8fb65db5d14d0b3abfb6202e88adf1",
     "datetime": "2b43944c2ebe45d67039b07e888cb3a7fd991d49",
     "error": "f24f3a22664960762b7a8daf2926f51649bc7ddd",
     "foundation": "a04087bf725cd4f35f7c89383b9da7cc59fcec46",
@@ -268,7 +282,7 @@
     "rate-limit": "8f7a414fcace49c54eb543f10d523f7aa70ed5a9",
     "reflection": "9f66bd2f8ef992ebbbebac08fa007c71593ef101",
     "router": "391ba5916af367202f6810126e696c2b7ea712e0",
-    "search": "1073acc8ce490f5d7db8ca88e1f6af588384ed33",
+    "search": "4a3cfbbdc5841f6d30b3c1b56284186b9c3d6532",
     "security": "8490d4a0e86da8daaf25d340ac00fee810c45e33",
     "terminal": "97aecf7c6b260ce8f9484fe9243dc9acc0ccc670",
     "wallet": "a0a5129957e995b9497fa48c32262d499c1b0fe7"

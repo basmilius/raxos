@@ -8,19 +8,12 @@ Raxos 3.2.0 requires PHP 8.5. Update the Raxos libraries together because the co
 
 ```php
 $queue = $bus->createQueue(allowedClasses: [
-    SendMerchantInvitationMessage::class,
-    SendTicketsMessage::class,
+    SendEmailMessage::class,
+    GenerateReportMessage::class,
 ]);
 ```
 
 The root serialized object must implement `MessageInterface`. Add any nested value-object classes to the same list if your message serializes objects instead of scalar values. Registration permits those objects' unserialization hooks; keep this list explicit. Malformed and unregistered messages are rejected without requeueing. Handler failures still requeue deliveries.
-
-Both consumers examined in this workspace call `createQueue()` without a list:
-
-- `passly/backend/src/functions.php`, in `messageQueue()`. The `Passly\MessageBus\Message` directory contains `CheckVatNumberMessage`, `GeocodeAddressMessage`, `IssueTicketsMessage`, `OrderRefundedMessage`, `PingMessage`, `SendMerchantInvitationMessage`, `SendOrderCanceledMessage`, `SendOrderConfirmationMessage`, `SendOrderExpiredMessage`, `SendOrderFailedMessage` and `SendTicketsMessage`.
-- `marveld/marveld-api/src/functions.php`, in `messageQueue()`. Its message class is `Marveld\MessageBus\Message\PingMessage`.
-
-Use the classes assigned to each worker. The two `PingMessage` implementations serialize their date as a string, so their payloads do not require `DateTime` in the allowlist. These consumer repositories were inspected without modification.
 
 ## OAuth authorization codes require S256 and atomic consumption
 
@@ -43,11 +36,9 @@ Bind the requested client's ID and the code token. Return whether the affected r
 
 Authorization requests must include a valid `code_challenge` and `code_challenge_method=S256`. Token requests must include the corresponding `code_verifier`. Redirect URIs must match exactly; percent-encoding variants are no longer decoded into a match. Existing codes with a null challenge cannot be redeemed; start a new authorization flow. The grant consumes the code before issuing tokens. A failed token issuance therefore requires a new code.
 
-No implementation of these factory interfaces was found in the two inspected consumer source trees.
-
 ## JWT verification has an explicit algorithm policy
 
-`Jwt::decode($token, $keys)` permits HS256 by default, preserving the Passly Wallet call. Pass an explicit list for other algorithms:
+`Jwt::decode($token, $keys)` permits HS256 by default. Pass an explicit list for other algorithms:
 
 ```php
 $claims = Jwt::decode($token, [$publicKey], [JwtAlgorithm::RS256]);
@@ -77,7 +68,7 @@ Custom `CacheInterface` implementations must add `scope(callable $fn): mixed`. T
 
 ## Other behavior changes
 
-- Use plain `RedisCache` with `RedisRateLimitStore`. Tagged caches lack the atomic operations that the store needs and are rejected by its constructor.
+- Use plain `RedisCache` with `RedisRateLimiterStore`. Tagged caches lack the atomic operations that the store needs and are rejected by its constructor.
 - `HttpSendFile` defaults to zero throttle. Set a positive throttle explicitly if needed. Single byte ranges, suffixes and open-ended ranges are honored; invalid or multiple ranges return HTTP 416.
 - Invalid JSON request bodies produce HTTP 400. Scalar JSON bodies, including `0`, are rejected as structured request data rather than mistaken for an empty body.
 - Router preflight runs middleware and returns allowed methods without executing the target handler. Explicit OPTIONS handlers still run normally.

@@ -30,7 +30,7 @@ declare(strict_types=1);
 use Raxos\Security\TwoFactor\{TwoFactorAuth, TwoFactorAuthAlgorithm};
 
 $totp = new TwoFactorAuth(
-    issuer: 'Passly',
+    issuer: 'Raxos',
     algorithm: TwoFactorAuthAlgorithm::SHA256,
 );
 ```

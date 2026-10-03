@@ -4,6 +4,8 @@
 
 Raxos is een **PHP monorepo** met meerdere zelfstandige bibliotheken die Bas Milius gebruikt in persoonlijke projecten. Vereist minimaal **PHP 8.5**.
 
+Houd documentatie, voorbeelden, tests en rapporten gericht op Raxos. Gebruik algemene fixtures en beschrijf librarygedrag zonder namen, bronpaden of testresultaten van consumerprojecten.
+
 De repo is opgebouwd als een **git repository met submodules**. Elke submodule (`barcode`, `cache`, etc.) is een eigen git repository op GitHub onder `github.com/basmilius/raxos-<naam>`.
 
 ---

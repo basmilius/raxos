@@ -737,7 +737,6 @@
     "php_lint": "1161 PHP files passed",
     "composer_validate": "workspace and 21 libraries passed",
     "phpdoc": "All new and changed production PHPDocs use since 3.2.0 and parameter type/name only. All test and fixture PHP files omit PHPDocs.",
-    "consumer_check": "12 actual message serialization round trips; 2 actual DTO schemas; supplied Passly products GET returns HTTP 200 and valid JSON; full Passly suite passes with 1312 tests and 6825 assertions on 3 October (see passly-suite.json); Marveld application suite not run.",
     "remote_heads_before_commits": "22/22 main heads matched GitHub",
     "standalone_updated_suites": {
       "barcode": "35 tests, 370 assertions",
@@ -787,33 +786,32 @@
     "historical_review": "review-evidence.json",
     "performance_after": "performance-after.json",
     "standalone": "standalone-test-results.json",
-    "consumer": "consumer-compatibility.json",
     "test_results": "test-results.json",
     "library_commits": "library-commits.json",
-    "passly_regression": "passly-regression.json",
     "unit_coverage": "unit-test-coverage.json",
-    "passly_suite": "passly-suite.json"
+    "pagination_regression": "pagination-regression.json",
+    "library_suite": "library-suite.json"
   },
   "library_commits": {
-    "barcode": "9d859407a1bde0d4896b8e22c2b67fbd0a1881d1",
+    "barcode": "b708f38c0bdf483c0ae734aefd4908c169b7caba",
     "cache": "39015400bce2af5de5baca0544479d6c47ea8d6d",
     "collection": "0249cad38c7e4713a10e94600b6e7a9381f0c913",
     "container": "5cbe01b0e01d82600ae03c3e3cd43e49cde24c0d",
     "contract": "b3edcc619245aaf8a450d00648a25e6daa35cd33",
-    "database": "3852c3dd362ff71198732dd42cebdd0ad37baf3d",
+    "database": "a43ad552deacd5ee3036467f9e8261371e40665e",
     "datetime": "b51335534fc23358f895abb6b2978ad912050a61",
     "error": "dd5b33499618fdce70a3433e93186d476c2b575b",
     "foundation": "cee28c6554b211481d5cf1d94e5af239baf637fb",
-    "http": "11fe82ea2ed0a25885826fbd6dda6192d0bfeae2",
+    "http": "53bc7a5601f2789aee37bb9b3ccffd3fd7197286",
     "mail": "f4879a06a6b486b446e0e842de513c0243ba7a66",
     "message-bus": "6bbe348e60686cda1604ceeac5b36b95f7693db8",
     "oauth2": "6e8deb3f0a4c3cd411d30b7545de6edceab13997",
     "openapi": "60d038312221c9a0becd6781781f9482808862c2",
     "rate-limit": "dfc13d936e19f088e5cf458ac8ffcf219c24f19c",
     "reflection": "9490ceada44701ae4e280ac5c12cc4616a7b149c",
-    "router": "07dc449a860275b897d13939dc11cf170e4f8670",
-    "search": "2483a9a4974d80902ed32c8992c893d96fd96369",
-    "security": "dfe2e3be2b992023ef63bf573abd623280692962",
+    "router": "ee43c4372da03554497f5d16881e07ee54b43c38",
+    "search": "394463e87190f151dc059917ab84d0086f3ab6f2",
+    "security": "9914211ae358aff4a664c884d804a44299ff6f9b",
     "terminal": "2e13f2b46d2451600a6b04719bee4c1001286d43",
     "wallet": "3818d3dafd20ae03147c77afccc0f6ee0d8bb90e"
   },
@@ -826,7 +824,7 @@
   "test_files": 366,
   "followup_checks": {
     "date": "2026-10-03",
-    "results": "passly-suite.json",
+    "results": "library-suite.json",
     "raxos_tests": 1701,
     "raxos_assertions": 11220
   }

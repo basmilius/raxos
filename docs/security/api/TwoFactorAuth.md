@@ -72,7 +72,7 @@ declare(strict_types=1);
 
 use Raxos\Security\TwoFactor\TwoFactorAuth;
 
-$totp = new TwoFactorAuth(issuer: 'Passly');
+$totp = new TwoFactorAuth(issuer: 'Raxos');
 $secret = $totp->createSecret();
 $qrData = $totp->generateQrData($secret, 'user@example.com');
 

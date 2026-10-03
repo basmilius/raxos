@@ -86,9 +86,7 @@ XDEBUG_MODE=coverage php -d date.timezone=UTC -d memory_limit=2G vendor/bin/pest
   --log-junit=reports/junit.xml --coverage-clover=reports/clover.xml
 ```
 
-Passly and Marveld were read as compatibility examples. The full Passly suite was subsequently made runnable against the local Raxos libraries and passed 1,312 tests with 6,825 assertions; [the recorded run](reports/passly-suite.json) lists its environment. Marveld's application suite was not run. [MIGRATION.md](MIGRATION.md) lists the consumer changes required before upgrading.
-
-The supplied Passly products GET request was reproduced and checked after the pagination fixes: HTTP 200, JSON output and matching item/pagination counts. The saved evidence omits credentials and product data. Synthetic database and search tests cover its query/filter/visibility path.
+The regression suites cover model visibility, duplicate projection names, soft-delete scopes and filtered pagination on SQLite, MySQL and MariaDB. [MIGRATION.md](MIGRATION.md) lists the contract and behavior changes required before upgrading.
 
 ## Reproduce the performance measurements
 

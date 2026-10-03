@@ -18,6 +18,8 @@ composer test:lint
 composer test
 ```
 
+Run the release-tool tests with `python3 -m unittest discover -s tests/release -v`. They use temporary Git repositories and a fake GitHub API and are also included in the root Tests workflow.
+
 PHP 8.5 is required. Every suite fixes the default timezone to UTC, including when invoked with `composer test`. The CI extension set is `bcmath`, `ctype`, `dom`, `fileinfo`, `gd`, `intl`, `json`, `mbstring`, `openssl`, `pdo`, `pdo_mysql`, `pdo_sqlite`, `redis`, `simplexml` and `zip`. SQLite tests use an in-memory database. Mail, HTTP transport and AMQP behavior use SDK mocks and do not contact providers.
 
 Redis integration tests require a disposable Redis service. Configure it explicitly:
@@ -84,7 +86,7 @@ XDEBUG_MODE=coverage php -d date.timezone=UTC -d memory_limit=2G vendor/bin/pest
   --log-junit=reports/junit.xml --coverage-clover=reports/clover.xml
 ```
 
-Passly and Marveld were read as compatibility examples. Their source trees were not modified and their application suites were not run. [MIGRATION.md](MIGRATION.md) lists the consumer changes required before upgrading.
+Passly and Marveld were read as compatibility examples. The full Passly suite was subsequently made runnable against the local Raxos libraries and passed 1,312 tests with 6,825 assertions; [the recorded run](reports/passly-suite.json) lists its environment. Marveld's application suite was not run. [MIGRATION.md](MIGRATION.md) lists the consumer changes required before upgrading.
 
 The supplied Passly products GET request was reproduced and checked after the pagination fixes: HTTP 200, JSON output and matching item/pagination counts. The saved evidence omits credentials and product data. Synthetic database and search tests cover its query/filter/visibility path.
 

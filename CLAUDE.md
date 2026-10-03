@@ -268,6 +268,16 @@ git commit -m "chore: bump barcode"
 
 ---
 
+## Releasing
+
+Release uitsluitend de root `basmilius/raxos` met de `release`-skill. De rootworkflow publiceert dezelfde versie in alle libraryrepos, met hun eigen notes en de submodulecommits uit de gekozen rootcommit. Volg [RELEASING.md](RELEASING.md) voor de voorbereiding, review en het exacte `gh release create`-commando met release-asset.
+
+Release notes en manifests mogen niet als bestanden in de repositories worden opgeslagen of gecommit. Maak de Markdown-concepten buiten de repositories in een tijdelijke map, schrijf per library notes volgens de `release-notes`-skill en bundel ze met `tools/release.py` in `raxos-libraries.json`. Voeg dat bestand bij het aanmaken van de rootrelease als asset toe; publiceer niet eerst om het daarna te uploaden. De agent maakt alleen de rootrelease aan, de workflow maakt de librarytags en releases.
+
+De lokale releasechecks zijn `python3 -m unittest discover -s tests/release -v`, `composer test:lint` en `composer test`, met de disposable testservices uit `TESTING.md`. De release gebruikt de vastgelegde SHA van `origin/main`; de laatste root-Tests-run voor precies die commit moet groen zijn. Laat de rootnotes, librarynotes, versie, SHA en bases beoordelen voordat je de rootrelease aanmaakt.
+
+---
+
 ## EditorConfig (geldt voor alle submodules)
 
 - Indentatie: **4 spaties** (geen tabs)

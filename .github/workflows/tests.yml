@@ -65,6 +65,8 @@ jobs:
         run: composer install --no-interaction --prefer-dist
       - name: Validate workspace and packages
         run: php tools/validate.php
+      - name: Test release tooling
+        run: python3 -m unittest discover -s tests/release -v
       - name: Lint PHP sources and tests
         run: composer test:lint
       - name: Run all library suites

@@ -1,0 +1,56 @@
+name: Release libraries
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Published Raxos release to inspect or resume
+        required: true
+        type: string
+      dry_run:
+        description: Validate without creating tags or releases
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: raxos-releases
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.repository == 'basmilius/raxos'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: refs/tags/${{ github.event.release.tag_name || inputs.tag }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test release tooling
+        run: python3 -m unittest discover -s tests/release -v
+      - name: Download library release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RAXOS_RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: gh release download "$RAXOS_RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern raxos-libraries.json --output "$RUNNER_TEMP/raxos-libraries.json"
+      - name: Validate and publish library releases
+        env:
+          GH_TOKEN: ${{ secrets.RAXOS_RELEASE_TOKEN }}
+          RAXOS_ROOT_TOKEN: ${{ github.token }}
+          RAXOS_RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          RAXOS_RELEASE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: python3 tools/release.py publish --tag "$RAXOS_RELEASE_TAG" --bundle "$RUNNER_TEMP/raxos-libraries.json" --output reports/release-plan.json
+      - name: Upload release plan
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raxos-release-plan
+          path: reports/release-plan.json
+          if-no-files-found: warn

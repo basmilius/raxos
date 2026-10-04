@@ -16,7 +16,7 @@ Library PHPDocs preserve the original `@since` on existing members. Only members
 
 ## Migrating to 3.2.0
 
-Raxos 3.2.0 requires PHP 8.5. Update the Raxos libraries together because the collection, database, message-bus and OAuth contracts changed. The review findings and their implementation status are in [the code review](reports/codebase-review.html) and [the performance report](reports/performance-review.html).
+Raxos 3.2.0 requires PHP 8.5. Update the Raxos libraries together because the collection, database, message-bus and OAuth contracts changed.
 
 ## Message consumers must register their message classes
 

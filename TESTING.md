@@ -79,7 +79,7 @@ The workspace, database and search workflows also supply MySQL 8.4 and MariaDB 1
 
 The root workflow checks out the pinned submodule commits, validates all manifests, lints sources and tests, checks selected public API types with PHPStan, verifies bounded iteration and operation counts, and runs all 21 suites with Xdebug. It uploads JUnit test results and Clover line coverage as the `raxos-test-results` artifact, including after a failed run when files exist. Each library workflow checks out the workspace, fetches current dependency `main` branches over HTTPS, then overlays the calling library's commit and runs its local Composer install, validation and Pest suite. This allows a library change to be tested before the root updates its pointer.
 
-The workflows have read-only repository permissions and disable persisted checkout credentials. YAML was checked locally with actionlint. GitHub will execute these new workflows after the commits are pushed; local validation is recorded in the reports.
+The test workflows have read-only repository permissions and disable persisted checkout credentials. Workflows write test results, coverage and release plans to the runner's temporary directory before uploading them as artifacts.
 
 ## Test scope
 
@@ -87,13 +87,14 @@ The suites exercise successful operations, boundary values and error paths. They
 
 AMQP connection/channel unit tests and mail-provider payloads use SDK mocks. Native RabbitMQ tests cover confirmed routing, retry limits, delayed retries, dead queues and redelivery after a failed transfer. Actual mail deliveries and Apple device acceptance require provider environments. Composite Every/Some filters execute truth and weighted-score checks on SQLite, MySQL and MariaDB. OAuth rotation tests run two PHP processes against transactional SQLite storage; production token adapters remain application-owned. The contract suite verifies that every declared interface and enum can be loaded independently; implementations are tested in their owning libraries.
 
-Line coverage is measured with Xdebug across every library's `src` directory, including untouched code. It is not branch coverage or a guarantee that all inputs work. File-download tests run in separate PHP processes, so their executed lines are not collected by the parent coverage driver. The reports list the measured coverage and remaining gaps per library; they impose no arbitrary coverage threshold.
+Line coverage is measured with Xdebug across every library's `src` directory, including untouched code. It is not branch coverage or a guarantee that all inputs work. File-download tests run in separate PHP processes, so their executed lines are not collected by the parent coverage driver. No minimum line-coverage threshold is enforced.
 
 To collect the same artifacts locally, install Xdebug and configure Redis, MySQL, MariaDB and RabbitMQ, then run:
 
 ```sh
+raxos_results=$(mktemp -d)
 XDEBUG_MODE=coverage php -d date.timezone=UTC -d memory_limit=2G vendor/bin/pest \
-  --log-junit=reports/junit.xml --coverage-clover=reports/clover.xml
+  --log-junit="$raxos_results/junit.xml" --coverage-clover="$raxos_results/clover.xml"
 ```
 
 The regression suites cover model visibility, duplicate projection names, soft-delete scopes and filtered pagination on SQLite, MySQL and MariaDB. [MIGRATION.md](MIGRATION.md) lists the contract and behavior changes required before upgrading.
@@ -105,8 +106,6 @@ RAXOS_REDIS_HOST=127.0.0.1 RAXOS_REDIS_PORT=6379 php tools/benchmark.php > /tmp/
 ```
 
 The script measures lexer growth, suffix-list reloads, route registration, isolated JSON parsing, batched SQLite hydration, retained identities, local file sending and tagged Redis invalidation. CPU timings are medians after warmup. The Redis flush is a single run. File timing excludes process startup and network transfer. Results are machine dependent; query counts, batch sizes and retained identities give more stable regression signals.
-
-The original review evidence remains in `reports/review-evidence.json`. Measurements after the changes are in `reports/performance-after.json`; both HTML reports distinguish those snapshots.
 
 ## Push order
 
@@ -137,5 +136,3 @@ php tools/benchmark-runtime.php > /tmp/raxos-runtime-measurements.json
 The script compares eager lists, LazySequence and ORM keyset iteration in fresh PHP processes. It gates row checksums, a generous bounded PHP-heap budget, expected query counts, zero retained ORM identities and one Redis evaluation per native snapshot. It does not gate machine-dependent timing. Heap measurements exclude database-driver allocations and RSS. Query counts run in a separate pass so retained logger events do not distort memory results.
 
 The runtime script measures reflection metadata, constructor autowiring, registration and resolution of 400 routes, QR SVG/PNG rendering and signing a Wallet pass with 16 disk attachments. It separates first-use time from warmed batch medians. Wallet certificate generation is excluded; the local signature does not establish Apple device acceptance. `RAXOS_BENCH_BASELINE_DIR` can point to exported library sources for a comparison using the same third-party dependencies. Current autoloaded function files remain active in that comparison.
-
-The feature design report keeps the original before/after proposals and records implementation evidence. Historical review and performance snapshots remain historical; use the current implementation report for this development round.

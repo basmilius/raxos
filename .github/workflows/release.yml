@@ -46,11 +46,11 @@ jobs:
           RAXOS_ROOT_TOKEN: ${{ github.token }}
           RAXOS_RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
           RAXOS_RELEASE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
-        run: python3 tools/release.py publish --tag "$RAXOS_RELEASE_TAG" --bundle "$RUNNER_TEMP/raxos-libraries.json" --output reports/release-plan.json
+        run: python3 tools/release.py publish --tag "$RAXOS_RELEASE_TAG" --bundle "$RUNNER_TEMP/raxos-libraries.json" --output "$RUNNER_TEMP/raxos-release-plan.json"
       - name: Upload release plan
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: raxos-release-plan
-          path: reports/release-plan.json
+          path: ${{ runner.temp }}/raxos-release-plan.json
           if-no-files-found: warn

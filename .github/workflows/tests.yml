@@ -89,13 +89,16 @@ jobs:
       - name: Check bounded iteration and operation counts
         run: XDEBUG_MODE=off php tools/benchmark-features.php --check
       - name: Run all library suites
-        run: php -d memory_limit=2G vendor/bin/pest --log-junit=reports/junit.xml --coverage-clover=reports/clover.xml
+        run: >-
+          php -d memory_limit=2G vendor/bin/pest
+          --log-junit="$RUNNER_TEMP/raxos-junit.xml"
+          --coverage-clover="$RUNNER_TEMP/raxos-clover.xml"
       - name: Upload test and coverage results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: raxos-test-results
           path: |
-            reports/junit.xml
-            reports/clover.xml
+            ${{ runner.temp }}/raxos-junit.xml
+            ${{ runner.temp }}/raxos-clover.xml
           if-no-files-found: warn

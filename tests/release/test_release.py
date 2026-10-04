@@ -238,7 +238,7 @@ class ReleaseFixture(unittest.TestCase):
     def test_progress_artifact_has_notes_and_partial_statuses(self):
         prepared = self.preflight()
         prepared[0]["status"] = "published"
-        output = self.root / "reports" / "plan.json"
+        output = self.root / "output" / "plan.json"
         release.record(prepared, output)
         self.assertEqual(prepared, json.loads(output.read_text()))
 

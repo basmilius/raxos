@@ -19,7 +19,4 @@ docs/.vitepress/dist/
 
 /.phpunit.cache/
 /.pest/
-/reports/junit.xml
-/reports/clover.xml
-/reports/release-plan.json
 __pycache__/

@@ -17,15 +17,18 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 #[Table('raxos_bench_rows')]
 final class FeatureBenchmarkRow extends Model
 {
+
     #[PrimaryKey]
     public int $id;
 
     #[Column]
     public string $payload;
+
 }
 
 final class FeatureCountingRedis extends RedisCache
 {
+
     public int $evaluations = 0;
 
     public int $existenceReads = 0;
@@ -43,6 +46,7 @@ final class FeatureCountingRedis extends RedisCache
 
         return parent::exists($key);
     }
+
 }
 
 if (($argv[1] ?? null) === 'worker') {

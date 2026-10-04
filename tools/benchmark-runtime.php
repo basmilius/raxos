@@ -32,23 +32,26 @@ if ($baseline = getenv('RAXOS_BENCH_BASELINE_DIR')) {
 
 final class RuntimeBenchmarkLeaf
 {
+
     public int $id = 1;
+
 }
 
 final readonly class RuntimeBenchmarkBranch
 {
-    public function __construct(public RuntimeBenchmarkLeaf $leaf)
-    {
-    }
+
+    public function __construct(public RuntimeBenchmarkLeaf $leaf) {}
+
 }
 
 final readonly class RuntimeBenchmarkRoot
 {
+
     public function __construct(
         public RuntimeBenchmarkBranch $branch,
         public RuntimeBenchmarkLeaf $leaf
-    ) {
-    }
+    ) {}
+
 }
 
 /**

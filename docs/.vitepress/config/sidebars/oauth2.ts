@@ -4,6 +4,7 @@ export const oauth2: DefaultTheme.SidebarItem[] = [
     {
         text: 'OAuth2',
         items: [
+            {text: 'OAuth security profiles', link: '/oauth2/security-profiles'},
             {text: 'Introduction', link: '/oauth2/'},
             {text: 'Installation', link: '/oauth2/installation'}
         ]

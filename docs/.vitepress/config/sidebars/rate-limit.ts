@@ -4,6 +4,7 @@ export const rateLimit: DefaultTheme.SidebarItem[] = [
     {
         text: 'Rate Limit',
         items: [
+            {text: 'Atomic rate-limit snapshots', link: '/rate-limit/atomic-snapshots'},
             {text: 'Introduction', link: '/rate-limit/'},
             {text: 'Installation', link: '/rate-limit/installation'}
         ]

@@ -90,8 +90,9 @@ use const JSON_THROW_ON_ERROR;
 ```
 
 - `@author` is altijd `Bas Milius <bas@mili.us>`
+- Een klasse-PHPDoc begint altijd met `Class [Name]`. Een optionele beschrijving staat daarna, met een lege PHPDoc-regel vóór en na de beschrijving.
 - `@since` bevat de versie van de module (niet de datum)
-- Nieuwe of aangepaste PHPDoc-blokken gebruiken voor deze versie `@since 3.2.0`
+- Alleen nieuwe code gebruikt `@since 3.3.0`. Behoud bij aanpassingen aan bestaande code de oorspronkelijke `@since`-versie.
 - `@param` bevat alleen het type en de parameternaam, geen beschrijving
 - Bij nieuwe parameters ook de PHPDoc bijwerken
 - `@throws` toevoegen als de methode een exception kan gooien
@@ -184,7 +185,7 @@ final class UserController
     #[Get('/')]
     public function index(HttpRequest $request): array { ... }
 
-    #[Get('/{id}')]
+    #[Get('/$id')]
     public function show(HttpRequest $request, int $id): User { ... }
 
     #[Post('/')]
@@ -232,7 +233,7 @@ Elke submodule heeft een eigen `composer.json`. Cross-module dependencies worden
         }
     ],
     "require": {
-        "raxos/foundation": "*"
+        "raxos/foundation": "^3.2"
     }
 }
 ```

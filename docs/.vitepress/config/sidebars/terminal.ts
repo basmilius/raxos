@@ -4,6 +4,7 @@ export const terminal: DefaultTheme.SidebarItem[] = [
     {
         text: 'Terminal',
         items: [
+            {text: 'Running commands programmatically', link: '/terminal/programmatic-runs'},
             {text: 'Introduction', link: '/terminal/'},
             {text: 'Installation', link: '/terminal/installation'}
         ]

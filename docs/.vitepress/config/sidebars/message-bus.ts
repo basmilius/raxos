@@ -4,6 +4,7 @@ export const messageBus: DefaultTheme.SidebarItem[] = [
     {
         text: 'Message Bus',
         items: [
+            {text: 'Confirmed delivery and retries', link: '/message-bus/delivery-policy'},
             {text: 'Introduction', link: '/message-bus/'},
             {text: 'Installation', link: '/message-bus/installation'}
         ]

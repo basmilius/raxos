@@ -21,27 +21,28 @@
         "opis/json-schema": "^2.6",
         "pestphp/pest": "^5.0",
         "psr/container": "^2.0",
-        "raxos/barcode": "*",
-        "raxos/cache": "*",
-        "raxos/collection": "*",
-        "raxos/container": "*",
-        "raxos/contract": "*",
-        "raxos/database": "*",
-        "raxos/datetime": "*",
-        "raxos/error": "*",
-        "raxos/foundation": "*",
-        "raxos/http": "*",
-        "raxos/mail": "*",
-        "raxos/message-bus": "*",
-        "raxos/oauth2": "*",
-        "raxos/openapi": "*",
-        "raxos/rate-limit": "*",
-        "raxos/reflection": "*",
-        "raxos/router": "*",
-        "raxos/search": "*",
-        "raxos/security": "*",
-        "raxos/terminal": "*",
-        "raxos/wallet": "*"
+        "raxos/barcode": "^3.3",
+        "raxos/cache": "^3.3",
+        "raxos/collection": "^3.3",
+        "raxos/container": "^3.3",
+        "raxos/contract": "^3.3",
+        "raxos/database": "^3.3",
+        "raxos/datetime": "^3.3",
+        "raxos/error": "^3.3",
+        "raxos/foundation": "^3.3",
+        "raxos/http": "^3.3",
+        "raxos/mail": "^3.3",
+        "raxos/message-bus": "^3.3",
+        "raxos/oauth2": "^3.3",
+        "raxos/openapi": "^3.3",
+        "raxos/rate-limit": "^3.3",
+        "raxos/reflection": "^3.3",
+        "raxos/router": "^3.3",
+        "raxos/search": "^3.3",
+        "raxos/security": "^3.3",
+        "raxos/terminal": "^3.3",
+        "raxos/wallet": "^3.3",
+        "phpstan/phpstan": "^2.1"
     },
     "config": {
         "platform": {
@@ -54,6 +55,7 @@
     },
     "scripts": {
         "test": "pest --compact",
-        "test:lint": "@php tools/lint.php"
+        "test:lint": "@php tools/lint.php",
+        "test:types": "phpstan analyse --no-progress"
     }
 }

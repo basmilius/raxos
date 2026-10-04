@@ -1,0 +1,22 @@
+parameters:
+    level: 5
+    phpVersion: 80500
+    treatPhpDocTypesAsCertain: false
+    paths:
+        - contract/src/Collection
+        - contract/src/Container
+        - contract/src/Database/Query/QueryInterface.php
+        - contract/src/Database/Query/KeysetQueryInterface.php
+        - contract/src/Database/TransactionalConnectionInterface.php
+        - contract/src/RateLimit/RateLimiterSnapshotStoreInterface.php
+        - collection/src
+        - http/src/Client
+        - security/src/Jwt/JwtVerifier.php
+        - security/src/Jwt/JwtVerificationPolicy.php
+        - security/src/Jwt/JwtVerificationKey.php
+        - oauth2/src/Server/SecurityProfile.php
+        - message-bus/src/QueuePolicy.php
+        - message-bus/src/DeliveryOutcome.php
+        - tests/Types
+    parallel:
+        maximumNumberOfProcesses: 1

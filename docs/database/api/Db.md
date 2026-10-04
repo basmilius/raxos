@@ -70,7 +70,7 @@ Db::transaction();
 try {
     Db::query()
         ->update('users', ['is_active' => 1])
-        ->where('id', 'usr_1')
+        ->whereField('id', 'usr_1')
         ->run();
 
     Db::commit();

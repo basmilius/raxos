@@ -52,7 +52,7 @@ export default defineConfig({
         },
         footer: {
             message: 'Released under the <a href="https://github.com/basmilius/raxos/blob/main/LICENSE">MIT License</a>.',
-            copyright: 'Copyright © 2024–present <a href="https://github.com/basmilius">Bas Milius</a>'
+            copyright: 'Copyright © 2017–present <a href="https://github.com/basmilius">Bas Milius</a>'
         },
         outline: {
             level: [2, 3]

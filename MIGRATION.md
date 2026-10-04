@@ -1,4 +1,20 @@
-# Raxos 3.2.0 migration
+# Migration guide
+
+## Preparing for 3.3.0
+
+PHP 8.5 remains required. Raxos dependencies now use bounded minor-compatible constraints. Packages that use new capabilities require their 3.3 dependency; other sibling requirements start at 3.2. Upgrade the related packages together.
+
+New capabilities use optional interfaces for scoped containers, managed transactions, keyset queries, atomic rate-limit snapshots, submission results and refresh rotation. Existing base interfaces gain no mandatory methods. Built-in implementations expose the new APIs; custom implementations can keep their previous behavior or opt in.
+
+HTTP request builders expose a public `request()` method. A custom HttpClient subclass that overrides the old protected method must widen its visibility to public. Request-schema generation now follows input aliases and requiredness; regenerate client specifications and review conditional-rule diagnostics.
+
+Queue policy, HTTP retries, Problem Details and OAuth modern profiles are explicit choices. Enabling refresh rotation requires an atomic persistence adapter with family replay detection; enabling a queue policy requires RabbitMQ support for confirmed publication and quorum retry queues. See their package guides for failure and duplicate-delivery behavior.
+
+DateTime parsing rejects impossible ISO-shaped dates instead of normalizing them. `Every` now applies conjunctive search filters and weighted scores. Cached serialized false/null values are valid hits, and tagged values publish atomically with their indexes.
+
+Library PHPDocs preserve the original `@since` on existing members. Only members introduced in this development round use 3.3.0. Tests and fixtures omit PHPDocs.
+
+## Migrating to 3.2.0
 
 Raxos 3.2.0 requires PHP 8.5. Update the Raxos libraries together because the collection, database, message-bus and OAuth contracts changed. The review findings and their implementation status are in [the code review](reports/codebase-review.html) and [the performance report](reports/performance-review.html).
 
@@ -83,4 +99,4 @@ Custom `CacheInterface` implementations must add `scope(callable $fn): mixed`. T
 - Refresh tokens must belong to the requesting OAuth client. Authorization response values are URL-encoded, and implicit tokens are returned only after successful persistence.
 - OpenAPI preserves false, zero and empty examples. Query aliases use their public names, and method-specific query and middleware parameters stay on their own operation. Explicit model schemas take precedence over the `Stringable` fallback.
 
-New and changed PHPDoc blocks in library code use `@since 3.2.0`. Parameter tags contain only the type and name. Tests and fixtures omit PHPDocs.
+Members introduced in 3.2.0 use `@since 3.2.0`; changes to older members retain their original version. Parameter tags contain only the type and name. Tests and fixtures omit PHPDocs.

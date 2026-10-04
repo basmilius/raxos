@@ -46,6 +46,8 @@ Multiple primers may be registered; primers with the same timing run in registra
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\column;
+
 use Raxos\Contract\Collection\ArrayListInterface;
 use Raxos\Contract\Database\ConnectionInterface;
 use Raxos\Contract\Database\Orm\PrimerInterface;

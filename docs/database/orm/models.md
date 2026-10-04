@@ -72,7 +72,7 @@ For anything beyond a primary key lookup, start a query with `User::select()` (o
 declare(strict_types=1);
 
 $active = User::select()
-    ->where('is_active', 1)
+    ->whereField('is_active', 1)
     ->orderBy('name')
     ->arrayList();
 ```

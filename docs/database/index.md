@@ -85,7 +85,7 @@ $user->name = 'Bas';
 $user->save();
 
 $recent = User::select()
-    ->where('created_on', '>', literal('now() - interval 7 day'))
+    ->whereField('created_on', '>', literal('now() - interval 7 day'))
     ->arrayList();
 ```
 

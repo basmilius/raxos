@@ -6,7 +6,7 @@
         <testsuite name="collection"><directory suffix="Test.php">collection/tests</directory></testsuite>
         <testsuite name="container"><directory suffix="Test.php">container/tests</directory></testsuite>
         <testsuite name="contract"><directory suffix="Test.php">contract/tests</directory></testsuite>
-        <testsuite name="database"><directory suffix="Test.php">database/tests</directory></testsuite>
+        <testsuite name="database"><directory suffix="Test.php">database/tests</directory><directory suffix="Test.php">tests/Documentation</directory></testsuite>
         <testsuite name="datetime"><directory suffix="Test.php">datetime/tests</directory></testsuite>
         <testsuite name="error"><directory suffix="Test.php">error/tests</directory></testsuite>
         <testsuite name="foundation"><directory suffix="Test.php">foundation/tests</directory></testsuite>

@@ -17,10 +17,10 @@ The root repository contains the documentation, shared test tooling and pinned l
 Install the libraries your application uses:
 
 ```sh
-composer require "raxos/router:^3.2"
+composer require "raxos/router:^3.3"
 ```
 
-Composer resolves the required sibling packages and checks their PHP extension requirements. Each library's README covers its installation and a first example. Upgrade related Raxos packages together; [Migrating to 3.2.0](MIGRATION.md) explains the changed contracts and behavior.
+Composer resolves the required sibling packages and checks their PHP extension requirements. Each library's README covers its installation and a first example. Upgrade related Raxos packages together; [Migration guide](MIGRATION.md) explains the changed contracts and behavior.
 
 ## Libraries
 
@@ -96,7 +96,7 @@ composer test
 
 Run one library with `vendor/bin/pest --testsuite=router`. Redis integration tests need a disposable Redis service. Database and search tests also use MySQL and MariaDB, alongside SQLite. [Testing Raxos](TESTING.md) documents the extensions, service configuration, test scope and coverage collection.
 
-GitHub Actions runs the workspace against its pinned commits and each library against its current dependencies. The root [Tests workflow](.github/workflows/tests.yml) validates manifests, lints PHP, tests release tooling and uploads JUnit and coverage artifacts.
+GitHub Actions runs the workspace against its pinned commits and each library against its current dependencies. The root [Tests workflow](.github/workflows/tests.yml) validates manifests, lints PHP, checks public API types and bounded iteration, tests release tooling and uploads JUnit and coverage artifacts. Native integration tests use Redis, MySQL, MariaDB and RabbitMQ.
 
 Each library is a separate Git repository. Commit library changes in their repository, then update the corresponding root submodule pointer. [TESTING.md](TESTING.md#push-order) lists the dependency order for pushes.
 

@@ -77,7 +77,7 @@ Each `where` shortcut starts a `select()` and immediately applies that one condi
 <?php
 declare(strict_types=1);
 
-$active = User::where('is_active', 1)
+$active = User::whereField('is_active', 1)
     ->orderBy('name')
     ->arrayList();
 
@@ -98,9 +98,11 @@ The `having` family mirrors the `where` family for the `having` clause, also sta
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\literal;
+
 $popular = Country::selectFoundRows(['code', 'count(*)'])
     ->groupBy(Country::col('code'))
-    ->having('count(*)', '>', 10)
+    ->having(literal('count(*)'), '>', 10)
     ->arrayList();
 ```
 

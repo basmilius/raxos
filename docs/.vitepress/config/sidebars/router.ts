@@ -4,6 +4,7 @@ export const router: DefaultTheme.SidebarItem[] = [
     {
         text: 'Router',
         items: [
+            {text: 'Building route URLs', link: '/router/reverse-routing'},
             {text: 'Introduction', link: '/router/'},
             {text: 'Installation', link: '/router/installation'}
         ]

@@ -4,6 +4,7 @@ export const collection: DefaultTheme.SidebarItem[] = [
     {
         text: 'Collection',
         items: [
+            {text: 'Lazy sequences and cursor pages', link: '/collection/lazy-sequences'},
             {text: 'Introduction', link: '/collection/'},
             {text: 'Installation', link: '/collection/installation'}
         ]

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raxos · Wat Raxos hierna beter kan doen</title>
+<style>
+:root {
+  color-scheme: light;
+  --brand: #005bd1;
+  --accent: var(--brand);
+  --paper: #fff;
+  --page: color-mix(in srgb, var(--accent) 6%, var(--paper));
+  --ink: color-mix(in srgb, var(--accent) 28%, #252b29);
+  --muted: color-mix(in srgb, var(--accent) 24%, #626762);
+  --line: color-mix(in srgb, var(--accent) 18%, var(--paper));
+  --panel: color-mix(in srgb, var(--accent) 4%, var(--paper));
+  --highlight: color-mix(in srgb, var(--accent) 10%, var(--paper));
+  --focus: var(--accent);
+  --success: #236746;
+  --success-bg: #e7f0e0;
+  --warning: #765311;
+  --warning-bg: #f7f0e0;
+  --danger: #913f35;
+  --danger-bg: #f8e9e6;
+  --info: #365573;
+  --info-bg: #e8edf4;
+  --reference: color-mix(in srgb, var(--muted) 55%, var(--paper));
+  --image-outline: rgb(0 0 0 / 10%);
+  --shadow-border: 0 0 0 1px rgb(0 0 0 / 6%), 0 1px 2px -1px rgb(0 0 0 / 6%), 0 2px 4px rgb(0 0 0 / 4%);
+  --shadow-border-hover: 0 0 0 1px rgb(0 0 0 / 14%), 0 1px 2px -1px rgb(0 0 0 / 8%), 0 2px 4px rgb(0 0 0 / 6%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--page);
+  line-height: 1.65;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+header, main, footer { max-width: 1120px; margin: auto; padding: 32px; }
+header { padding-top: 64px; }
+h1 { font-size: clamp(36px, 5.5vw, 62px); line-height: 1.07; letter-spacing: -.04em; max-width: 850px; margin: 18px 0 24px; }
+h2 { font-size: 28px; line-height: 1.2; letter-spacing: -.025em; margin: 0 0 20px; }
+h3 { font-size: 19px; margin: 26px 0 10px; }
+h1, h2, h3 { text-wrap: balance; overflow-wrap: anywhere; }
+p { margin: 0 0 16px; text-wrap: pretty; }
+li, figcaption, blockquote { text-wrap: pretty; }
+.long-excerpt { text-wrap: wrap; }
+a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+a:focus-visible, summary:focus-visible, input:focus-visible, button:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+a:hover { text-decoration-thickness: 2px; }
+.intro { font-size: 21px; max-width: 850px; }
+.eyebrow, footer, .caption, figcaption { font-size: 13px; color: var(--muted); }
+.eyebrow { letter-spacing: .04em; }
+.status { display: inline-block; background: var(--highlight); padding: 7px 14px; border-radius: 20px; font-size: 14px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: 24px; }
+nav a { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; }
+nav a:hover, summary:hover { background: var(--panel); }
+nav a:active, summary:active { background: var(--highlight); }
+section { padding: 32px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; margin-bottom: 24px; scroll-margin-top: 20px; }
+.recommendation { background: var(--highlight); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; margin: 26px 0; padding: 24px 0; border-block: 1px solid var(--line); }
+.stats strong { display: block; color: var(--accent); font-size: 38px; line-height: 1.2; letter-spacing: -.03em; }
+.stats span { display: block; font-size: 13px; margin-top: 7px; }
+.stats strong, table, output, .bar-label { font-variant-numeric: tabular-nums; }
+.table { overflow-x: auto; margin: 20px 0; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+caption { text-align: left; margin-bottom: 12px; font-weight: 600; }
+th, td { padding: 13px 12px; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: var(--panel); }
+.wide { min-width: 680px; }
+li { margin-bottom: 10px; }
+ul, ol { padding-left: 23px; }
+.note { padding: 18px 20px; background: var(--warning-bg); border-left: 3px solid var(--warning); }
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.split > * { min-width: 0; }
+.panel { background: var(--panel); padding: 24px; border-radius: 12px; }
+.panel h3 { margin-top: 0; }
+.badge { display: inline-block; font-size: 12px; color: var(--muted); background: var(--panel); padding: 3px 8px; border-radius: 5px; }
+.badge.confirmed { color: var(--success); background: var(--success-bg); }
+.badge.warning { color: var(--warning); background: var(--warning-bg); }
+.badge.danger { color: var(--danger); background: var(--danger-bg); }
+.badge.info { color: var(--info); background: var(--info-bg); }
+figure { margin: 20px 0; }
+.split > figure { margin: 0; }
+figure img { display: block; width: 100%; height: auto; border-radius: 8px; outline: 1px solid var(--image-outline); outline-offset: -1px; }
+figcaption { margin-top: 10px; }
+.diagram { display: block; max-width: 100%; height: auto; }
+.diagram text { font-family: inherit; fill: var(--ink); font-size: 16px; }
+.diagram .label { fill: var(--muted); font-size: 14px; }
+.diagram .reference { fill: var(--reference); }
+.diagram .node { fill: var(--highlight); stroke: var(--accent); }
+.diagram .edge, .diagram .axis { fill: none; stroke: var(--accent); stroke-width: 2; }
+.diagram .arrow, .diagram .series { fill: var(--accent); }
+.diagram .grid { stroke: var(--line); }
+.plot { max-width: none; }
+.steps { list-style: none; padding: 0; counter-reset: step; }
+.step { counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding-top: 24px; border-top: 1px solid var(--line); margin-top: 24px; }
+.step::before { content: counter(step); font-size: 26px; color: var(--accent); }
+.step h3 { margin: 0 0 10px; }
+code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: .88em; overflow-wrap: anywhere; }
+pre { overflow-x: auto; padding: 18px; background: var(--panel); border-radius: 8px; font-size: 12px; }
+pre code { overflow-wrap: normal; font-size: inherit; }
+details { border-top: 1px solid var(--line); margin-top: 16px; }
+summary { cursor: pointer; min-height: 44px; padding: 10px 0; color: var(--accent); font-weight: 600; }
+label { display: block; font-weight: 600; }
+button, select { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--paper); font: inherit; }
+button { cursor: pointer; transition: background-color 120ms ease, scale 120ms ease; }
+button:hover:not(:disabled) { background: var(--highlight); }
+button:active:not(:disabled):not([data-static]) { scale: 0.96; }
+button:disabled, select:disabled { opacity: .6; cursor: not-allowed; }
+input[type="range"] { width: 100%; min-height: 44px; accent-color: var(--accent); }
+.bar { height: 26px; background: var(--line); border-radius: 5px; overflow: hidden; margin: 8px 0 18px; }
+.bar span { display: block; height: 100%; background: var(--accent); }
+.bar.reference span { background: var(--reference); }
+.bar-label { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; }
+.skip { position: absolute; left: 16px; top: -100px; padding: 12px; background: var(--paper); }
+.skip:focus { top: 16px; }
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --accent: #8bbcff;
+    --paper: color-mix(in srgb, var(--accent) 6%, #1c1c1e);
+    --page: color-mix(in srgb, var(--accent) 4%, #121213);
+    --ink: color-mix(in srgb, var(--accent) 12%, #e8e8ea);
+    --muted: color-mix(in srgb, var(--accent) 16%, #a6a6aa);
+    --panel: color-mix(in srgb, var(--accent) 8%, var(--paper));
+    --highlight: color-mix(in srgb, var(--accent) 14%, var(--paper));
+    --reference: color-mix(in srgb, var(--muted) 60%, var(--paper));
+    --success: #8fd0a8;
+    --success-bg: #1c3326;
+    --warning: #e3bd6a;
+    --warning-bg: #3a2e14;
+    --danger: #f0a397;
+    --danger-bg: #3d211d;
+    --info: #9dbbe0;
+    --info-bg: #1f2a3a;
+    --image-outline: rgb(255 255 255 / 10%);
+    --shadow-border: 0 0 0 1px rgb(255 255 255 / 8%);
+    --shadow-border-hover: 0 0 0 1px rgb(255 255 255 / 13%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  button:active:not(:disabled):not([data-static]) { scale: none; }
+}
+@media (max-width: 700px) {
+  header, main, footer { padding: 24px 16px; }
+  header { padding-top: 40px; }
+  section { padding: 24px 18px; }
+  .split { grid-template-columns: 1fr; }
+  .stats { gap: 12px; }
+  .stats strong { font-size: 30px; }
+}
+@media (max-width: 420px) {
+  .stats { grid-template-columns: 1fr; }
+  .step { grid-template-columns: 30px 1fr; }
+}
+@media print {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  :root { background: var(--paper); }
+  header, main, footer { max-width: none; padding: 16px 0; }
+  nav, .skip, input[type="range"], .interactive-only { display: none; }
+  section { border-radius: 0; border: 0; border-top: 1px solid var(--line); padding: 24px 0; }
+  .table { overflow: visible; }
+  .wide { min-width: 0; }
+  .plot { max-width: 100%; }
+  th, td { overflow-wrap: anywhere; }
+  .split { grid-template-columns: 1fr; }
+  figure, tr, .panel { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .recommendation, .panel, .bar, .badge { print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#summary">Ga naar de conclusie</a>
+<header>
+<p class="eyebrow">Raxos / vervolgonderzoek / 3 oktober 2026</p>
+<h1>Wat Raxos hierna beter kan doen</h1><p class="intro">De meeste winst komt van interfaces die fouten moeilijker maken, documentatie die werkelijk uitvoert en uitbreidingen op bestaande modules.</p>
+<p class="status">Review en voorstellen. De runtimecode is tijdens dit onderzoek niet gewijzigd.</p>
+<p class="caption">Root <code>56431b50172a</code>; alle 21 libraries geïnventariseerd (714 PHP-bronbestanden), publieke ingangen en relevante uitvoerpaden gericht onderzocht. Geen volledige nieuwe audit van ieder bronbestand.</p>
+<nav aria-label="Inhoudsopgave"><a href="#summary">Conclusie</a><a href="#sql">Eerst herstellen</a><a href="#http">Nieuwe mogelijkheden</a><a href="#contracts">Contracts en CI</a><a href="#libraries">Alle libraries</a><a href="#next">Volgorde</a></nav>
+</header><main><section id="summary" class="recommendation"><h2>Begin met correct gedrag en bruikbare interfaces</h2><p>De eerste ronde moet SQL-voorbeelden, cache-invalidation en de aansluiting tussen OpenAPI en runtimegedrag herstellen. Daarna leveren keyset-paginering, een complete HTTP-client en betrouwbare queue-afhandeling de meeste extra mogelijkheden op.</p>
+<p>Een groene suite verifieert het gedrag waarvoor tests bestaan. De nieuwe probes laten zien waar documentatievoorbeelden, command-interleavings en native drivergeheugen nog extra testgevallen nodig hebben.</p>
+<div class="stats"><div><strong>21</strong><span>libraries geïnventariseerd</span></div><div><strong>3</strong><span>Redis-interleavings gereproduceerd</span></div><div><strong>2</strong><span>native MySQL-cursormodi gemeten</span></div></div>
+<p>De aanbevolen eerste vervolgstappen staan hieronder. <a href="next-performance.html">Het performance-rapport</a> bevat de meetresultaten en voorwaarden.</p></section><section id="sql"><h2>1. Maak kolomfilters expliciet en test SQL-documentatie</h2><p><span class="badge confirmed">Gereproduceerd</span></p><p>Meerdere databasepagina’s gebruiken <code>where('is_active', 1)</code> of <code>where('id', '>', ...)</code>. De builder bindt die strings als waarden. In de SQLite-probe retourneerde <code>where('id', '>', 199999)</code> een eerste rij met id 1, terwijl een expliciete <code>ColumnRef</code> bij id 200000 begon. De query is geldige SQL, waardoor deze vergissing stil blijft.</p><h3>Voorstel</h3><p>Corrigeer de voorbeelden naar <code>column('id')</code> of <code>Model::col('id')</code>. Voeg een expliciete helper voor een kolomfilter toe, bijvoorbeeld <code>whereField()</code>, en leg het onderscheid tussen identifier, waarde en raw SQL op één plek uit. Wijzig de bestaande betekenis van strings niet stilzwijgend.</p><h3>Wanneer is het af?</h3><p>De SQL-voorbeelden draaien tegen synthetische SQLite-, MySQL- en MariaDB-tabellen en controleren echte resultaten. Een voorbeeldfilter moet een rij uitsluiten. Signaturen in de API-pagina’s volgen de code, inclusief <code>cursor()</code> met <code>batchSize</code> en <code>retainCache</code>.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-database/blob/8fdb467c05f069131b95d2d06b69ece68d0d3166/src/Query/Query.php#L1537"><code>database/src/Query/Query.php</code></a>, <a href="https://github.com/basmilius/raxos/blob/56431b50172a9beee66ef573384fee2479456cec/docs/database/query-builder.md#L64"><code>docs/database/query-builder.md</code></a>, <a href="https://github.com/basmilius/raxos/blob/56431b50172a9beee66ef573384fee2479456cec/docs/database/orm/querying.md#L80"><code>docs/database/orm/querying.md</code></a></p></section><section id="openapi"><h2>2. Laat requestmetadata het OpenAPI-schema sturen</h2><p><span class="badge confirmed">Gereproduceerd</span></p><p>Een DTO met runtime-alias <code>display_name</code> en <code>MinLength(3)</code> werd correct gevalideerd, maar het schema beschreef <code>name</code> zonder lengtebeperking of required-lijst. Een verplichte <code>#[MapQuery] int $limit</code> verscheen als optionele parameter zonder schema. De huidige OpenAPI-attributes kunnen details handmatig leveren, maar de automatische afleiding laat ze hier weg.</p><h3>Voorstel</h3><p>Gebruik voor requestmodellen gedeelde metadata voor aliases, aanwezigheid, standaardwaarden, nullability, enums en ondersteunde constraints. Leid query- en headerparameters af uit hun mapping en type. Bewaar expliciete schema-overrides. Geef een melding voor voorwaarden die niet statisch zijn af te leiden, zoals een closure voor optionality.</p><h3>Wanneer is het af?</h3><p>Contracttests vergelijken runtimevalidatie en de gegenereerde schema’s voor dezelfde fixtures. Een required integer-parameter blijft required en integer; <code>display_name</code> is in beide interfaces dezelfde sleutel. Een afzonderlijk response-schema blijft mogelijk wanneer serialization afwijkt.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-openapi/blob/1f76023b6c05725047cb064acf28f23c927b82a1/src/SchemaBuilder.php#L136"><code>openapi/src/SchemaBuilder.php</code></a>, <a href="https://github.com/basmilius/raxos-openapi/blob/1f76023b6c05725047cb064acf28f23c927b82a1/src/RouterBuilder.php#L148"><code>openapi/src/RouterBuilder.php</code></a>, <a href="https://github.com/basmilius/raxos-http/blob/a5f052778267bc1e271979310cb877f31beec789/src/Validate/HttpClassValidator.php#L143"><code>http/src/Validate/HttpClassValidator.php</code></a></p></section><section id="datetime"><h2>3. Test de DateTime-roundtrip naar routeparameters</h2><p><span class="badge confirmed">Gereproduceerd</span></p><p><code>DateTime::jsonSerialize()</code> gaf <code>2026-01-02T03:04:05+02:00</code> terug. <code>DateTime::pattern()</code> accepteerde die volledige string niet: de offset ontbreekt in het patroon. De router gebruikt zo’n patroon voor getypeerde parameters.</p><h3>Voorstel</h3><p>Definieer welke ISO 8601-varianten geschikt zijn voor routeparameters en accepteer daarin de eigen serialisatie, inclusief timezone-offset. Beschrijf de verschillen met <code>__toString()</code> en beperk het patroon tot vormen die de parser daadwerkelijk ondersteunt.</p><h3>Wanneer is het af?</h3><p>Roundtrip-tests voor UTC, positieve en negatieve offsets, schrikkeldagen en ongeldige waarden. Test zowel het patroon als een werkelijk door de router gematchte request, inclusief URL-encoding.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-datetime/blob/617fe4d17118ff7f0b12ac3230d417964550664f/src/DateTime.php#L26"><code>datetime/src/DateTime.php</code></a>, <a href="https://github.com/basmilius/raxos-datetime/blob/617fe4d17118ff7f0b12ac3230d417964550664f/src/DateTime.php#L56"><code>datetime/src/DateTime.php</code></a>, <a href="https://github.com/basmilius/raxos-router/blob/f0228d46b7e98ea73c4814b3ba391fa605e60a78/src/RouterUtil.php"><code>router/src/RouterUtil.php</code></a></p></section><section id="http"><h2>4. Maak de HTTP-client compleet en expliciet</h2><p><span class="badge confirmed">Gereproduceerd</span></p><p>De request-builder heeft GET, POST en DELETE. PUT, PATCH en HEAD via de client gaven een <code>BadCallException</code>. <code>options()</code> stelt Guzzle-opties in en is geen helper voor de OPTIONS-methode. De client biedt een <code>@mixin</code> voor IDE’s, maar de daadwerkelijke request-ingang is protected en forwarding gebruikt <code>__call()</code>.</p><h3>Voorstel</h3><p>Voeg de ontbrekende methoden en een publieke, getypeerde request-ingang toe. Gebruik een ondubbelzinnige naam voor de OPTIONS-request zonder de bestaande optie-setter te veranderen. Optionele retry- en timeoutpolicies kunnen op de bestaande Guzzle-injectie aansluiten; definieer expliciet welke requests opnieuw mogen worden verstuurd.</p><h3>Wanneer is het af?</h3><p>Alle HTTP-methoden worden met een mocktransport getest op methode, URI, headers en body. Requests delen geen veranderlijke builderstate. De publieke ingang en retourtypen zijn controleerbaar met static analysis.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-http/blob/a5f052778267bc1e271979310cb877f31beec789/src/Client/HttpClient.php#L52"><code>http/src/Client/HttpClient.php</code></a>, <a href="https://github.com/basmilius/raxos-http/blob/a5f052778267bc1e271979310cb877f31beec789/src/Client/HttpClientRequest.php#L230"><code>http/src/Client/HttpClientRequest.php</code></a></p></section><section id="search"><h2>5. Voltooi de AND-combinator in Search</h2><p><span class="badge info">Onderbouwd voorstel</span></p><p><code>Search\Filter\Every::apply()</code> gooit nog <code>RuntimeException('Not implemented.')</code>. <code>Some</code> levert OR-semantiek; dat vervangt geen AND-combinator.</p><h3>Voorstel</h3><p>Implementeer Every met expliciete groepering en een vastgelegde scoreberekening. Beschrijf vooraf de betekenis van een lege lijst en de combinatie met Some. Voeg pas NOT of relationele filters toe wanneer daar een concrete toepassing voor is.</p><h3>Wanneer is het af?</h3><p>Tests voor geneste <code>Every(Some(...), ...)</code>, lege filters, weights, soft deletes en herstel van de tijdelijke querymodus bij exceptions. Dezelfde resultaten op SQLite, MySQL en MariaDB.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-search/blob/25af14af611b4c94bcf57ee22cb4dcff9fc80532/src/Filter/Every.php#L49"><code>search/src/Filter/Every.php</code></a>, <a href="https://github.com/basmilius/raxos-search/blob/25af14af611b4c94bcf57ee22cb4dcff9fc80532/src/Filter/Some.php#L59"><code>search/src/Filter/Some.php</code></a></p></section><section id="transactions"><h2>6. Verberg transactiebeheer achter een callback</h2><p><span class="badge info">Onderbouwd voorstel</span></p><p>Nested transacties en savepoints bestaan al. Een caller moet nu zelf <code>transaction()</code>, <code>commit()</code> en <code>rollBack()</code> koppelen met try/catch. Het gedocumenteerde voorbeeld herhaalt dat voor geneste scopes.</p><h3>Voorstel</h3><p>Voeg bijvoorbeeld <code>Db::transactional(fn() =&gt; ...)</code> toe die het callbackresultaat teruggeeft. Een <code>afterCommit()</code>-mechanisme past daarbij voor acties die alleen na de buitenste commit mogen plaatsvinden. Behoud de bestaande rollback-only-semantiek en de handmatige methoden.</p><h3>Wanneer is het af?</h3><p>Terugkeerwaarden, exceptions, nested rollback, mislukte commits en meerdere connecties zijn getest. afterCommit-callbacks draaien één keer na de echte commit en nooit na een rollback. Een callbackhelper kan additief; hooks vereisen eerst een duidelijke lifecycle.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-database/blob/8fdb467c05f069131b95d2d06b69ece68d0d3166/src/Connection/Connection.php#L255"><code>database/src/Connection/Connection.php</code></a>, <a href="https://github.com/basmilius/raxos-database/blob/8fdb467c05f069131b95d2d06b69ece68d0d3166/src/Db.php#L396"><code>database/src/Db.php</code></a>, <a href="https://github.com/basmilius/raxos/blob/56431b50172a9beee66ef573384fee2479456cec/docs/database/transactions-and-logging.md#L15"><code>docs/database/transactions-and-logging.md</code></a></p></section><section id="queues"><h2>7. Voeg delivery-bevestiging en begrensde retries toe</h2><p><span class="badge info">Onderbouwd voorstel</span></p><p>De publisher zet persistent delivery aan en roept <code>basic_publish()</code> aan, zonder publisher-confirm-handshake. De consumer requeuet een mislukte callback meteen. Een structureel falend bericht kan daardoor terug blijven komen. Prefetch staat vast op één.</p><h3>Voorstel</h3><p>Maak publisher confirms, retry-backoff, maximum attempts en dead-letter-afhandeling configureerbaar. Geef consumers een duidelijke uitkomst voor acknowledge, tijdelijk opnieuw proberen en definitief afwijzen. Laat storage en business-idempotency bij de caller.</p><h3>Wanneer is het af?</h3><p>Een disposable RabbitMQ-integratiesuite verifieert bevestigde publish, connection loss, retryvertraging en afwijzen na het maximum. Prefetch krijgt een begrensde configuratie. Persistent delivery alleen belooft geen bevestigde opslag; <a href="https://www.rabbitmq.com/docs/confirms">RabbitMQ beschrijft die afzonderlijke garanties</a>.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-message-bus/blob/f4092553fe6d3de79bc9b953478c5eaa02ed315f/src/MessageBusQueue.php#L103"><code>message-bus/src/MessageBusQueue.php</code></a>, <a href="https://github.com/basmilius/raxos-message-bus/blob/f4092553fe6d3de79bc9b953478c5eaa02ed315f/src/MessageBusQueue.php#L158"><code>message-bus/src/MessageBusQueue.php</code></a></p></section><section id="tokens"><h2>8. Maak tokenbeleid expliciet en testbaar</h2><p><span class="badge info">Onderbouwd voorstel</span></p><p>JWT ondersteunt al algoritmepolicy en key selection, maar tijd en leeway zijn globale statics. Een issuer/audience-policy zit niet in decode. De refresh-grant genereert een nieuw access token en behoudt de bestaande refresh token; de factory heeft wel atomic authorization-code consumption, maar geen gelijkwaardige refresh-consumption-ingang.</p><h3>Voorstel</h3><p>Voeg een instance-based verifier toe met verwachte issuer/audience, algoritmen, keys en een geïnjecteerde <a href="https://www.php-fig.org/psr/psr-20/">PSR-20-klok</a>. Ontwerp voor OAuth2 een expliciet securityprofiel en atomic refresh-tokenrotatie met replay-detectie. De huidige decode-helper kan beschikbaar blijven.</p><h3>Wanneer is het af?</h3><p>Twee verifiers beïnvloeden elkaars klok of leeway niet. Test verkeerd publiek, verkeerde issuer, time boundaries, twee gelijktijdige refreshes en token-family revocation. Voor public clients vereist <a href="https://www.rfc-editor.org/rfc/rfc9700.html#section-2.2.2">RFC 9700</a> sender-constraining of rotatie. Een verplichte nieuwe factorymethode is een contractwijziging; maak compatibiliteit en migratie onderdeel van het ontwerp.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-security/blob/6d0b9250407fb3f6f5c408504c360b3e8940eaf4/src/Jwt/Jwt.php#L34"><code>security/src/Jwt/Jwt.php</code></a>, <a href="https://github.com/basmilius/raxos-oauth2/blob/8ef507d064f28c51b2ee15e5a3e32140aaa0324c/src/Server/GrantType/RefreshTokenGrantType.php#L26"><code>oauth2/src/Server/GrantType/RefreshTokenGrantType.php</code></a>, <a href="https://github.com/basmilius/raxos-oauth2/blob/8ef507d064f28c51b2ee15e5a3e32140aaa0324c/src/Server/Token/TokenFactoryInterface.php#L183"><code>oauth2/src/Server/Token/TokenFactoryInterface.php</code></a></p></section><section id="contracts"><h2>9. Controleer types en dependencycompatibiliteit in CI</h2><p><span class="badge info">Onderbouwd voorstel</span></p><p>Generics bestaan al in Collection en Database. Ze worden nog niet door PHPStan of Psalm gecontroleerd in de huidige CI. <code>MapInterface::get()</code> beschrijft bijvoorbeeld TValue, terwijl Map en ReadonlyMap bij een ontbrekende sleutel null kunnen teruggeven. Sibling-librarydependencies gebruiken bewust <code>*</code>, zodat de gepubliceerde manifests geen compatibele versiegrenzen afdwingen.</p><h3>Voorstel</h3><p>Begin met static analysis voor publieke contracts, collecties, modelquery’s en de container. Voeg type-inferentiechecks toe voor map/filter, nullable lookups en modelresultaten. Bespreek daarna versiegrenzen voor gepubliceerde siblingdependencies; de lokale workspace kan een afzonderlijke path-/branchaliasstrategie houden.</p><h3>Wanneer is het af?</h3><p>Een ontbrekende mapsleutel blijft zichtbaar in het afgeleide type; transformaties houden hun nieuwe elementtype. Dependencychecks verifiëren dat oude contracts en een toekomstige incompatible major niet worden geselecteerd. Dit vraagt een bewuste wijziging van het huidige manifestbeleid, niet het blind vervangen van alle wildcards. <a href="https://getcomposer.org/doc/articles/versions.md">Composer documenteert de constraintsemantiek</a>.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-contract/blob/85476931d149399a7f9a5f9b0303d0dd6d847fcc/src/Collection/MapInterface.php#L26"><code>contract/src/Collection/MapInterface.php</code></a>, <a href="https://github.com/basmilius/raxos-collection/blob/ceb0aeeece6a999a4e5c6f53b1a73933373651da/src/ReadonlyMap.php#L45"><code>collection/src/ReadonlyMap.php</code></a>, <a href="https://github.com/basmilius/raxos/blob/56431b50172a9beee66ef573384fee2479456cec/composer.json"><code>composer.json</code></a>, <a href="https://github.com/basmilius/raxos-http/blob/a5f052778267bc1e271979310cb877f31beec789/composer.json"><code>http/composer.json</code></a></p></section><section id="libraries"><h2>Alle libraries, zonder overal een nieuwe feature te forceren</h2><p>Dit overzicht laat zien wat in deze ronde is bekeken en welke vervolgactie daarbij past. Een inventarisatie van alle bronbestanden is geen garantie dat ieder pad opnieuw is gecontroleerd.</p><div class="table" role="region" aria-label="Scope en vervolgwerk per library" tabindex="0"><table class="wide"><caption>Scope en vervolgwerk per library</caption><thead><tr><th scope="col">Library</th><th scope="col">Onderzocht</th><th scope="col">Passende verbetering</th><th scope="col">Prioriteit</th></tr></thead><tbody><tr><th scope="row"><code>barcode</code></th><td>QR/PDF417 en beide renderers bekeken; verdere formaten staan uitgeschakeld.</td><td>Code128 of EAN13 pas toevoegen bij een concrete behoefte.</td><td>Later</td></tr><tr><th scope="row"><code>cache</code></th><td>Tagged writes, flush en remember gericht gereproduceerd.</td><td>Atomic writes en TTL-behoud; daarna lock-/refreshbeleid.</td><td>Eerst</td></tr><tr><th scope="row"><code>collection</code></th><td>Generics, Map-missingness en materialisatie bekeken.</td><td>Types verifiëren; een aparte lazy sequence alleen voor streaminggebruik.</td><td>Gericht</td></tr><tr><th scope="row"><code>container</code></th><td>Bindings, singleton-fast-path en autowiring bekeken.</td><td>Request-scoped instances als workers die daadwerkelijk nodig hebben.</td><td>Voorwaardelijk</td></tr><tr><th scope="row"><code>contract</code></th><td>Publieke contracts en verplichte PDO-dependency geïnventariseerd.</td><td>Nullable returntypes en compatible siblingversies afdwingen.</td><td>Gericht</td></tr><tr><th scope="row"><code>database</code></th><td>Queryfilters, cursor, pagination en savepoints onderzocht.</td><td>Correcte voorbeelden; keyset-batches en transactional-callback.</td><td>Eerst</td></tr><tr><th scope="row"><code>datetime</code></th><td>Eigen serialized DateTime voldoet niet aan het volledige patroon.</td><td>Geteste serialization/parse/route-roundtrip.</td><td>Eerst</td></tr><tr><th scope="row"><code>error</code></th><td>Bestaande structured exception-output bekeken.</td><td>Optionele HTTP Problem Details-adapter; domeinexceptions behouden.</td><td>Later</td></tr><tr><th scope="row"><code>foundation</code></th><td>Globale Singleton-registry en Preloader bekeken.</td><td>Worker-lifecycle documenteren; extension/dependencygebruik gericht nalopen.</td><td>Voorwaardelijk</td></tr><tr><th scope="row"><code>http</code></th><td>Verbs met mocktransport gecontroleerd; client/requestmodel bekeken.</td><td>Complete verbs, typed request-ingang en expliciete retry-policy.</td><td>Volgende</td></tr><tr><th scope="row"><code>mail</code></th><td>Berichtvelden en transport-resultaten bekeken.</td><td>Optionele Reply-To en provider delivery receipt bij behoefte aan tracking.</td><td>Later</td></tr><tr><th scope="row"><code>message-bus</code></th><td>Publish/consume en nack-gedrag bekeken.</td><td>Confirms, backoff, dead letters en native broker-tests.</td><td>Volgende</td></tr><tr><th scope="row"><code>oauth2</code></th><td>Refresh-grant en tokenfactory bekeken.</td><td>Atomic rotatie en expliciet securityprofiel.</td><td>Ontwerpen</td></tr><tr><th scope="row"><code>openapi</code></th><td>Alias, constraint en queryparameter met echte builders gecontroleerd.</td><td>Gedeelde requestmetadata en contracttests.</td><td>Eerst</td></tr><tr><th scope="row"><code>rate-limit</code></th><td>Counter-script en aparte TTL-read bekeken.</td><td>Eén atomic status-snapshot in plaats van twee roundtrips.</td><td>Optimaliseren</td></tr><tr><th scope="row"><code>reflection</code></th><td>Reflectorconstructie en typehelpers bekeken.</td><td>Types en foutdiagnostiek testen; caching eerst meten.</td><td>Meten</td></tr><tr><th scope="row"><code>router</code></th><td>Resolving, bounded routecache en path()-lookup bekeken.</td><td>URL-generatie met parameters en typed metadata; warmup eerst meten.</td><td>Volgende</td></tr><tr><th scope="row"><code>search</code></th><td>Filtercombinatie en SQL-integratie bekeken.</td><td>Every (AND); keyset-pagination met stabiele sortering.</td><td>Volgende</td></tr><tr><th scope="row"><code>security</code></th><td>JWT-policy en klokgebruik bekeken; bestaande algoritmefix niet opnieuw aanbevolen.</td><td>Instance verifier met claimpolicy en ClockInterface.</td><td>Ontwerpen</td></tr><tr><th scope="row"><code>terminal</code></th><td>Execute/exit en parsing bekeken.</td><td>Programmatische run(argv): int voor testen en embedded CLI-gebruik.</td><td>Later</td></tr><tr><th scope="row"><code>wallet</code></th><td>Signing, packaging en lifecycle bekeken.</td><td>Geen nieuwe platformintegratie zonder concrete behoefte; documenteer cleanup.</td><td>Behouden</td></tr></tbody></table></div></section><section id="next"><h2>Volgorde voor een volgende release</h2><ol class="steps">
+<li class="step"><div><h3>Herstel en bescherm de gereproduceerde afwijkingen</h3><p>SQL-documentatie, de twee tagged-cache-races, OpenAPI-requestmetadata en DateTime-roundtrips. Voeg eerst de relevante tests toe en houd de bestaande interfaces bruikbaar.</p></div></li>
+<li class="step"><div><h3>Voeg een beperkte set mogelijkheden toe</h3><p>Keyset-paginering met bounded batches, complete HTTP-verbs, Every en een transactiecallback. Leg het gedrag en voorbeelden vast voordat het contract groter wordt.</p></div></li>
+<li class="step"><div><h3>Ontwerp de grotere contractwijzigingen afzonderlijk</h3><p>Queue-deliverybeleid, refresh-tokenrotatie, een tokenverifier en worker-scopes. Dwing geen nieuwe methode af op alle custom implementations zonder migratiepad.</p></div></li>
+</ol><p>Ook passend, maar geen eerste prioriteit: reverse routing, een programmatische CLI-ingang, lazy sequences, mail receipts en een optionele <a href="https://www.rfc-editor.org/rfc/rfc9457.html">Problem Details-response</a>. Nieuwe features passen in een minor zolang ze additief blijven; gewijzigde betekenissen, verplichte interfaceleden en incompatible defaults vragen een aparte compatibiliteitsbeoordeling.</p></section></main>
+<footer><p>PHP 8.5.9, Darwin arm64. Eigen disposable Redis 7- en MySQL 8.4-services; beide verwijderd. Geen bestaande applicatie of service gebruikt. Meetvoorwaarden en libraryrevisies staan in <a href="next-review-evidence.json">het bewijsbestand</a>. <a href="next-performance.html">Lees ook het performance-rapport.</a></p>
+<p>De rapporten onderscheiden gereproduceerd gedrag, voorstellen op basis van de code en nog te meten ideeën. De eerdere rapporten blijven historische snapshots.</p><p>Controle: bronpaden, links, anchors, taal en standalone-opbouw gecontroleerd. Contrast berekend voor lichte en donkere kleuren. Responsieve en printregels gecontroleerd in CSS. Browserrendering was niet beschikbaar; een visuele controle bij smalle viewport, donker thema en print is daarom nog niet uitgevoerd.</p></footer>
+</body></html>

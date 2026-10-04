@@ -59,7 +59,7 @@ Calling a relation name as a method returns its query, so you can refine it befo
 
 ```php
 $posts = $user->posts()
-    ->where('is_published', 1)
+    ->whereField('is_published', 1)
     ->arrayList();
 ```
 
@@ -87,7 +87,7 @@ $user = User::singleOrFail('usr_1');
 $user->name = 'Bas';
 $user->save();
 
-$active = User::where('is_active', 1)->arrayList();
+$active = User::whereField('is_active', 1)->arrayList();
 ```
 
 ## Complete Queryable static methods

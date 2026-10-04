@@ -4,6 +4,7 @@ export const container: DefaultTheme.SidebarItem[] = [
     {
         text: 'Container',
         items: [
+            {text: 'Scoped services', link: '/container/scopes'},
             {text: 'Introduction', link: '/container/'},
             {text: 'Installation', link: '/container/installation'}
         ]

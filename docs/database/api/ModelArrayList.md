@@ -63,6 +63,8 @@ Because `ModelArrayList` extends `ArrayList`, every general purpose collection m
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\column;
+
 $active = User::all()
     ->filter(static fn(User $user) => $user->isActive);
 

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raxos · De volgende performanceverbeteringen</title>
+<style>
+:root {
+  color-scheme: light;
+  --brand: #005bd1;
+  --accent: var(--brand);
+  --paper: #fff;
+  --page: color-mix(in srgb, var(--accent) 6%, var(--paper));
+  --ink: color-mix(in srgb, var(--accent) 28%, #252b29);
+  --muted: color-mix(in srgb, var(--accent) 24%, #626762);
+  --line: color-mix(in srgb, var(--accent) 18%, var(--paper));
+  --panel: color-mix(in srgb, var(--accent) 4%, var(--paper));
+  --highlight: color-mix(in srgb, var(--accent) 10%, var(--paper));
+  --focus: var(--accent);
+  --success: #236746;
+  --success-bg: #e7f0e0;
+  --warning: #765311;
+  --warning-bg: #f7f0e0;
+  --danger: #913f35;
+  --danger-bg: #f8e9e6;
+  --info: #365573;
+  --info-bg: #e8edf4;
+  --reference: color-mix(in srgb, var(--muted) 55%, var(--paper));
+  --image-outline: rgb(0 0 0 / 10%);
+  --shadow-border: 0 0 0 1px rgb(0 0 0 / 6%), 0 1px 2px -1px rgb(0 0 0 / 6%), 0 2px 4px rgb(0 0 0 / 4%);
+  --shadow-border-hover: 0 0 0 1px rgb(0 0 0 / 14%), 0 1px 2px -1px rgb(0 0 0 / 8%), 0 2px 4px rgb(0 0 0 / 6%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--page);
+  line-height: 1.65;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+header, main, footer { max-width: 1120px; margin: auto; padding: 32px; }
+header { padding-top: 64px; }
+h1 { font-size: clamp(36px, 5.5vw, 62px); line-height: 1.07; letter-spacing: -.04em; max-width: 850px; margin: 18px 0 24px; }
+h2 { font-size: 28px; line-height: 1.2; letter-spacing: -.025em; margin: 0 0 20px; }
+h3 { font-size: 19px; margin: 26px 0 10px; }
+h1, h2, h3 { text-wrap: balance; overflow-wrap: anywhere; }
+p { margin: 0 0 16px; text-wrap: pretty; }
+li, figcaption, blockquote { text-wrap: pretty; }
+.long-excerpt { text-wrap: wrap; }
+a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+a:focus-visible, summary:focus-visible, input:focus-visible, button:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+a:hover { text-decoration-thickness: 2px; }
+.intro { font-size: 21px; max-width: 850px; }
+.eyebrow, footer, .caption, figcaption { font-size: 13px; color: var(--muted); }
+.eyebrow { letter-spacing: .04em; }
+.status { display: inline-block; background: var(--highlight); padding: 7px 14px; border-radius: 20px; font-size: 14px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: 24px; }
+nav a { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; }
+nav a:hover, summary:hover { background: var(--panel); }
+nav a:active, summary:active { background: var(--highlight); }
+section { padding: 32px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; margin-bottom: 24px; scroll-margin-top: 20px; }
+.recommendation { background: var(--highlight); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; margin: 26px 0; padding: 24px 0; border-block: 1px solid var(--line); }
+.stats strong { display: block; color: var(--accent); font-size: 38px; line-height: 1.2; letter-spacing: -.03em; }
+.stats span { display: block; font-size: 13px; margin-top: 7px; }
+.stats strong, table, output, .bar-label { font-variant-numeric: tabular-nums; }
+.table { overflow-x: auto; margin: 20px 0; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+caption { text-align: left; margin-bottom: 12px; font-weight: 600; }
+th, td { padding: 13px 12px; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: var(--panel); }
+.wide { min-width: 680px; }
+li { margin-bottom: 10px; }
+ul, ol { padding-left: 23px; }
+.note { padding: 18px 20px; background: var(--warning-bg); border-left: 3px solid var(--warning); }
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.split > * { min-width: 0; }
+.panel { background: var(--panel); padding: 24px; border-radius: 12px; }
+.panel h3 { margin-top: 0; }
+.badge { display: inline-block; font-size: 12px; color: var(--muted); background: var(--panel); padding: 3px 8px; border-radius: 5px; }
+.badge.confirmed { color: var(--success); background: var(--success-bg); }
+.badge.warning { color: var(--warning); background: var(--warning-bg); }
+.badge.danger { color: var(--danger); background: var(--danger-bg); }
+.badge.info { color: var(--info); background: var(--info-bg); }
+figure { margin: 20px 0; }
+.split > figure { margin: 0; }
+figure img { display: block; width: 100%; height: auto; border-radius: 8px; outline: 1px solid var(--image-outline); outline-offset: -1px; }
+figcaption { margin-top: 10px; }
+.diagram { display: block; max-width: 100%; height: auto; }
+.diagram text { font-family: inherit; fill: var(--ink); font-size: 16px; }
+.diagram .label { fill: var(--muted); font-size: 14px; }
+.diagram .reference { fill: var(--reference); }
+.diagram .node { fill: var(--highlight); stroke: var(--accent); }
+.diagram .edge, .diagram .axis { fill: none; stroke: var(--accent); stroke-width: 2; }
+.diagram .arrow, .diagram .series { fill: var(--accent); }
+.diagram .grid { stroke: var(--line); }
+.plot { max-width: none; }
+.steps { list-style: none; padding: 0; counter-reset: step; }
+.step { counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding-top: 24px; border-top: 1px solid var(--line); margin-top: 24px; }
+.step::before { content: counter(step); font-size: 26px; color: var(--accent); }
+.step h3 { margin: 0 0 10px; }
+code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: .88em; overflow-wrap: anywhere; }
+pre { overflow-x: auto; padding: 18px; background: var(--panel); border-radius: 8px; font-size: 12px; }
+pre code { overflow-wrap: normal; font-size: inherit; }
+details { border-top: 1px solid var(--line); margin-top: 16px; }
+summary { cursor: pointer; min-height: 44px; padding: 10px 0; color: var(--accent); font-weight: 600; }
+label { display: block; font-weight: 600; }
+button, select { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--paper); font: inherit; }
+button { cursor: pointer; transition: background-color 120ms ease, scale 120ms ease; }
+button:hover:not(:disabled) { background: var(--highlight); }
+button:active:not(:disabled):not([data-static]) { scale: 0.96; }
+button:disabled, select:disabled { opacity: .6; cursor: not-allowed; }
+input[type="range"] { width: 100%; min-height: 44px; accent-color: var(--accent); }
+.bar { height: 26px; background: var(--line); border-radius: 5px; overflow: hidden; margin: 8px 0 18px; }
+.bar span { display: block; height: 100%; background: var(--accent); }
+.bar.reference span { background: var(--reference); }
+.bar-label { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; }
+.skip { position: absolute; left: 16px; top: -100px; padding: 12px; background: var(--paper); }
+.skip:focus { top: 16px; }
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --accent: #8bbcff;
+    --paper: color-mix(in srgb, var(--accent) 6%, #1c1c1e);
+    --page: color-mix(in srgb, var(--accent) 4%, #121213);
+    --ink: color-mix(in srgb, var(--accent) 12%, #e8e8ea);
+    --muted: color-mix(in srgb, var(--accent) 16%, #a6a6aa);
+    --panel: color-mix(in srgb, var(--accent) 8%, var(--paper));
+    --highlight: color-mix(in srgb, var(--accent) 14%, var(--paper));
+    --reference: color-mix(in srgb, var(--muted) 60%, var(--paper));
+    --success: #8fd0a8;
+    --success-bg: #1c3326;
+    --warning: #e3bd6a;
+    --warning-bg: #3a2e14;
+    --danger: #f0a397;
+    --danger-bg: #3d211d;
+    --info: #9dbbe0;
+    --info-bg: #1f2a3a;
+    --image-outline: rgb(255 255 255 / 10%);
+    --shadow-border: 0 0 0 1px rgb(255 255 255 / 8%);
+    --shadow-border-hover: 0 0 0 1px rgb(255 255 255 / 13%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  button:active:not(:disabled):not([data-static]) { scale: none; }
+}
+@media (max-width: 700px) {
+  header, main, footer { padding: 24px 16px; }
+  header { padding-top: 40px; }
+  section { padding: 24px 18px; }
+  .split { grid-template-columns: 1fr; }
+  .stats { gap: 12px; }
+  .stats strong { font-size: 30px; }
+}
+@media (max-width: 420px) {
+  .stats { grid-template-columns: 1fr; }
+  .step { grid-template-columns: 30px 1fr; }
+}
+@media print {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  :root { background: var(--paper); }
+  header, main, footer { max-width: none; padding: 16px 0; }
+  nav, .skip, input[type="range"], .interactive-only { display: none; }
+  section { border-radius: 0; border: 0; border-top: 1px solid var(--line); padding: 24px 0; }
+  .table { overflow: visible; }
+  .wide { min-width: 0; }
+  .plot { max-width: 100%; }
+  th, td { overflow-wrap: anywhere; }
+  .split { grid-template-columns: 1fr; }
+  figure, tr, .panel { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .recommendation, .panel, .bar, .badge { print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#summary">Ga naar de conclusie</a>
+<header>
+<p class="eyebrow">Raxos / vervolgonderzoek / 3 oktober 2026</p>
+<h1>De volgende performanceverbeteringen</h1><p class="intro">Nieuwe probes tonen waar correctheid, geheugen en databasewerk nog kunnen verbeteren, met meetvoorwaarden per bevinding.</p>
+<p class="status">Review en voorstellen. De runtimecode is tijdens dit onderzoek niet gewijzigd.</p>
+<p class="caption">Root <code>56431b50172a</code>; alle 21 libraries geïnventariseerd (714 PHP-bronbestanden), publieke ingangen en relevante uitvoerpaden gericht onderzocht. Geen volledige nieuwe audit van ieder bronbestand.</p>
+<nav aria-label="Inhoudsopgave"><a href="#summary">Conclusie</a><a href="#cache">Redis-interleavings</a><a href="#mysql">MySQL-geheugen</a><a href="#pagination">Paginering</a><a href="#roundtrips">Roundtrips</a><a href="#measure">Nog te meten</a><a href="#next">CI en volgorde</a></nav>
+</header><main><section id="summary" class="recommendation"><h2>Correcte cache-invalidation en begrensd databasegeheugen hebben voorrang</h2><p>De cacheprobes tonen fouten bij writes en flushes die door elkaar lopen. De databaseprobes tonen twee afzonderlijke mogelijkheden: de native MySQL-buffer beheersen en diepe OFFSET-pagina’s vervangen door een expliciete seek-interface.</p><p>De huidige ORM-cursor batcht hydration en ruimt nieuw geïntroduceerde identities op. Dat bestaande voordeel blijft relevant, maar begrenst niet automatisch de buffer van de MySQL-driver.</p></section><section id="cache"><h2>1. Maak tagged writes en invalidation samen atomic</h2><p><span class="badge confirmed">Gereproduceerd op Redis 7</span></p>
+<p>De writer koppelt een key aan de tags vóór SETEX. Een flush tussen die handelingen verwijdert de index; daarna schrijft SETEX de waarde opnieuw. Die waarde bleef in de probe ook na een tweede flush bestaan.</p>
+<ol><li>Client A koppelt de nog te schrijven waarde aan de tag-index.</li><li>Client B flusht de tag, verwijdert de index en probeert de waarde te verwijderen.</li><li>Client A voert SETEX uit. De waarde bestaat, maar de index niet meer.</li><li>Een volgende tag-flush kan de waarde niet vinden.</li></ol>
+<p>Een tweede interleaving las een oude TTL en verkortte de tag-index naar 10 seconden, terwijl de gekoppelde lange waarde nog 100 seconden geldig was.</p><div class="table" role="region" aria-label="Gecontroleerde command-interleavings met twee clients" tabindex="0"><table class="wide"><caption>Gecontroleerde command-interleavings met twee clients</caption><thead><tr><th scope="col">Probe</th><th scope="col">Waargenomen</th><th scope="col">Vereist gedrag</th></tr></thead><tbody><tr><th scope="row">Flush tussen index en SETEX</th><td>Waarde blijft zonder index bestaan, ook na tweede flush.</td><td>Waarde en index verschijnen als één consistente write.</td></tr><tr><th scope="row">Korte write na een lange write</th><td>Tag-index 10 s; lange waarde 100 s.</td><td>Tag-index verloopt nooit eerder dan de langst levende gekoppelde waarde.</td></tr><tr><th scope="row">Twee remember-misses</th><td>De berekening draait twee keer.</td><td>Optionele single-flight-policy met lock-owner, timeout en vrijgave.</td></tr></tbody></table></div><h3>Voorstel en acceptatie</h3><p>Schrijf waarde, memberships en monotone tag-TTL in één bounded script of vergelijkbare atomic operatie. Houd flush-batches klein. Definieer welke writes een gelijktijdige flush omvat. Test crash/interruption, meerdere tags, verschillende TTL’s en writes die blijven binnenkomen tijdens een flush. Redis garandeert <a href="https://redis.io/docs/latest/develop/programmability/eval-intro/">atomic uitvoering van Lua</a>; dat garandeert nog geen complete applicatiepolicy.</p><p class="caption">Bron: <a href="https://github.com/basmilius/raxos-cache/blob/47ec24f63b44e9214abd8fcf0e3ff4dec3680868/src/Redis/RedisTaggedCache.php#L159"><code>cache/src/Redis/RedisTaggedCache.php</code></a>. Reproductie met echte Redis-commands, interleaving via een tijdelijke subclass; geen gemeten workloadpercentage of productie-incident.</p></section><section id="mysql"><h2>2. Een ORM-batch is geen begrensde MySQL-buffer</h2><p><span class="badge confirmed">Native driver gemeten</span></p><p>20.000 rijen met een payload van 512 bytes gebruikten onderstaande extra PHP-heap bij het doorlopen van de Raxos-cursor. Iedere modus draaide in een eigen PHP-proces.</p><div class="table" role="region" aria-label="MySQL 8.4, PHP 8.5.9, raw querycursor, geen ORM-relaties" tabindex="0"><table class="wide"><caption>MySQL 8.4, PHP 8.5.9, raw querycursor, geen ORM-relaties</caption><thead><tr><th scope="col">Modus</th><th scope="col">Rijen</th><th scope="col">Piek boven baseline</th><th scope="col">Na eerste rij</th></tr></thead><tbody><tr><th scope="row">Standaard buffered</th><td>20.000</td><td>11.25 MiB</td><td>11.24 MiB</td></tr><tr><th scope="row">Expliciet unbuffered</th><td>20.000</td><td>0.77 MiB</td><td>0.53 MiB</td></tr></tbody></table></div><figure class="panel"><div class="bar-label"><span>Standaard buffered</span><span>11.25 MiB</span></div><div class="bar" role="img" aria-label="Standaard buffered: 11.25 MiB extra PHP-heap"><span style="width:100.00%"></span></div><div class="bar-label"><span>Expliciet unbuffered</span><span>0.77 MiB</span></div><div class="bar" role="img" aria-label="Expliciet unbuffered: 0.77 MiB extra PHP-heap"><span style="width:6.82%"></span></div><figcaption>Gemeten PHP-heap, niet de volledige OS-process-RSS. Eén meting per modus. Dit vergelijkt driverbuffering; het is geen benchmark van requestlatency of alle ORM-mogelijkheden.</figcaption></figure><h3>Voorstel en acceptatie</h3><p>Voeg een expliciete bounded-batch-interface toe, bijvoorbeeld chunkById/lazyById. Een raw streaming-modus kan unbuffered PDO gebruiken, maar de caller moet de beperkingen kennen. Bij unbuffered MySQL kan dezelfde verbinding geen nieuwe query uitvoeren voordat het resultaat is afgehandeld; dat raakt eager loading. <a href="https://www.php.net/manual/en/mysqlinfo.concepts.buffering.php">De PHP-handleiding beschrijft beide modi</a>.</p><p>Test de heapgroei bij grotere native datasets, early break en exception cleanup, eager loading, identity-cachebeleid en compound sort keys. Bewaar de huidige cursorsemantiek en kies streaming expliciet.</p><p class="caption">Bron: <a href="https://github.com/basmilius/raxos-database/blob/8fdb467c05f069131b95d2d06b69ece68d0d3166/src/Query/Statement.php#L145"><code>database/src/Query/Statement.php</code></a>, <a href="https://github.com/basmilius/raxos-database/blob/8fdb467c05f069131b95d2d06b69ece68d0d3166/src/Connection/MySql.php#L53"><code>database/src/Connection/MySql.php</code></a>.</p></section><section id="pagination"><h2>3. Maak keyset-paginering een eigen resultaatvorm</h2><p><span class="badge confirmed">SQLite-vergelijking gemeten</span></p><p>Op 200.000 rijen steeg de mediane OFFSET-tijd met de paginadiepte. De seek-query gebruikte een geïndexeerde id en begon direct na de laatst getoonde sleutel. De resultaten van beide queries waren per pagina gelijk.</p><div class="table" role="region" aria-label="SQLite :memory:, 1 warmup + 9 runs per query, medianen" tabindex="0"><table class="wide"><caption>SQLite :memory:, 1 warmup + 9 runs per query, medianen</caption><thead><tr><th scope="col">Offset / vorige id</th><th scope="col">OFFSET, 25 rijen</th><th scope="col">Seek, 25 rijen</th></tr></thead><tbody><tr><th scope="row">0</th><td>0.0077 ms</td><td>0.0094 ms</td></tr><tr><th scope="row">50.000</th><td>0.1985 ms</td><td>0.0093 ms</td></tr><tr><th scope="row">150.000</th><td>0.6145 ms</td><td>0.0094 ms</td></tr></tbody></table></div><h3>Voorstel en acceptatie</h3><p>Een CursorPage met items, nextCursor en hasMore past beter dan een Paginated-resultaat dat altijd total en pages verlangt. Gebruik limit+1 om hasMore te bepalen. Beschrijf sortering, een unieke tie-breaker, ascending/descending, nulls en de betekenis van inserts of updates tussen pagina’s.</p><p>Test dit ook op MySQL en MariaDB, met niet-unieke en samengestelde sorteersleutels, filterchanges, een ongeldige cursor en wijzigingen tussen pagina’s. De SQLite-medianen voorspellen geen MySQL-latency. OFFSET blijft bruikbaar voor pagina’s die een paginanummer of totaal nodig hebben.</p><p class="caption">Bestaande ingang: <a href="https://github.com/basmilius/raxos-database/blob/8fdb467c05f069131b95d2d06b69ece68d0d3166/src/Query/Statement.php#L194"><code>database/src/Query/Statement.php</code></a>, <a href="https://github.com/basmilius/raxos-collection/blob/ceb0aeeece6a999a4e5c6f53b1a73933373651da/src/Paginated.php#L33"><code>collection/src/Paginated.php</code></a>.</p></section><section id="roundtrips"><h2>4. Verminder roundtrips met behoud van de betekenis</h2><p>Een warme Redis remember-hit voerde in de probe EXISTS en GET uit. Een tagged write voert voor iedere tag TTL, SADD en EXPIRE uit, plus SETEX voor de waarde. De rate limiter voert een counter-script en een afzonderlijke PTTL-read uit.</p><div class="table" role="region" aria-label="Command-counts, geen gemeten netwerkbesparing" tabindex="0"><table class="wide"><caption>Command-counts, geen gemeten netwerkbesparing</caption><thead><tr><th scope="col">Pad</th><th scope="col">Huidige client-roundtrips</th><th scope="col">Mogelijke interface</th></tr></thead><tbody><tr><th scope="row">Warme remember-hit</th><td>2: EXISTS + GET</td><td>Eén lookup die found en value afzonderlijk teruggeeft.</td></tr><tr><th scope="row">Tagged write met één tag</th><td>4: TTL + SADD + EXPIRE + SETEX</td><td>Eén atomic write; serverwerk blijft bestaan.</td></tr><tr><th scope="row">RateLimitStatus met increment</th><td>2: EVAL + PTTL</td><td>Eén atomic snapshot met operations en TTL.</td></tr></tbody></table></div><p>Een gecombineerde lookup moet cached false/null en een ontbrekende waarde blijven onderscheiden, ook bij custom serializers. Een lockbeleid voor remember moet optioneel en begrensd zijn. TTL-jitter of stale-while-revalidate kan daarna nuttig zijn als de workload gelijktijdige expiraties heeft.</p><p class="caption">Bronnen: <a href="https://github.com/basmilius/raxos-cache/blob/47ec24f63b44e9214abd8fcf0e3ff4dec3680868/src/Redis/RedisCache.php#L103"><code>cache/src/Redis/RedisCache.php</code></a>, <a href="https://github.com/basmilius/raxos-cache/blob/47ec24f63b44e9214abd8fcf0e3ff4dec3680868/src/Redis/RedisTaggedCache.php#L169"><code>cache/src/Redis/RedisTaggedCache.php</code></a>, <a href="https://github.com/basmilius/raxos-rate-limit/blob/34b79caef133881098cb0dc33a83032c46274a73/src/RateLimiter.php#L61"><code>rate-limit/src/RateLimiter.php</code></a>, <a href="https://github.com/basmilius/raxos-rate-limit/blob/34b79caef133881098cb0dc33a83032c46274a73/src/Store/RedisRateLimiterStore.php#L72"><code>rate-limit/src/Store/RedisRateLimiterStore.php</code></a>.</p></section><section id="measure"><h2>5. Meet nieuwe hotspots voordat de implementatie complexer wordt</h2><p><span class="badge warning">Nog te meten</span></p>
+<p>De router gebruikt al gecombineerde regexes en een bounded routecache. De container heeft al een singleton-fast-path. De eerdere lexer- en suffix-list-problemen zijn aangepakt. Voor deze onderdelen is nog geen nieuw aantoonbaar performanceprobleem vastgesteld.</p>
+<p>Meet cold route-mapping, transient autowiring, validatiemetadata en schema-generatie met realistische aantallen controllers en DTO’s. Vergelijk PHP-FPM en een langlevend workerproces. Een cache/warmup van onveranderlijke metadata is pas zinvol als die meting de herhaalde reflectie als kostenpost aanwijst. Geef zo’n cache een code/configuratierevisie en invalidationregel.</p>
+<p>Voor barcode-rendering, Wallet-signing en mail-attachmentgeheugen is eveneens een representatieve payload nodig. De library-inventarisatie maakt daar geen snelheidsclaim over.</p><p class="caption">Bestaande optimalisaties: <a href="https://github.com/basmilius/raxos-router/blob/f0228d46b7e98ea73c4814b3ba391fa605e60a78/src/Resolvable.php#L118"><code>router/src/Resolvable.php</code></a>, <a href="https://github.com/basmilius/raxos-container/blob/39e6b4136c5c8d061e090bfbb49437424611f4ff/src/Container.php#L530"><code>container/src/Container.php</code></a>. Historische metingen: <a href="performance-after.json">performance-after.json van 2 oktober</a>.</p></section><section id="next"><h2>Bescherm eigenschappen in CI, bewaar timings als bewijs</h2><p>Voeg de Redis-interleavings en native cursorgeheugenprobes toe aan de teststrategie. Verifieer querycounts, batchgroottes, identity-retention, roundtrips en cleanup. Controleer bij geheugentests de groei ten opzichte van de dataset, niet één willekeurige vaste limiet.</p><p>Bewaar tijdmetingen met runtime, driver, dataset, warmup en herhalingen als CI-artifact. Maak de gewone suite niet afhankelijk van milliseconden die op gedeelde runners wisselen.</p><ol class="steps"><li class="step"><div><h3>Atomic tagged-cache-writes</h3><p>Eerst correctheid en regressietests, daarna de reductie van roundtrips meten.</p></div></li><li class="step"><div><h3>Bounded native batches en keyset-pages</h3><p>Leg driver- en ORM-gedrag samen vast; test ook mutaties tussen pagina’s.</p></div></li><li class="step"><div><h3>Metadata en payloads gericht benchmarken</h3><p>Kies alleen caches of nieuwe streaming-ingangen waar representatieve metingen hun nut aantonen.</p></div></li></ol></section></main>
+<footer><p>PHP 8.5.9, Darwin arm64. Eigen disposable Redis 7- en MySQL 8.4-services; beide verwijderd. Geen bestaande applicatie of service gebruikt. Meetvoorwaarden en libraryrevisies staan in <a href="next-review-evidence.json">het bewijsbestand</a>. <a href="next-improvements.html">Lees ook de interface- en featurevoorstellen.</a></p>
+<p>De rapporten onderscheiden gereproduceerd gedrag, voorstellen op basis van de code en nog te meten ideeën. De eerdere rapporten blijven historische snapshots.</p><p>Controle: bronpaden, links, anchors, taal en standalone-opbouw gecontroleerd. Contrast berekend voor lichte en donkere kleuren. Responsieve en printregels gecontroleerd in CSS. Browserrendering was niet beschikbaar; een visuele controle bij smalle viewport, donker thema en print is daarom nog niet uitgevoerd.</p></footer>
+</body></html>

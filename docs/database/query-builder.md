@@ -38,7 +38,7 @@ use Raxos\Database\Db;
 $rows = Db::query()
     ->select(['id', 'name', 'email'])
     ->from('users')
-    ->where('is_active', 1)
+    ->whereField('is_active', 1)
     ->orderBy('name')
     ->limit(25)
     ->array();
@@ -50,20 +50,22 @@ Related helpers: `selectDistinct()` and `selectSuffix()`. The `from()` method ta
 
 ## Where clauses
 
-`where()` chains conditions with `and`, `orWhere()` with `or`. Passing two arguments implies an `=` comparison; passing three uses the given operator.
+`whereField()` treats its first argument as a column identifier. `where()` treats plain strings as bound values: use `column()` or `Model::col()` for column references. Both chain conditions with `and`, `orWhere()` with `or`. Passing two arguments implies an `=` comparison; passing three uses the given operator.
 
 ```php
 <?php
 declare(strict_types=1);
+
+use function Raxos\Database\Query\column;
 
 use Raxos\Database\Db;
 
 $rows = Db::query()
     ->select()
     ->from('orders')
-    ->where('status', 'paid')
-    ->where('total', '>', 100)
-    ->orWhere('status', 'refunded')
+    ->whereField('status', 'paid')
+    ->whereField('total', '>', 100)
+    ->orWhere(column('status'), 'refunded')
     ->array();
 ```
 
@@ -77,6 +79,8 @@ The join family covers every SQL join. Each takes a table name and an optional c
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\column;
+
 use Raxos\Contract\Database\Query\QueryInterface;
 use Raxos\Database\Db;
 
@@ -84,7 +88,7 @@ $rows = Db::query()
     ->select(['users.id', 'profiles.bio'])
     ->from('users')
     ->leftJoin('profiles', static fn(QueryInterface $query) => $query
-        ->on('profiles.user_id', 'users.id'))
+        ->on(column('profiles.user_id'), column('users.id')))
     ->array();
 ```
 
@@ -96,13 +100,15 @@ Available joins: `join()`, `innerJoin()`, `leftJoin()`, `leftOuterJoin()`, `righ
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\literal;
+
 use Raxos\Database\Db;
 
 $rows = Db::query()
-    ->select(['country', 'count(*)'])
+    ->select(['country', 'count' => literal('count(*)')])
     ->from('users')
     ->groupBy('country')
-    ->having('count(*)', '>', 10)
+    ->having(literal('count(*)'), '>', 10)
     ->orderByDesc('country')
     ->array();
 ```
@@ -157,12 +163,12 @@ use Raxos\Database\Db;
 
 Db::query()
     ->update('users', ['name' => 'Bas Milius'])
-    ->where('id', 'usr_1')
+    ->whereField('id', 'usr_1')
     ->run();
 
 Db::query()
     ->deleteFrom('sessions')
-    ->where('expires_on', '<', 1710000000)
+    ->whereField('expires_on', '<', 1710000000)
     ->run();
 ```
 
@@ -174,12 +180,14 @@ Db::query()
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\literal;
+
 use Raxos\Database\Db;
 use function Raxos\Database\Query\{literal, stringLiteral};
 
 Db::query()
     ->update('articles', ['views' => literal('views + 1')])
-    ->where('slug', stringLiteral('hello-world'))
+    ->whereField('slug', stringLiteral('hello-world'))
     ->run();
 ```
 
@@ -193,6 +201,8 @@ A partial is a reusable sub query fragment that behaves as an expression. Wrap a
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\column;
+
 use Raxos\Contract\Database\ConnectionInterface;
 use Raxos\Contract\Database\Query\QueryInterface;
 use Raxos\Database\Db;
@@ -203,7 +213,7 @@ use function Raxos\Database\Query\{column, partial};
 $hasOrderLine = partial(static fn(ConnectionInterface $connection): QueryInterface => $connection->query()
     ->select(1)
     ->from('order_line')
-    ->where('product_id', column('id', 'product')));
+    ->whereField('product_id', column('id', 'product')));
 
 Db::query()
     ->select('*')
@@ -224,7 +234,7 @@ Terminal methods run the statement and shape the result:
 | `arrayList()` | An `ArrayList`, or a `ModelArrayList` for model queries. |
 | `single()` | The first row, or `null`. |
 | `singleOrFail()` | The first row, or throws `MissingResultException`. |
-| `cursor()` | A `Generator` that yields rows one at a time. |
+| `cursor(fetchMode, options, batchSize: 100, retainCache: false)` | Yields rows with bounded ORM hydration and scoped identity-cache retention. PDO may still buffer the full result; use a keyset batch iterator for bounded native reads. |
 | `run()` | The affected row count for a write. |
 | `paginate()` | A `Paginated` page including a total count. |
 
@@ -233,7 +243,7 @@ Terminal methods run the statement and shape the result:
 declare(strict_types=1);
 
 $page = User::select()
-    ->where('is_active', 1)
+    ->whereField('is_active', 1)
     ->paginate(offset: 0, limit: 20);
 ```
 

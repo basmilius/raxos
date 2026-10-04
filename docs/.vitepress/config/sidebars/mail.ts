@@ -4,6 +4,7 @@ export const mail: DefaultTheme.SidebarItem[] = [
     {
         text: 'Mail',
         items: [
+            {text: 'Reply-To and submission results', link: '/mail/submission-results'},
             {text: 'Introduction', link: '/mail/'},
             {text: 'Installation', link: '/mail/installation'}
         ]

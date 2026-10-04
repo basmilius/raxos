@@ -4,6 +4,7 @@ export const database: DefaultTheme.SidebarItem[] = [
     {
         text: 'Database',
         items: [
+            {text: 'Transactions and bounded queries', link: '/database/bounded-queries'},
             {text: 'Introduction', link: '/database/'},
             {text: 'Installation', link: '/database/installation'}
         ]

@@ -32,6 +32,8 @@ When the partial is compiled it invokes the closure with the host connection, th
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\column;
+
 use Raxos\Contract\Database\ConnectionInterface;
 use Raxos\Contract\Database\Query\QueryInterface;
 use Raxos\Database\Db;
@@ -42,8 +44,8 @@ use function Raxos\Database\Query\{column, partial};
 $hasPaidOrderLine = partial(static fn(ConnectionInterface $connection): QueryInterface => $connection->query()
     ->select(1)
     ->from('order_line')
-    ->where('product_id', column('id', 'product'))
-    ->where('status', 'paid'));
+    ->whereField('product_id', column('id', 'product'))
+    ->whereField('status', 'paid'));
 
 $products = Db::query()
     ->select('*')

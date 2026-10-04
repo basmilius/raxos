@@ -4,6 +4,7 @@ export const http: DefaultTheme.SidebarItem[] = [
     {
         text: 'HTTP',
         items: [
+            {text: 'HTTP retries and public errors', link: '/http/retries-and-problems'},
             {text: 'Introduction', link: '/http/'},
             {text: 'Installation', link: '/http/installation'}
         ]

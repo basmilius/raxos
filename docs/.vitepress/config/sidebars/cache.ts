@@ -4,6 +4,7 @@ export const cache: DefaultTheme.SidebarItem[] = [
     {
         text: 'Cache',
         items: [
+            {text: 'Lookups and cached computation', link: '/cache/lookups-and-locks'},
             {text: 'Introduction', link: '/cache/'},
             {text: 'Installation', link: '/cache/installation'}
         ]

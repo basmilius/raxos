@@ -4,6 +4,7 @@ export const datetime: DefaultTheme.SidebarItem[] = [
     {
         text: 'DateTime',
         items: [
+            {text: 'DateTime route round trips', link: '/datetime/route-roundtrips'},
             {text: 'Introduction', link: '/datetime/'},
             {text: 'Installation', link: '/datetime/installation'}
         ]

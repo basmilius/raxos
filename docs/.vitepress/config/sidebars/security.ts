@@ -4,6 +4,7 @@ export const security: DefaultTheme.SidebarItem[] = [
     {
         text: 'Security',
         items: [
+            {text: 'Instance JWT verification', link: '/security/verification-policy'},
             {text: 'Introduction', link: '/security/'},
             {text: 'Installation', link: '/security/installation'}
         ]

@@ -89,7 +89,7 @@ use Raxos\Database\Query\Expr;
 $hasOrders = Db::query()
     ->select()
     ->from('orders')
-    ->where('orders.user_id', User::col('id'));
+    ->whereField('orders.user_id', User::col('id'));
 
 $buyers = User::select()
     ->where(Expr::exists($hasOrders))

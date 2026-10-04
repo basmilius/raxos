@@ -24,7 +24,7 @@ class Statement implements StatementInterface
 | `single(int $fetchMode = PDO::FETCH_ASSOC): Model\|stdClass\|array\|null` | Executes and fetches the first row, hydrating a model when one is assigned. |
 | `array(int $fetchMode = PDO::FETCH_ASSOC): array` | Executes and fetches every row. |
 | `arrayList(int $fetchMode = PDO::FETCH_ASSOC): ArrayListInterface\|ModelArrayList` | Executes and returns the rows as a collection. |
-| `cursor(int $fetchMode = PDO::FETCH_ASSOC): Generator` | Executes and yields rows one at a time. |
+| `cursor(int $fetchMode = PDO::FETCH_ASSOC, int $batchSize = 100, bool $retainCache = false): Generator` | Executes and yields rows one at a time. |
 | `fetchColumn(int $index = 0): mixed` | Executes and returns a single column value from the first row. |
 | `rowCount(): int` | Returns the affected row count of the last execution. |
 

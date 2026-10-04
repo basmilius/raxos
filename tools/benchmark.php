@@ -28,6 +28,8 @@ require dirname(__DIR__) . '/database/tests/Fixtures/Models.php';
 require dirname(__DIR__) . '/cache/tests/Fixtures/RecordingRedisCache.php';
 
 /**
+ * Returns median elapsed milliseconds after one untimed warmup, excluding process startup.
+ *
  * @param callable $fn
  * @param int $runs
  * @return float
@@ -46,6 +48,7 @@ function benchmarkMedian(callable $fn, int $runs = 7): float
     }
 
     sort($times);
+
     return round($times[intdiv($runs, 2)], 4);
 }
 

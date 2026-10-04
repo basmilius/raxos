@@ -150,6 +150,8 @@ Register a primer per query with `prime()`. It runs over the freshly hydrated ba
 <?php
 declare(strict_types=1);
 
+use function Raxos\Database\Query\column;
+
 use Raxos\Contract\Collection\ArrayListInterface;
 use Raxos\Contract\Database\ConnectionInterface;
 use Raxos\Contract\Database\Orm\PrimerInterface;
@@ -194,7 +196,7 @@ use Raxos\Contract\Database\Query\QueryInterface;
 // Users that have at least one published post.
 $authors = User::select()
     ->whereHas('posts', static fn(QueryInterface $query) => $query
-        ->where('is_published', 1))
+        ->whereField('is_published', 1))
     ->arrayList();
 
 // Users whose posts have a given status.
@@ -214,7 +216,7 @@ declare(strict_types=1);
 $user = User::singleOrFail('usr_1');
 
 $recentPosts = $user->posts()
-    ->where('created_on', '>', 1710000000)
+    ->whereField('created_on', '>', 1710000000)
     ->orderByDesc('created_on')
     ->arrayList();
 ```

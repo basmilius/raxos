@@ -1,0 +1,249 @@
+{
+  "root_revision": "56431b50172a9beee66ef573384fee2479456cec",
+  "date": "2026-10-03",
+  "local": {
+    "http_methods": {
+      "put": "Raxos\\Http\\Client\\Error\\BadCallException",
+      "patch": "Raxos\\Http\\Client\\Error\\BadCallException",
+      "head": "Raxos\\Http\\Client\\Error\\BadCallException",
+      "options": "request option setter; no OPTIONS verb helper"
+    },
+    "validation_short_name": "Raxos\\Http\\Validate\\Error\\ValidationNotOkException",
+    "validated_alias_value": "Keyboard",
+    "openapi_body_schema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "openapi_query_parameter": {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "deprecated": false,
+      "allowEmptyValue": false
+    },
+    "where_string_is_value": {
+      "sql": "select * from `next_probe_rows` where :p1_0 > 199999 order by `id` limit 25",
+      "first_id": 1,
+      "expected_first_id_with_column": 200000
+    },
+    "pagination": [
+      {
+        "offset": 0,
+        "offset_ms": 0.0077,
+        "seek_ms": 0.0094
+      },
+      {
+        "offset": 50000,
+        "offset_ms": 0.1985,
+        "seek_ms": 0.0093
+      },
+      {
+        "offset": 150000,
+        "offset_ms": 0.6145,
+        "seek_ms": 0.0094
+      }
+    ]
+  },
+  "redis": {
+    "remember_warm_commands": [
+      "EXISTS",
+      "GET"
+    ],
+    "interleaved_remember_computations": 2,
+    "interleaved_tag_ttl": 10,
+    "long_item_ttl": 100,
+    "item_exists_after_interleaved_flush": true,
+    "tag_index_exists_after_interleaved_flush": false,
+    "item_exists_after_second_flush": true
+  },
+  "mysql_cursor": [
+    {
+      "mode": "default-buffered",
+      "rows": 20000,
+      "payload_bytes": 512,
+      "first_row_heap_bytes": 11789496,
+      "peak_heap_bytes_over_baseline": 11796624,
+      "elapsed_ms": 36.917
+    },
+    {
+      "mode": "explicit-unbuffered",
+      "rows": 20000,
+      "payload_bytes": 512,
+      "first_row_heap_bytes": 554936,
+      "peak_heap_bytes_over_baseline": 804416,
+      "elapsed_ms": 29.007
+    }
+  ],
+  "conditions": {
+    "php": "8.5.9",
+    "os": "Darwin arm64",
+    "sqlite_rows": 200000,
+    "sqlite_page_size": 25,
+    "sqlite_warmups": 1,
+    "sqlite_runs": 9,
+    "mysql": "8.4",
+    "redis": "7-alpine",
+    "redis_races": "deterministic interleaving at real Redis command boundaries using two clients",
+    "mysql_memory": "one isolated PHP process per mode; raw rows, no ORM relations; PHP heap usage, not OS RSS",
+    "opcache_cli": "0",
+    "jit": "disable",
+    "memory_limit": "128M"
+  },
+  "datetime_roundtrip": {
+    "serialized": "2026-01-02T03:04:05+02:00",
+    "pattern": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}",
+    "full_pattern_match": false
+  },
+  "libraries": {
+    "barcode": {
+      "revision": "702f640e04a2037870371e93009fc3c434066ea7",
+      "source_files": 11,
+      "test_files": 9
+    },
+    "cache": {
+      "revision": "47ec24f63b44e9214abd8fcf0e3ff4dec3680868",
+      "source_files": 12,
+      "test_files": 9
+    },
+    "collection": {
+      "revision": "ceb0aeeece6a999a4e5c6f53b1a73933373651da",
+      "source_files": 13,
+      "test_files": 12
+    },
+    "container": {
+      "revision": "39e6b4136c5c8d061e090bfbb49437424611f4ff",
+      "source_files": 17,
+      "test_files": 8
+    },
+    "contract": {
+      "revision": "85476931d149399a7f9a5f9b0303d0dd6d847fcc",
+      "source_files": 109,
+      "test_files": 1
+    },
+    "database": {
+      "revision": "8fdb467c05f069131b95d2d06b69ece68d0d3166",
+      "source_files": 144,
+      "test_files": 61
+    },
+    "datetime": {
+      "revision": "617fe4d17118ff7f0b12ac3230d417964550664f",
+      "source_files": 9,
+      "test_files": 10
+    },
+    "error": {
+      "revision": "64dbcb901aaa98a63f864bc93c0c39718718a23b",
+      "source_files": 3,
+      "test_files": 3
+    },
+    "foundation": {
+      "revision": "bfe063edbdf00ce93bfd676fa472dfa98ff3c7ec",
+      "source_files": 25,
+      "test_files": 20
+    },
+    "http": {
+      "revision": "a5f052778267bc1e271979310cb877f31beec789",
+      "source_files": 80,
+      "test_files": 52
+    },
+    "mail": {
+      "revision": "3609ca944fdf7dabec75d30f0ed8deff730ba42b",
+      "source_files": 14,
+      "test_files": 10
+    },
+    "message-bus": {
+      "revision": "f4092553fe6d3de79bc9b953478c5eaa02ed315f",
+      "source_files": 9,
+      "test_files": 2
+    },
+    "oauth2": {
+      "revision": "8ef507d064f28c51b2ee15e5a3e32140aaa0324c",
+      "source_files": 30,
+      "test_files": 7
+    },
+    "openapi": {
+      "revision": "1f76023b6c05725047cb064acf28f23c927b82a1",
+      "source_files": 48,
+      "test_files": 34
+    },
+    "rate-limit": {
+      "revision": "34b79caef133881098cb0dc33a83032c46274a73",
+      "source_files": 7,
+      "test_files": 5
+    },
+    "reflection": {
+      "revision": "684f20e1ace85a58f8f3464b42193ec20a824e0c",
+      "source_files": 8,
+      "test_files": 8
+    },
+    "router": {
+      "revision": "f0228d46b7e98ea73c4814b3ba391fa605e60a78",
+      "source_files": 52,
+      "test_files": 33
+    },
+    "search": {
+      "revision": "25af14af611b4c94bcf57ee22cb4dcff9fc80532",
+      "source_files": 42,
+      "test_files": 32
+    },
+    "security": {
+      "revision": "6d0b9250407fb3f6f5c408504c360b3e8940eaf4",
+      "source_files": 22,
+      "test_files": 9
+    },
+    "terminal": {
+      "revision": "6f865508bec070ddf550de578b58f1668dd9be14",
+      "source_files": 26,
+      "test_files": 13
+    },
+    "wallet": {
+      "revision": "717746c824d0d7a75ca5017e878b2b3607252994",
+      "source_files": 33,
+      "test_files": 28
+    }
+  },
+  "scope": "Inventory of all 21 libraries, targeted public entry points and hot paths; not an exhaustive new security audit or complete source re-review.",
+  "sources": {
+    "redis_atomic": "https://redis.io/docs/latest/develop/programmability/eval-intro/",
+    "php_buffering": "https://www.php.net/manual/en/mysqlinfo.concepts.buffering.php",
+    "rabbitmq_confirms": "https://www.rabbitmq.com/docs/confirms",
+    "oauth_bcp": "https://www.rfc-editor.org/rfc/rfc9700.html#section-4.14",
+    "clock": "https://www.php-fig.org/psr/psr-20/",
+    "problem_details": "https://www.rfc-editor.org/rfc/rfc9457.html",
+    "composer_versions": "https://getcomposer.org/doc/articles/versions.md"
+  },
+  "report_verification": {
+    "links": 64,
+    "local_and_source_paths": "checked",
+    "standalone_dependencies": "inline CSS; no external assets",
+    "contrast_ratios": {
+      "light": {
+        "text on paper": 11.93,
+        "text on highlight": 10.24,
+        "text on panel": 11.23,
+        "muted on paper": 6.15,
+        "muted on highlight": 5.28,
+        "muted on panel": 5.79,
+        "link on paper": 6.15,
+        "link on highlight": 5.28,
+        "link on panel": 5.79
+      },
+      "dark": {
+        "text on paper": 11.79,
+        "text on highlight": 8.79,
+        "text on panel": 10.03,
+        "muted on paper": 6.48,
+        "muted on highlight": 4.84,
+        "muted on panel": 5.52,
+        "link on paper": 7.79,
+        "link on highlight": 5.81,
+        "link on panel": 6.63
+      }
+    },
+    "narrow_and_print": "CSS inspected; not browser-rendered",
+    "browser_rendering": "unavailable: IAB not available, browser inventory empty"
+  }
+}

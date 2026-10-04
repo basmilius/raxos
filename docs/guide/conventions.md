@@ -31,14 +31,33 @@ final readonly class Point
     public function __construct(
         public float $x,
         public float $y = 0.0
-    ) {}
+    )
+    {
+    }
 }
 ```
 
 ## Documentation
 
-Every class, method and property carries PHPDoc. Blocks include `@author Bas Milius <bas@mili.us>`
-and an `@since` tag with the module version, plus `@throws` where relevant.
+Every class, method and property in library source carries PHPDoc. Describe its behavior or the constraint a caller must know. Blocks include `@author Bas Milius <bas@mili.us>` and `@throws` where relevant. Parameter tags contain only the type and name.
+
+Class PHPDocs always start with `Class [Name]`. An optional description follows, separated from the heading and tags by blank PHPDoc lines:
+
+```php
+/**
+ * Class CacheEntry
+ *
+ * Distinguishes a stored null or false value from a cache miss.
+ *
+ * @author Bas Milius <bas@mili.us>
+ * @package Raxos\Cache\Redis
+ * @since 3.3.0
+ */
+```
+
+`@since` records when a member was introduced. Preserve it when changing an existing member; only new code uses `@since 3.3.0`. Tests and fixtures omit PHPDocs.
+
+Separate methods and logical steps with whitespace. Use alphabetical imports instead of fully qualified class references, and split long signatures and compound conditions into readable lines.
 
 ## Error handling
 

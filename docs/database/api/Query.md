@@ -65,7 +65,7 @@ abstract class Query implements QueryInterface
 | `arrayList(int $fetchMode = PDO::FETCH_ASSOC): ArrayListInterface\|ModelArrayList` | Returns the rows as an `ArrayList`, or a `ModelArrayList` for model queries. |
 | `single(int $fetchMode = PDO::FETCH_ASSOC): Model\|stdClass\|array\|null` | Returns the first row or `null`. |
 | `singleOrFail(...): Model\|stdClass\|array` | Same as `single()`, but throws `MissingResultException` when nothing is found. |
-| `cursor(int $fetchMode = PDO::FETCH_ASSOC): Generator` | Yields rows one at a time. |
+| `cursor(int $fetchMode = PDO::FETCH_ASSOC, array $options = [], int $batchSize = 100, bool $retainCache = false): Generator` | Yields rows one at a time. |
 | `run(array $options = []): int` | Executes a write and returns the affected row count. |
 | `paginate(int $offset, int $limit, ?callable $itemBuilder = null, ?callable $totalBuilder = null): Paginated` | Executes as a page of results, including a total count. |
 | `toSql(): string` | Compiles the query to a SQL string. |
@@ -93,8 +93,8 @@ use function Raxos\Database\Query\literal;
 $rows = Db::query()
     ->select(['id', 'name'])
     ->from('users')
-    ->where('is_active', 1)
-    ->where('created_on', '>', literal('now() - interval 30 day'))
+    ->whereField('is_active', 1)
+    ->whereField('created_on', '>', literal('now() - interval 30 day'))
     ->orderByDesc('created_on')
     ->limit(50)
     ->array();

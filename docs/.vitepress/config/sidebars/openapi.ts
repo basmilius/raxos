@@ -4,6 +4,7 @@ export const openapi: DefaultTheme.SidebarItem[] = [
     {
         text: 'OpenAPI',
         items: [
+            {text: 'Input schemas and validation', link: '/openapi/input-schemas'},
             {text: 'Introduction', link: '/openapi/'},
             {text: 'Installation', link: '/openapi/installation'}
         ]
